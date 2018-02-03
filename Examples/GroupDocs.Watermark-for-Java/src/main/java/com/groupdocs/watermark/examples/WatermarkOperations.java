@@ -145,6 +145,9 @@ public class WatermarkOperations {
 			watermark.setHorizontalAlignment(HorizontalAlignment.Right);
 			watermark.setVerticalAlignment(VerticalAlignment.Bottom);
 
+			watermark.getMargins().setRight(0.1);
+			watermark.getMargins().setBottom(0.2);
+			
 			doc.addWatermark(watermark);
 			doc.save(Common.mapOutputFilePath(DOC_FILE_PATH));
 			doc.close();
@@ -398,7 +401,7 @@ public class WatermarkOperations {
 			exp.printStackTrace();
 		}
 	}
-
+	
 	/// <summary>
 	/// Searches for image watermark
 	/// </summary>
