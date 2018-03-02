@@ -23,7 +23,7 @@ You may find following resources helpful:
 
 # Apply License
 
-Follow below steps if you have product license
+Follow below steps if you have product license:
 
 1. Open "Common.java"
 2. Set "LICENSE_PATH" variable to your license file path
