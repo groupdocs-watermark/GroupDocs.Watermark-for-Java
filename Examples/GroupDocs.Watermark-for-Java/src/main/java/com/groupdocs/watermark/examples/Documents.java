@@ -64,6 +64,7 @@ import com.groupdocs.watermark.SlidesImageEffects;
 import com.groupdocs.watermark.SlidesImageFillFormat;
 import com.groupdocs.watermark.SlidesLayoutSlide;
 import com.groupdocs.watermark.SlidesMasterSlide;
+import com.groupdocs.watermark.SlidesSearchableObjects;
 import com.groupdocs.watermark.SlidesShape;
 import com.groupdocs.watermark.SlidesShapeSettings;
 import com.groupdocs.watermark.SlidesSlide;
@@ -333,6 +334,37 @@ public class Documents {
 		}
 
 		/**
+		 * Removes XObject with particular text formatting
+		 */
+		public static void removeXObjectWithParticularTextFormatting() {
+			try {
+				// ExStart:RemoveXObjectWithParticularTextFormatting_1
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				for (PdfPage page : doc.getPages()) {
+					for (int i = page.getXObjects().getCount() - 1; i >= 0; i--) {
+						for (FormattedTextFragment fragment : page.getXObjects().get_Item(i)
+								.getFormattedTextFragments()) {
+							if (Color.getRed().equals(fragment.getForegroundColor())) {
+								page.getXObjects().removeAt(i);
+								break;
+							}
+						}
+					}
+
+				}
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveXObjectWithParticularTextFormatting_1
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
 		 * Adds watermark to all images XObjects inside a PDF document
 		 */
 		public static void addWatermarkToXObjects() {
@@ -424,6 +456,37 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:RemoveArtifactPDF
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Removes artifact containing particular text formatting
+		 */
+		public static void removeArtifactWithParticularTextFormatting() {
+			try {
+				// ExStart:RemoveArtifactsWithParticularTextFormatting_1
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				for (PdfPage page : doc.getPages()) {
+					for (int i = page.getArtifacts().getCount() - 1; i >= 0; i--) {
+						for (FormattedTextFragment fragment : page.getArtifacts().get_Item(i)
+								.getFormattedTextFragments()) {
+							if (fragment.getFont().getSize() > 42) {
+								page.getArtifacts().removeAt(i);
+								break;
+							}
+						}
+					}
+
+				}
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveArtifactsWithParticularTextFormatting_1
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
@@ -523,6 +586,37 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:RemoveAnnotationPDF
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Removes annotation with particular text formatting
+		 */
+		public static void removeAnnotationWithParticularTextFormatting() {
+			try {
+				// ExStart:RemoveAnnotationsWithParticularTextFormatting_1
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				for (PdfPage page : doc.getPages()) {
+					for (int i = page.getAnnotations().getCount() - 1; i >= 0; i--) {
+						for (FormattedTextFragment fragment : page.getAnnotations().get_Item(i)
+								.getFormattedTextFragments()) {
+							if ("Verdana".equals(fragment.getFont().getFamilyName())) {
+								page.getAnnotations().removeAt(i);
+								break;
+							}
+						}
+					}
+
+				}
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveAnnotationsWithParticularTextFormatting_1
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
@@ -1250,6 +1344,38 @@ public class Documents {
 		}
 
 		/**
+		 * Removes shape with particular text formatting
+		 */
+		public static void removeShapeWithParticularTextFormatting() {
+			try {
+				// ExStart:RemoveTextShapesWithParticularTextFormattingWord_1
+				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				for (WordsSection section : doc.getSections()) {
+					for (int i = section.getShapes().getCount() - 1; i >= 0; i--) {
+						for (FormattedTextFragment fragment : section.getShapes().get_Item(i)
+								.getFormattedTextFragments()) {
+							if ("Arial".equals(fragment.getFont().getFamilyName())
+									&& Color.getRed().equals(fragment.getForegroundColor())) {
+								section.getShapes().removeAt(i);
+								break;
+							}
+						}
+					}
+
+				}
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveTextShapesWithParticularTextFormattingWord_1
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
 		 * Adds watermark to all image shapes in a Word document
 		 */
 		public static void addWatermarkToImageShapes() {
@@ -1286,6 +1412,29 @@ public class Documents {
 			}
 		}
 
+		/**
+		 * Removes/replaces hyperlink associated with a particular shape
+		 */
+		public static void removeHyperlinkAssociatedWithParticularShape() {
+			try {
+				// ExStart:RemoveHyperlinksWord_1
+				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				// Replace hyperlink
+				doc.getSections().get_Item(0).getShapes().get_Item(0).setHyperlink("https://www.groupdocs.com/");
+
+				// Remove hyperlink
+				doc.getSections().get_Item(0).getShapes().get_Item(1).setHyperlink(null);
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveHyperlinksWord_1
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
 	}
 
 	public static class Excel {
@@ -1717,6 +1866,37 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:RemoveShapeExcelWorksheet
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Removes shape with particular text formatting
+		 */
+		public static void removeShapeWithParticularTextFormatting() {
+			try {
+				// ExStart:RemoveTextShapesWithParticularTextFormattingExcel_1
+				CellsDocument doc = Document.load(CellsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				for (CellsWorksheet worksheet : doc.getWorksheets()) {
+					for (int i = worksheet.getShapes().getCount() - 1; i >= 0; i--) {
+						for (FormattedTextFragment fragment : worksheet.getShapes().get_Item(i)
+								.getFormattedTextFragments()) {
+							if ("Arial".equals(fragment.getFont().getFamilyName())
+									&& Color.getRed().equals(fragment.getForegroundColor())) {
+								worksheet.getShapes().removeAt(i);
+								break;
+							}
+						}
+					}
+				}
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveTextShapesWithParticularTextFormattingExcel_1
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
@@ -2188,7 +2368,7 @@ public class Documents {
 		 */
 		public static void addAttachment() {
 			try {
-				// ExStart:AddAttachment
+				// ExStart:AddAttachmentExcel
 				CellsDocument doc = Document.load(CellsDocument.class, Common.mapSourceFilePath(FILE_PATH));
 
 				String attachmentPath = Common.mapSourceFilePath("sample.docx");
@@ -2221,7 +2401,7 @@ public class Documents {
 
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
-				// ExEnd:AddAttachment
+				// ExEnd:AddAttachmentExcel
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
@@ -2370,6 +2550,32 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:SearchImageInAttachment
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Removes/replaces hyperlink associated with particular shape
+		 */
+		public static void removeHyperlinkAssociatedWithParticularShape() {
+			try {
+				// ExStart:RemoveHyperlinksExcel_1
+				CellsDocument doc = Document.load(CellsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				// Replace hyperlink
+				doc.getWorksheets().get_Item(0).getCharts().get_Item(0).setHyperlink("https://www.aspose.com/");
+				doc.getWorksheets().get_Item(0).getShapes().get_Item(0).setHyperlink("https://www.groupdocs.com/");
+
+				// Remove hyperlink
+				doc.getWorksheets().get_Item(1).getCharts().get_Item(0).setHyperlink(null);
+				doc.getWorksheets().get_Item(1).getShapes().get_Item(0).setHyperlink(null);
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveHyperlinksExcel_1
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
@@ -2679,7 +2885,7 @@ public class Documents {
 		}
 
 		/**
-		 * Remove shape from PowerPoint slide
+		 * Removes shape from PowerPoint slide
 		 */
 		public static void removeShape() {
 			try {
@@ -2695,6 +2901,39 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:RemoveShapePowerPoint
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Removes shape with particular text formatting
+		 */
+		public static void removeShapeWithParticularTextFormatting() {
+			try {
+				// ExStart:RemoveTextShapesWithParticularTextFormattingPowerPoint_1
+				// Load document
+				SlidesDocument doc = Document.load(SlidesDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				// Get and remove shapes from slides
+				for (SlidesSlide section : doc.getSlides()) {
+					for (int i = section.getShapes().getCount() - 1; i >= 0; i--) {
+						for (FormattedTextFragment fragment : section.getShapes().get_Item(i)
+								.getFormattedTextFragments()) {
+							if ("Arial".equals(fragment.getFont().getFamilyName())
+									&& Color.getRed().equals(fragment.getForegroundColor())) {
+								section.getShapes().removeAt(i);
+								break;
+							}
+						}
+					}
+				}
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveTextShapesWithParticularTextFormattingPowerPoint_1
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
@@ -2806,6 +3045,39 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:AddWatermarkToAllBackgroundImagesPowerPointSlide
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Sets additional settings for slide backgrounds
+		 */
+		public static void setAdditionalSettingsForSlideBackgrounds() {
+			try {
+				// ExStart:SetTiledSemitransparentBackgroundPowerPoint_1
+				// Get image
+				String imagePath = Common.WATERMARK_IMAGE_PATH;
+				File imageFile = new File(imagePath);
+				byte[] imageBytes = new byte[(int) imageFile.length()];
+				InputStream imageInputStream = new FileInputStream(imageFile);
+				imageInputStream.read(imageBytes);
+				imageInputStream.close();
+
+				// Load document
+				SlidesDocument doc = Document.load(SlidesDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				// Get slide and update background
+				SlidesSlide slide = doc.getSlides().get_Item(0);
+				slide.getImageFillFormat().setBackgroundImage(new SlidesWatermarkableImage(imageBytes));
+				slide.getImageFillFormat().setTileAsTexture(true);
+				slide.getImageFillFormat().setTransparency(0.5);
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:SetTiledSemitransparentBackgroundPowerPoint_1
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
@@ -3082,6 +3354,32 @@ public class Documents {
 				exp.printStackTrace();
 			}
 		}
+
+		/**
+		 * Removes hyperlinks of all types
+		 */
+		public static void removeHyperlinksOfAllTypes() {
+			try {
+				// ExStart:RemoveHyperlinksUsingFindWatermarkPowerPoint_1
+				SlidesDocument doc = Document.load(SlidesDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				doc.getSearchableObjects().setSlidesSearchableObjects(SlidesSearchableObjects.Hyperlinks);
+
+				// Find all hyperlinks
+				PossibleWatermarkCollection watermarks = doc.findWatermarks();
+
+				// Remove found watermarks
+				watermarks.clear();
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveHyperlinksUsingFindWatermarkPowerPoint_1
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
 	}
 
 	public static class Visio {
@@ -3360,6 +3658,38 @@ public class Documents {
 		}
 
 		/**
+		 * Removes shapes with particular text formatting
+		 */
+		public static void removeShapeWithParticularTextFormatting() {
+			try {
+				// ExStart:RemoveTextShapesWithParticularTextFormattingVisio_1
+				DiagramDocument doc = Document.load(DiagramDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				// Get pages and remove shapes with particular text formatting
+				for (DiagramPage section : doc.getPages()) {
+					for (int i = section.getShapes().getCount() - 1; i >= 0; i--) {
+						for (FormattedTextFragment fragment : section.getShapes().get_Item(i)
+								.getFormattedTextFragments()) {
+							if ("Arial".equals(fragment.getFont().getFamilyName())
+									&& Color.getRed().equals(fragment.getForegroundColor())) {
+								section.getShapes().removeAt(i);
+								break;
+							}
+						}
+					}
+				}
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveTextShapesWithParticularTextFormattingVisio_1
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
 		 * Extracts information about all the headers&footers
 		 */
 		public static void getHeaderFooterInformation() {
@@ -3496,6 +3826,31 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:ReplaceShapeImageVisio
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Removes/replaces hyperlink associated with particular shape
+		 */
+		public static void removeHyperlinkAssociatedWithParticularShape() {
+			try {
+				// ExStart:RemoveHyperlinksVisio_1
+				DiagramDocument doc = Document.load(DiagramDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				DiagramShape shape = doc.getPages().get_Item(0).getShapes().get_Item(0);
+				for (int i = shape.getHyperlinks().getCount() - 1; i >= 0; i--) {
+
+					if (shape.getHyperlinks().get_Item(i).getAddress().contains("http://someurl.com")) {
+						shape.getHyperlinks().removeAt(i);
+					}
+				}
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveHyperlinksVisio_1
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
@@ -3763,7 +4118,7 @@ public class Documents {
 		 */
 		public static void findTextFragmentInEmailMessage() {
 			try {
-				// ExStart:listAllRecipients
+				// ExStart:findTextFragmentInEmailMessage
 				EmailDocument doc = Document.load(EmailDocument.class, Common.mapSourceFilePath(FILE_PATH));
 
 				SearchCriteria criteria = new TextSearchCriteria("test", false);
@@ -3782,7 +4137,7 @@ public class Documents {
 				// Save document
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
-				// ExEnd:listAllRecipients
+				// ExEnd:findTextFragmentInEmailMessage
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();

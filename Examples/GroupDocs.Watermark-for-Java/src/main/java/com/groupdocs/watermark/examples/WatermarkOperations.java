@@ -12,6 +12,7 @@ import com.groupdocs.watermark.Document;
 import com.groupdocs.watermark.Font;
 import com.groupdocs.watermark.FontStyle;
 import com.groupdocs.watermark.HorizontalAlignment;
+import com.groupdocs.watermark.HyperlinkPossibleWatermark;
 import com.groupdocs.watermark.ImageDctHashSearchCriteria;
 import com.groupdocs.watermark.ImageSearchCriteria;
 import com.groupdocs.watermark.ImageWatermark;
@@ -147,7 +148,7 @@ public class WatermarkOperations {
 
 			watermark.getMargins().setRight(0.1);
 			watermark.getMargins().setBottom(0.2);
-			
+
 			doc.addWatermark(watermark);
 			doc.save(Common.mapOutputFilePath(DOC_FILE_PATH));
 			doc.close();
@@ -401,7 +402,7 @@ public class WatermarkOperations {
 			exp.printStackTrace();
 		}
 	}
-	
+
 	/// <summary>
 	/// Searches for image watermark
 	/// </summary>
@@ -577,4 +578,38 @@ public class WatermarkOperations {
 			exp.printStackTrace();
 		}
 	}
+
+	/// <summary>
+	/// Searches and removes hyperlinks
+	/// </summary>
+	public static void removeHyperlinksWithParticularURL() {
+		try {
+			// ExStart:RemoveHyperlinksWithParticularURL_1
+			Document doc = Document.load(Common.mapSourceFilePath(DOC_FILE_PATH));
+
+			// Find watermark with particular text search criteria
+			PossibleWatermarkCollection watermarks = doc
+					.findWatermarks(new TextSearchCriteria(Pattern.compile("someurl\\.com")));
+			for (int i = watermarks.getCount() - 1; i >= 0; i--) {
+				// Ensure that only hyperlinks will be removed
+				if (HyperlinkPossibleWatermark.class.isInstance(watermarks.get_Item(i))) {
+					// Output the full url of the hyperlink
+					System.out.println(watermarks.get_Item(i).getText());
+
+					// Remove hyperlink from the document
+					watermarks.removeAt(i);
+				}
+			}
+
+			// Save document
+			doc.save(Common.mapOutputFilePath(DOC_FILE_PATH));
+
+			doc.close();
+			// ExEnd:RemoveHyperlinksWithParticularURL_1
+		} catch (Exception exp) {
+			System.out.println("Exception: " + exp.getMessage());
+			exp.printStackTrace();
+		}
+	}
+
 }
