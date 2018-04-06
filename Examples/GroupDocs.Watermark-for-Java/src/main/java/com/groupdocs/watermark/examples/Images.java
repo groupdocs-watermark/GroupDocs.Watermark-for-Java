@@ -14,7 +14,7 @@ public class Images {
 	/**
 	 * Adds watermark to a multi frame image
 	 */
-	public static void AddWatermarkToMultiframeImageDocument() {
+	public static void addWatermarkToMultiframeImageDocument() {
 		try {
 			// ExStart:AddWatermarkToMultiframeImageDocument
 			MultiframeImageDocument doc = Document.load(MultiframeImageDocument.class,

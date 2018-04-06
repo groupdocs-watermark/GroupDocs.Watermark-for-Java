@@ -53,6 +53,7 @@ import com.groupdocs.watermark.PdfImageConversionFormat;
 import com.groupdocs.watermark.PdfPage;
 import com.groupdocs.watermark.PdfPageMarginType;
 import com.groupdocs.watermark.PdfSearchableObjects;
+import com.groupdocs.watermark.PdfWatermarkableImage;
 import com.groupdocs.watermark.PdfXObject;
 import com.groupdocs.watermark.PossibleWatermarkCollection;
 import com.groupdocs.watermark.SearchCriteria;
@@ -894,6 +895,223 @@ public class Documents {
 				exp.printStackTrace();
 			}
 		}
+
+		/**
+		 * Replaces text for particular XObject
+		 */
+		public static void replaceTextForParticularXObject() {
+			try {
+				// ExStart:ReplaceTextForParticularXObject_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				for (PdfXObject xObject : doc.getPages().get_Item(0).getXObjects()) {
+					if (xObject.getText().contains("Test")) {
+						xObject.setText("Passed");
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceTextForParticularXObject_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Replaces text for particular artifact
+		 */
+		public static void replaceTextForParticularArtifact() {
+			try {
+				// ExStart:ReplaceTextForParticularArtifact_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				for (PdfArtifact artifact : doc.getPages().get_Item(0).getArtifacts()) {
+					if (artifact.getText().contains("Test")) {
+						artifact.setText("Passed");
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceTextForParticularArtifact_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Replaces text for particular annotation
+		 */
+		public static void replaceTextForParticularAnnotation() {
+			try {
+				// ExStart:ReplaceTextForParticularAnnotation_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				for (PdfAnnotation annotation : doc.getPages().get_Item(0).getAnnotations()) {
+					if (annotation.getText().contains("Test")) {
+						annotation.setText("Passed");
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceTextForParticularAnnotation_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Replaces text for particular XObject with formatting
+		 */
+		public static void replaceTextForParticularXObjectWithFormatting() {
+			try {
+				// ExStart:ReplaceTextForParticularXObjectWithFormatting_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				for (PdfXObject xObject : doc.getPages().get_Item(0).getXObjects()) {
+					if (xObject.getText().contains("Test")) {
+						xObject.getFormattedTextFragments().clear();
+						xObject.getFormattedTextFragments().add("Passed", new Font("Calibri", 19, FontStyle.Bold),
+								Color.getRed(), Color.getAqua());
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceTextForParticularXObjectWithFormatting_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Replaces text for particular artifact with formatting
+		 */
+		public static void replaceTextForParticularArtifactWithFormatting() {
+			try {
+				// ExStart:ReplaceTextForParticularArtifactWithFormatting_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				for (PdfArtifact artifact : doc.getPages().get_Item(0).getArtifacts()) {
+					if (artifact.getText().contains("Test")) {
+						artifact.getFormattedTextFragments().clear();
+						artifact.getFormattedTextFragments().add("Passed", new Font("Calibri", 19, FontStyle.Bold),
+								Color.getRed(), Color.getAqua());
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceTextForParticularArtifactWithFormatting_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Replaces text for particular annotation with formatting
+		 */
+		public static void replaceTextForParticularAnnotationWithFormatting() {
+			try {
+				// ExStart:ReplaceTextForParticularAnnotationWithFormatting_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				for (PdfAnnotation annotation : doc.getPages().get_Item(0).getAnnotations()) {
+					if (annotation.getText().contains("Test")) {
+						annotation.getFormattedTextFragments().clear();
+						annotation.getFormattedTextFragments().add("Passed", new Font("Calibri", 19, FontStyle.Bold),
+								Color.getRed(), Color.getAqua());
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceTextForParticularAnnotationWithFormatting_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Replaces image for particular XObject
+		 */
+		public static void replaceImageForParticularXObject() {
+			try {
+				// ExStart:ReplaceImageForParticularXObject_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				String imagePath = "D:\\test.png";
+				File imageFile = new File(imagePath);
+				byte[] imageBytes = new byte[(int) imageFile.length()];
+				InputStream imageInputStream = new FileInputStream(imageFile);
+				imageInputStream.read(imageBytes);
+				imageInputStream.close();
+
+				for (PdfXObject xObject : doc.getPages().get_Item(0).getXObjects()) {
+					if (xObject.getImage() != null) {
+						xObject.setImage(new PdfWatermarkableImage(imageBytes));
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceImageForParticularXObject_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Replaces image for particular artifact
+		 */
+		public static void replaceImageForParticularArtifact() {
+			try {
+				// ExStart:ReplaceImageForParticularArtifact_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				String imagePath = "D:\\test.png";
+				File imageFile = new File(imagePath);
+				byte[] imageBytes = new byte[(int) imageFile.length()];
+				InputStream imageInputStream = new FileInputStream(imageFile);
+				imageInputStream.read(imageBytes);
+				imageInputStream.close();
+
+				for (PdfArtifact artifact : doc.getPages().get_Item(0).getArtifacts()) {
+					if (artifact.getImage() != null) {
+						artifact.setImage(new PdfWatermarkableImage(imageBytes));
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceImageForParticularArtifact_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Replaces image for particular annotation
+		 */
+		public static void replaceImageForParticularAnnotation() {
+			try {
+				// ExStart:ReplaceImageForParticularAnnotation_18.3
+				PdfDocument doc = Document.load(PdfDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				String imagePath = "D:\\test.png";
+				File imageFile = new File(imagePath);
+				byte[] imageBytes = new byte[(int) imageFile.length()];
+				InputStream imageInputStream = new FileInputStream(imageFile);
+				imageInputStream.read(imageBytes);
+				imageInputStream.close();
+
+				for (PdfAnnotation annotation : doc.getPages().get_Item(0).getAnnotations()) {
+					if (annotation.getImage() != null) {
+						annotation.setImage(new PdfWatermarkableImage(imageBytes));
+					}
+				}
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ReplaceImageForParticularAnnotation_18.3
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
 	}
 
 	public static class Word {
