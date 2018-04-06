@@ -2,6 +2,7 @@ package com.groupdocs.watermark.examples;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.regex.Pattern;
 
 import com.groupdocs.watermark.CellsSearchableObjects;
@@ -353,10 +354,9 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Searches for watermark with a particular text
-	/// <param name="SearchString">Search String</param>
-	/// </summary>
+	/**
+	 * Searches for watermark with a particular text 
+	 */
 	public static void searchWatermark(String searchString) {
 		try {
 			// ExStart:SearchWatermarkWithSearchString
@@ -377,10 +377,9 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Searches for watermark with a regular expression
-	/// <param name="RegularExpression">Regular Expression</param>
-	/// </summary>
+	/**
+	 * Searches for watermark with a regular expression 
+	 */
 	public static void searchWatermarkWithRegularExpression() {
 		try {
 			// ExStart:SearchWatermarkWithRegularExpression
@@ -403,9 +402,9 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Searches for image watermark
-	/// </summary>
+	/**
+	 * Searches for image watermark
+	 */
 	public static void searchImageWatermark() {
 		try {
 			// ExStart:SearchImageWatermark
@@ -429,9 +428,9 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Searches for watermark with combination of different search criteria
-	/// </summary>
+	/**
+	 * Searches for watermark with combination of different search criteria
+	 */
 	public static void searchWatermarkWithCombinedSearch() {
 		try {
 			// ExStart:SearchWatermarkWithCombinedSearch
@@ -459,9 +458,9 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Searches watermark with a prticular text formatting
-	/// </summary>
+	/**
+	 * Searches watermark with a prticular text formatting
+	 */
 	public static void searchWatermarkWithParticularTextFormatting() {
 		try {
 			// ExStart:SearchWatermarkWithParticularTextFormatting
@@ -491,9 +490,9 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Removes watermark
-	/// </summary>
+	/**
+	 * Removes watermark
+	 */
 	public static void removeWatermark() {
 		try {
 			// ExStart:RemoveWatermark
@@ -517,10 +516,10 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Searches for watermark specifying which objects should be included in
-	/// the search for all document instances
-	/// </summary>
+	/**
+	 * Searches for watermark specifying which objects should be included in the
+	 * search for all document instances
+	 */
 	public static void searchWatermarkInParticularObjects() {
 		try {
 			// ExStart:SearchWatermarkInParticularObjectsAllInstances
@@ -555,10 +554,10 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Searches for watermark specifying which objects should be included in
-	/// the search for particular document instance
-	/// </summary>
+	/**
+	 * Searches for watermark specifying which objects should be included in the
+	 * search for particular document instance
+	 */
 	public static void searchWatermarkInParticularObjectsForParticularDocument() {
 		try {
 			// ExStart:SearchWatermarkInParticularObjectsForParticularDocument
@@ -579,9 +578,9 @@ public class WatermarkOperations {
 		}
 	}
 
-	/// <summary>
-	/// Searches and removes hyperlinks
-	/// </summary>
+	/**
+	 * Searches and removes hyperlinks
+	 */
 	public static void removeHyperlinksWithParticularURL() {
 		try {
 			// ExStart:RemoveHyperlinksWithParticularURL_1
@@ -606,6 +605,113 @@ public class WatermarkOperations {
 
 			doc.close();
 			// ExEnd:RemoveHyperlinksWithParticularURL_1
+		} catch (Exception exp) {
+			System.out.println("Exception: " + exp.getMessage());
+			exp.printStackTrace();
+		}
+	}
+
+	/**
+	 * Updates text in the found watermarks
+	 */
+	public static void editTextInFoundWatermarks() {
+		try {
+			// ExStart:EditTextInFoundWatermarks_18.3
+			Document doc = Document.load(Common.mapSourceFilePath(PPT_FILE_PATH));
+			 
+			TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
+			PossibleWatermarkCollection watermarks = doc.findWatermarks(searchCriteria);
+			for (PossibleWatermark watermark : watermarks)
+			{
+			    try
+			    {
+			        watermark.setText("passed");
+			    }
+			    catch (Exception e)
+			    {
+			        // Found entity may not support text editing
+			        // Passed argument can have inappropriate value
+			        // Process such cases here
+			    }
+			}
+			 
+			doc.save(Common.mapOutputFilePath(PPT_FILE_PATH));
+			doc.close();
+			// ExEnd:EditTextInFoundWatermarks_18.3
+		} catch (Exception exp) {
+			System.out.println("Exception: " + exp.getMessage());
+			exp.printStackTrace();
+		}
+	}
+
+	/**
+	 * Updates text with formatting in the found watermarks
+	 */
+	public static void editTextWithFormattingInFoundWatermarks() {
+		try {
+			// ExStart:EditTextWithFormattingInFoundWatermarks_18.3
+			Document doc = Document.load(Common.mapSourceFilePath(DOC_FILE_PATH));
+			 
+			TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
+			PossibleWatermarkCollection watermarks = doc.findWatermarks(searchCriteria);
+			for (PossibleWatermark watermark : watermarks)
+			{
+			    try
+			    {
+			        watermark.getFormattedTextFragments().clear();
+			        watermark.getFormattedTextFragments().add("passed", new Font("Calibri", 19, FontStyle.Bold), Color.getRed(), Color.getAqua());
+			    }
+			    catch (Exception e)
+			    {
+			        // Found entity may not support text editing
+			        // Passed argument can have inappropriate value
+			        // Process such cases here
+			    }
+			}
+			 
+			doc.save(Common.mapOutputFilePath(DOC_FILE_PATH));
+			doc.close();
+			// ExEnd:EditTextWithFormattingInFoundWatermarks_18.3
+		} catch (Exception exp) {
+			System.out.println("Exception: " + exp.getMessage());
+			exp.printStackTrace();
+		}
+	}
+
+	/**
+	 * Replaces image in the found watermarks
+	 */
+	public static void replacesImageInFoundWatermarks() {
+		try {
+			// ExStart:ReplacesImageInFoundWatermarks_18.3
+			String imagePath = Common.mapSourceFilePath(Common.WATERMARK_IMAGE_PATH);
+			File imageFile = new File(imagePath);
+			byte[] imageBytes = new byte[(int)imageFile.length()];
+			InputStream imageInputStream = new FileInputStream(imageFile);
+			imageInputStream.read(imageBytes);
+			imageInputStream.close();
+			 
+			Document doc = Document.load(Common.mapSourceFilePath(PDF_FILE_PATH));
+			 
+			SearchCriteria searchCriteria = new ImageDctHashSearchCriteria("D:\\logo.bmp");
+			PossibleWatermarkCollection watermarks = doc.findWatermarks(searchCriteria);
+			for (PossibleWatermark watermark : watermarks)
+			{
+			    try
+			    {
+			        watermark.setImageData(imageBytes);
+			    }
+			    catch (Exception e)
+			    {
+			        // Found entity may not support image replacing
+			        // Passed image can have inappropriate format
+			        // Process such cases here
+			    }
+			}
+			 
+			doc.save(Common.mapOutputFilePath(PDF_FILE_PATH));
+			doc.close();
+			// ExEnd:ReplacesImageInFoundWatermarks_18.3
 		} catch (Exception exp) {
 			System.out.println("Exception: " + exp.getMessage());
 			exp.printStackTrace();
