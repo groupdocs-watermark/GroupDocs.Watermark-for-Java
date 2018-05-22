@@ -18,8 +18,10 @@ Directory | Description
 
 + **Website:** [www.groupdocs.com](http://www.groupdocs.com)
 + **Product Home:** [GroupDocs.Watermark for Java](https://products.groupdocs.com/watermark/java)
-+ **Download:** [Download GroupDocs.Watermark for Java](https://downloads.groupdocs.com/watermark/java)
++ **Download:** [Download GroupDocs.Watermark for Java](https://artifact.groupdocs.com/repo/com/groupdocs/groupdocs-watermark/)
++ **API Reference:** [GroupDocs.Watermark for Java API Reference Guide](https://apireference.groupdocs.com/java/watermark)
 + **Documentation:** [GroupDocs.Watermark for Java Documentation](https://docs.groupdocs.com/display/watermarkjava/Introducing+GroupDocs.Watermark+for+Java)
-+ **Forum:** [GroupDocs.Watermark for Java Forum](https://forum.groupdocs.com/c/watermark)
++ **Free Support:** [GroupDocs.Watermark for Java Free Support Forum](https://forum.groupdocs.com/c/watermark)
++ **Paid Support:** [GroupDocs.Watermark for Java Paid Support Helpdesk](https://helpdesk.groupdocs.com/)
 + **Blog:** [GroupDocs.Watermark for Java Blog](https://blog.groupdocs.com/category/groupdocs-watermark-product-family/)
 
