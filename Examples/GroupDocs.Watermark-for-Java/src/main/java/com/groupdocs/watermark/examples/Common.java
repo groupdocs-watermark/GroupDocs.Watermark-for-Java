@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
@@ -25,11 +26,11 @@ public class Common {
 	// applies product license
 	public static void applyLicenseFromFile() {
 		try {
-			//ExStart:ApplyLicenseFromFile
+			// ExStart:ApplyLicenseFromFile
 			// Setup license
 			License lic = new License();
 			lic.setLicense(LICENSE_PATH);
-			//ExEnd:ApplyLicenseFromFile
+			// ExEnd:ApplyLicenseFromFile
 		} catch (Exception exp) {
 			System.out.println("Exception: " + exp.getMessage());
 			exp.printStackTrace();
@@ -37,29 +38,22 @@ public class Common {
 	}
 
 	// applies product license
-		public static void applyLicenseFromStream() {
-			try {
-				//ExStart:ApplyLicenseFromStream
-				// Setup license
-				License lic = new License();
-				lic.setLicense(new java.io.FileInputStream(LICENSE_PATH));
-				//ExEnd:ApplyLicenseFromStream
-			} catch (Exception exp) {
-				System.out.println("Exception: " + exp.getMessage());
-				exp.printStackTrace();
-			}
+	public static void applyLicenseFromStream() {
+		try {
+			// ExStart:ApplyLicenseFromStream
+			// Setup license
+			License lic = new License();
+			lic.setLicense(new java.io.FileInputStream(LICENSE_PATH));
+			// ExEnd:ApplyLicenseFromStream
+		} catch (Exception exp) {
+			System.out.println("Exception: " + exp.getMessage());
+			exp.printStackTrace();
 		}
-		
+	}
+
 	// returns project base directory
 	public static Path getProjectBaseDir() {
-		Properties props = new Properties();
-		try {
-			InputStream i = Common.class.getResourceAsStream("/project.properties");
-			props.load(i);
-		} catch (IOException x) {
-			throw new RuntimeException(x);
-		}
-		return FileSystems.getDefault().getPath(props.getProperty("project.basedir"));
+		return Paths.get(System.getProperty("user.dir"));
 	}
 
 	// returns source file path
@@ -84,7 +78,7 @@ public class Common {
 
 	// shows how to use library in licensed mode using Dynabic.Metered account
 	public static void useDynabicMeteredAccount() {
-		//ExStart:ApplyMeteredLicense 
+		// ExStart:ApplyMeteredLicense
 		// initialize Metered API
 		Metered metered = new Metered();
 		// set-up credentials
@@ -93,7 +87,7 @@ public class Common {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//ExEnd:ApplyMeteredLicense 
+		// ExEnd:ApplyMeteredLicense
 		// do some work:
 	}
 
@@ -187,9 +181,8 @@ public class Common {
 			exp.printStackTrace();
 		}
 	}
-	
-	public static void AddWatermarkToAllDocumentsInFolder()
-	{
+
+	public static void AddWatermarkToAllDocumentsInFolder() {
 		// ExStart:AddWatermarkToAllDocumentsInFolderBusinessCase
 		String inputFolder = "D:\\docs\\input\\";
 		String outputFolder = "D:\\docs\\output\\";
@@ -206,25 +199,17 @@ public class Common {
 		watermark.setOpacity(0.5);
 		watermark.setForegroundColor(Color.getRed());
 
-		for (File file : files)
-		{
-			if (file.isFile())
-			{
+		for (File file : files) {
+			if (file.isFile()) {
 				Document doc = null;
-				try
-				{
-				   doc = Document.load(file.getAbsolutePath());                   
-				   doc.addWatermark(watermark);
-				   doc.save(outputFolder + file.getName());                   
-				}
-				catch (UnsupportedFileTypeException exception)
-				{
-				   System.out.println("File format is not supported. File = " + file.getName());
-				}
-				finally
-				{    
-					if (doc != null)
-					{
+				try {
+					doc = Document.load(file.getAbsolutePath());
+					doc.addWatermark(watermark);
+					doc.save(outputFolder + file.getName());
+				} catch (UnsupportedFileTypeException exception) {
+					System.out.println("File format is not supported. File = " + file.getName());
+				} finally {
+					if (doc != null) {
 						doc.close();
 					}
 				}
@@ -232,10 +217,9 @@ public class Common {
 		}
 		// ExEnd:AddWatermarkToAllDocumentsInFolderBusinessCase
 	}
-	
-	public static void RemoveCompanyLogoWatermarkFromDocuments()
-	{
-		//ExStart:RemoveCompanyLogoWatermarkFromDocumentsBusinessCase
+
+	public static void RemoveCompanyLogoWatermarkFromDocuments() {
+		// ExStart:RemoveCompanyLogoWatermarkFromDocumentsBusinessCase
 		String inputFolder = "D:\\docs\\input\\";
 		String outputFolder = "D:\\docs\\output\\";
 		String logo = "D:\\docs\\logo.png";
@@ -246,32 +230,25 @@ public class Common {
 		Pattern pattern = Pattern.compile("^Company\\s+Name$", Pattern.CASE_INSENSITIVE);
 		TextSearchCriteria textSearchCriteria = new TextSearchCriteria(pattern);
 
-		for (File file : files)
-		{
-			if (file.isFile())
-			{
+		for (File file : files) {
+			if (file.isFile()) {
 				Document doc = null;
-				try
-				{
-				   doc = Document.load(file.getAbsolutePath());                   
-				   PossibleWatermarkCollection watermarks = doc.findWatermarks(textSearchCriteria.or(imageSearchCriteria));
-				   watermarks.clear();
-				   doc.save(outputFolder + file.getName());                   
-				}
-				catch (UnsupportedFileTypeException exception)
-				{
-				   System.out.println("File format is not supported. File = " + file.getName());
-				}
-				finally
-				{    
-					if (doc != null)
-					{
+				try {
+					doc = Document.load(file.getAbsolutePath());
+					PossibleWatermarkCollection watermarks = doc
+							.findWatermarks(textSearchCriteria.or(imageSearchCriteria));
+					watermarks.clear();
+					doc.save(outputFolder + file.getName());
+				} catch (UnsupportedFileTypeException exception) {
+					System.out.println("File format is not supported. File = " + file.getName());
+				} finally {
+					if (doc != null) {
 						doc.close();
 					}
 				}
 			}
 		}
-		//ExEnd:RemoveCompanyLogoWatermarkFromDocumentsBusinessCase
+		// ExEnd:RemoveCompanyLogoWatermarkFromDocumentsBusinessCase
 	}
 
 }
