@@ -78,7 +78,9 @@ import com.groupdocs.watermark.WatermarkableImage;
 import com.groupdocs.watermark.WatermarkableImageCollection;
 import com.groupdocs.watermark.WordsDocument;
 import com.groupdocs.watermark.WordsImageEffects;
+import com.groupdocs.watermark.WordsLockType;
 import com.groupdocs.watermark.WordsPageSetup;
+import com.groupdocs.watermark.WordsProtectionType;
 import com.groupdocs.watermark.WordsSection;
 import com.groupdocs.watermark.WordsShape;
 import com.groupdocs.watermark.WordsShapeSettings;
@@ -1165,6 +1167,86 @@ public class Documents {
 		}
 
 		/**
+		 * Adds locked watermark to a section of Word document
+		 **/
+		public static void addLockedWatermarkToSection() {
+			try {
+				// ExStart:AddLockedWatermarkToSection_18.6
+				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				
+				TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+				watermark.setForegroundColor(Color.getRed());
+				 
+				WordsShapeSettings settings = new WordsShapeSettings();
+				settings.setLocked(true);
+				settings.setLockType(WordsLockType.ReadOnlyWithEditableContent);
+				settings.setPassword("7654321");
+				 
+				doc.getSections().get_Item(0).addWatermark(watermark, settings);
+				
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:AddLockedWatermarkToSection_18.6
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Adds locked watermark to all pages of Word document
+		 **/
+		public static void addLockedWatermarkToAllPages() {
+			try {
+				// ExStart:AddLockedWatermarkToAllPages_18.6
+				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+				watermark.setForegroundColor(Color.getRed());
+				 
+				WordsShapeSettings settings = new WordsShapeSettings();
+				settings.setLocked(true);
+				settings.setLockType(WordsLockType.AllowOnlyFormFields);
+				settings.setPassword("7654321");
+				 
+				doc.addWatermark(watermark, settings);
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:AddLockedWatermarkToAllPages_18.6
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Adds locked watermark to particular pages of Word document
+		 **/
+		public static void addLockedWatermarkToParticularPages() {
+			try {
+				// ExStart:AddLockedWatermarkToParticularPages_18.6
+				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				
+				TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+				watermark.setForegroundColor(Color.getRed());
+				 
+				WordsShapeSettings settings = new WordsShapeSettings();
+				settings.setPageNumbers(new int[] { 1, 3 });
+				settings.setLocked(true);
+				settings.setLockType(WordsLockType.AllowOnlyComments);
+				settings.setPassword("7654321");
+				 
+				doc.addWatermark(watermark, settings);
+				
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:AddLockedWatermarkToParticularPages_18.6
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
 		 * Gets properties of a section of Word document
 		 */
 		public static void getSectionProperties() {
@@ -1648,6 +1730,40 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:RemoveHyperlinksWord_1
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Protects a Word document
+		 */
+		public static void protectWordDocument() {
+			try {
+				// ExStart:ProtectWordDocument_18.6
+				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				doc.protect(WordsProtectionType.ReadOnly, "7654321");
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:ProtectWordDocument_18.6
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
+		/**
+		 * Removes protection from Word document
+		 */
+		public static void unprotectWordDocument() {
+			try {
+				// ExStart:UnProtectWordDocument_18.6
+				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+				doc.unprotect();
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:UnProtectWordDocument_18.6
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
