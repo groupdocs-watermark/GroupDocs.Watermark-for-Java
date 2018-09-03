@@ -25,6 +25,7 @@ import com.groupdocs.watermark.RotateAngleSearchCriteria;
 import com.groupdocs.watermark.SearchCriteria;
 import com.groupdocs.watermark.SearchableObjects;
 import com.groupdocs.watermark.SizingType;
+import com.groupdocs.watermark.SlidesDocument;
 import com.groupdocs.watermark.SlidesSearchableObjects;
 import com.groupdocs.watermark.TextAlignment;
 import com.groupdocs.watermark.TextFormattingSearchCriteria;
@@ -355,7 +356,7 @@ public class WatermarkOperations {
 	}
 
 	/**
-	 * Searches for watermark with a particular text 
+	 * Searches for watermark with a particular text
 	 */
 	public static void searchWatermark(String searchString) {
 		try {
@@ -378,7 +379,7 @@ public class WatermarkOperations {
 	}
 
 	/**
-	 * Searches for watermark with a regular expression 
+	 * Searches for watermark with a regular expression
 	 */
 	public static void searchWatermarkWithRegularExpression() {
 		try {
@@ -618,23 +619,19 @@ public class WatermarkOperations {
 		try {
 			// ExStart:EditTextInFoundWatermarks_18.3
 			Document doc = Document.load(Common.mapSourceFilePath(PPT_FILE_PATH));
-			 
+
 			TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
 			PossibleWatermarkCollection watermarks = doc.findWatermarks(searchCriteria);
-			for (PossibleWatermark watermark : watermarks)
-			{
-			    try
-			    {
-			        watermark.setText("passed");
-			    }
-			    catch (Exception e)
-			    {
-			        // Found entity may not support text editing
-			        // Passed argument can have inappropriate value
-			        // Process such cases here
-			    }
+			for (PossibleWatermark watermark : watermarks) {
+				try {
+					watermark.setText("passed");
+				} catch (Exception e) {
+					// Found entity may not support text editing
+					// Passed argument can have inappropriate value
+					// Process such cases here
+				}
 			}
-			 
+
 			doc.save(Common.mapOutputFilePath(PPT_FILE_PATH));
 			doc.close();
 			// ExEnd:EditTextInFoundWatermarks_18.3
@@ -651,24 +648,21 @@ public class WatermarkOperations {
 		try {
 			// ExStart:EditTextWithFormattingInFoundWatermarks_18.3
 			Document doc = Document.load(Common.mapSourceFilePath(DOC_FILE_PATH));
-			 
+
 			TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
 			PossibleWatermarkCollection watermarks = doc.findWatermarks(searchCriteria);
-			for (PossibleWatermark watermark : watermarks)
-			{
-			    try
-			    {
-			        watermark.getFormattedTextFragments().clear();
-			        watermark.getFormattedTextFragments().add("passed", new Font("Calibri", 19, FontStyle.Bold), Color.getRed(), Color.getAqua());
-			    }
-			    catch (Exception e)
-			    {
-			        // Found entity may not support text editing
-			        // Passed argument can have inappropriate value
-			        // Process such cases here
-			    }
+			for (PossibleWatermark watermark : watermarks) {
+				try {
+					watermark.getFormattedTextFragments().clear();
+					watermark.getFormattedTextFragments().add("passed", new Font("Calibri", 19, FontStyle.Bold),
+							Color.getRed(), Color.getAqua());
+				} catch (Exception e) {
+					// Found entity may not support text editing
+					// Passed argument can have inappropriate value
+					// Process such cases here
+				}
 			}
-			 
+
 			doc.save(Common.mapOutputFilePath(DOC_FILE_PATH));
 			doc.close();
 			// ExEnd:EditTextWithFormattingInFoundWatermarks_18.3
@@ -686,29 +680,25 @@ public class WatermarkOperations {
 			// ExStart:ReplacesImageInFoundWatermarks_18.3
 			String imagePath = Common.mapSourceFilePath(Common.WATERMARK_IMAGE_PATH);
 			File imageFile = new File(imagePath);
-			byte[] imageBytes = new byte[(int)imageFile.length()];
+			byte[] imageBytes = new byte[(int) imageFile.length()];
 			InputStream imageInputStream = new FileInputStream(imageFile);
 			imageInputStream.read(imageBytes);
 			imageInputStream.close();
-			 
+
 			Document doc = Document.load(Common.mapSourceFilePath(PDF_FILE_PATH));
-			 
+
 			SearchCriteria searchCriteria = new ImageDctHashSearchCriteria("D:\\logo.bmp");
 			PossibleWatermarkCollection watermarks = doc.findWatermarks(searchCriteria);
-			for (PossibleWatermark watermark : watermarks)
-			{
-			    try
-			    {
-			        watermark.setImageData(imageBytes);
-			    }
-			    catch (Exception e)
-			    {
-			        // Found entity may not support image replacing
-			        // Passed image can have inappropriate format
-			        // Process such cases here
-			    }
+			for (PossibleWatermark watermark : watermarks) {
+				try {
+					watermark.setImageData(imageBytes);
+				} catch (Exception e) {
+					// Found entity may not support image replacing
+					// Passed image can have inappropriate format
+					// Process such cases here
+				}
 			}
-			 
+
 			doc.save(Common.mapOutputFilePath(PDF_FILE_PATH));
 			doc.close();
 			// ExEnd:ReplacesImageInFoundWatermarks_18.3
@@ -718,4 +708,26 @@ public class WatermarkOperations {
 		}
 	}
 
+	/**
+	 * Searches for text watermark skipping unreadable characters
+	 */
+	public static void SearchTextWatermarkSkippingUnreadableCharacters() {
+		try {
+			// ExStart:SearchTextWatermarkSkippingUnreadableCharacters_18.8
+			SlidesDocument doc = Document.load(SlidesDocument.class, Common.mapSourceFilePath(PPT_FILE_PATH));
+			String watermarkText = "Company name";
+			TextSearchCriteria criterion = new TextSearchCriteria(watermarkText);
+			  
+			// Enabling skipping of unreadable characters
+			criterion.setSkipUnreadableCharacters(true);
+			  
+			PossibleWatermarkCollection result = doc.findWatermarks(criterion);
+			  
+			doc.close(); 
+			// ExEnd:SearchTextWatermarkSkippingUnreadableCharacters_18.8
+		} catch (Exception exp) {
+			System.out.println("Exception: " + exp.getMessage());
+			exp.printStackTrace();
+		}
+	}
 }
