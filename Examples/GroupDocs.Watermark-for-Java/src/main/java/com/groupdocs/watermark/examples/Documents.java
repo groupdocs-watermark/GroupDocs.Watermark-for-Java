@@ -13,8 +13,10 @@ import com.groupdocs.watermark.CellsHeaderFooterSection;
 import com.groupdocs.watermark.CellsHeaderFooterSectionCollection;
 import com.groupdocs.watermark.CellsHeaderFooterSectionType;
 import com.groupdocs.watermark.CellsImageEffects;
+import com.groupdocs.watermark.CellsMsoDrawingType;
 import com.groupdocs.watermark.CellsSearchableObjects;
 import com.groupdocs.watermark.CellsShape;
+import com.groupdocs.watermark.CellsShapeCollection;
 import com.groupdocs.watermark.CellsShapeSettings;
 import com.groupdocs.watermark.CellsTextEffects;
 import com.groupdocs.watermark.CellsWatermarkableImage;
@@ -1173,17 +1175,17 @@ public class Documents {
 			try {
 				// ExStart:AddLockedWatermarkToSection_18.6
 				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
-				
+
 				TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
 				watermark.setForegroundColor(Color.getRed());
-				 
+
 				WordsShapeSettings settings = new WordsShapeSettings();
 				settings.setLocked(true);
 				settings.setLockType(WordsLockType.ReadOnlyWithEditableContent);
 				settings.setPassword("7654321");
-				 
+
 				doc.getSections().get_Item(0).addWatermark(watermark, settings);
-				
+
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:AddLockedWatermarkToSection_18.6
@@ -1202,12 +1204,12 @@ public class Documents {
 				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
 				TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
 				watermark.setForegroundColor(Color.getRed());
-				 
+
 				WordsShapeSettings settings = new WordsShapeSettings();
 				settings.setLocked(true);
 				settings.setLockType(WordsLockType.AllowOnlyFormFields);
 				settings.setPassword("7654321");
-				 
+
 				doc.addWatermark(watermark, settings);
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
@@ -1225,18 +1227,18 @@ public class Documents {
 			try {
 				// ExStart:AddLockedWatermarkToParticularPages_18.6
 				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
-				
+
 				TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
 				watermark.setForegroundColor(Color.getRed());
-				 
+
 				WordsShapeSettings settings = new WordsShapeSettings();
 				settings.setPageNumbers(new int[] { 1, 3 });
 				settings.setLocked(true);
 				settings.setLockType(WordsLockType.AllowOnlyComments);
 				settings.setPassword("7654321");
-				 
+
 				doc.addWatermark(watermark, settings);
-				
+
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:AddLockedWatermarkToParticularPages_18.6
@@ -2916,6 +2918,34 @@ public class Documents {
 			}
 		}
 
+		/**
+		 * Removes shape in an Excel worksheet
+		 */
+		public static void RemoveSmartArtAndCustomXmlShapes() {
+			try {
+				// ExStart:RemoveSmartArtAndCustomXmlShapes_18.8
+				CellsDocument doc = Document.load(CellsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				// Get shapes
+				CellsShapeCollection shapes = doc.getWorksheets().get_Item(0).getShapes();
+				for (int i = shapes.getCount() - 1; i >= 0; i--) {
+					CellsShape shape = shapes.get_Item(i);
+					// Check if the shape is SmartArt or CustomXml
+					if (shape.getMsoDrawingType() == CellsMsoDrawingType.SmartArt
+							|| shape.getMsoDrawingType() == CellsMsoDrawingType.CustomXml) {
+						shapes.removeAt(i);
+					}
+				}
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:RemoveSmartArtAndCustomXmlShapes_18.8
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+
 	}
 
 	public static class PowerPoint {
@@ -3714,6 +3744,35 @@ public class Documents {
 			}
 		}
 
+		/**
+		 * Protects watermark using unreadable characters
+		 */
+		public static void ProtectWatermarkUsingUnreadableCharacters() {
+			try {
+				// ExStart:ProtectWatermarkUsingUnreadableCharacters_18.8
+				final SlidesDocument document = Document.load(SlidesDocument.class,
+						Common.mapSourceFilePath(FILE_PATH));
+
+				TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+
+				SlidesShapeSettings settings = new SlidesShapeSettings();
+				settings.setLocked(true);
+
+				// Set protection with unreadable characters
+				settings.setProtectWithUnreadableCharacters(true);
+
+				// Add watermark
+				document.addWatermark(watermark, settings);
+
+				// Save document
+				document.save(Common.mapOutputFilePath(FILE_PATH));
+				document.close();
+				// ExEnd:ProtectWatermarkUsingUnreadableCharacters_18.8
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
 	}
 
 	public static class Visio {
