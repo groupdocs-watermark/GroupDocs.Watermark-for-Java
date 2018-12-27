@@ -48,7 +48,7 @@ public class WatermarkOperations {
 	public static void addTextWatermark() {
 		try {
 			// ExStart:AddTextWatermark
-			Document doc = Document.load(Common.mapSourceFilePath(PNG_FILE_PATH));
+			Document doc = Document.load(Common.mapSourceFilePath(DOC_FILE_PATH));
 
 			Font font = new Font("Arial", 19, FontStyle.Bold | FontStyle.Italic);
 			TextWatermark watermark = new TextWatermark("Test watermark", font);
@@ -61,7 +61,7 @@ public class WatermarkOperations {
 
 			doc.addWatermark(watermark);
 
-			doc.save(Common.mapOutputFilePath(PNG_FILE_PATH));
+			doc.save(Common.mapOutputFilePath(DOC_FILE_PATH));
 
 			doc.close();
 			// ExEnd:AddTextWatermark

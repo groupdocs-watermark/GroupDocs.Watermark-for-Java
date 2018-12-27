@@ -4,14 +4,14 @@ public class MainClass {
 	public static void main(String[] args) throws Throwable {
 
 		// Uncomment following code if you have license file
-		//Common.applyLicenseFromFile();
+		Common.applyLicenseFromFile();
 
 		// Using metered license
 		// Common.useDynabicMeteredAccount();
 
 		// Working with Watermark Operations
 		// Add image watermark to any supported document
-		//WatermarkOperations.addImageWatermark();
+		 WatermarkOperations.addImageWatermark();
 
 		// Add image watermark to any supported document using stream
 		 //WatermarkOperations.addImageWatermarkUsingStream();
