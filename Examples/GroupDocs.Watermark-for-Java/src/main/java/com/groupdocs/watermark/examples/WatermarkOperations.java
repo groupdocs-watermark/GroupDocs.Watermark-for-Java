@@ -2,6 +2,7 @@ package com.groupdocs.watermark.examples;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.regex.Pattern;
 
@@ -361,13 +362,24 @@ public class WatermarkOperations {
 	public static void searchWatermark(String searchString) {
 		try {
 			// ExStart:SearchWatermarkWithSearchString
-			Document doc = Document.load(Common.mapSourceFilePath(DOC_FILE_PATH));
+			Document doc = Document.load(Common.mapSourceFilePath(XLS_FILE_PATH));
 			// Search by exact string
 			TextSearchCriteria textSearchCriteria = new TextSearchCriteria(searchString);
 
 			// Find all possible watermarks containing some specific text
 			PossibleWatermarkCollection possibleWatermarks = doc.findWatermarks(textSearchCriteria);
 
+			for (PossibleWatermark possibleWatermark : possibleWatermarks) {
+				if (possibleWatermark.getImageData() != null) {
+					System.out.println(possibleWatermark.getImageData().length);
+				}
+				System.out.println(possibleWatermark.getText());
+				System.out.println(possibleWatermark.getX());
+				System.out.println(possibleWatermark.getY());
+				System.out.println(possibleWatermark.getRotateAngle());
+				System.out.println(possibleWatermark.getWidth());
+				System.out.println(possibleWatermark.getHeight());
+			}
 			// ...
 
 			doc.close();
@@ -409,16 +421,27 @@ public class WatermarkOperations {
 	public static void searchImageWatermark() {
 		try {
 			// ExStart:SearchImageWatermark
-			Document doc = Document.load(Common.mapSourceFilePath(DOC_FILE_PATH));
+			Document doc = Document.load(Common.mapSourceFilePath(XLS_FILE_PATH));
 			// Initialize criteria with the image
 			ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(Common.WATERMARK_IMAGE_PATH);
 
 			// Set maximum allowed difference between images
-			imageSearchCriteria.setMaxDifference(0.1);
+			imageSearchCriteria.setMaxDifference(0.4);
 
 			PossibleWatermarkCollection possibleWatermarks = doc.findWatermarks(imageSearchCriteria);
 
-			System.out.println(possibleWatermarks.get_Item(0).getHeight());
+			for (PossibleWatermark possibleWatermark : possibleWatermarks) {
+				if (possibleWatermark.getImageData() != null) {
+					System.out.println(possibleWatermark.getImageData().length);					
+				}
+				System.out.println(possibleWatermark.getText());
+				System.out.println(possibleWatermark.getX());
+				System.out.println(possibleWatermark.getY());
+				System.out.println(possibleWatermark.getRotateAngle());
+				System.out.println(possibleWatermark.getWidth());
+				System.out.println(possibleWatermark.getHeight());
+			}
+			
 			// ...
 
 			doc.close();
