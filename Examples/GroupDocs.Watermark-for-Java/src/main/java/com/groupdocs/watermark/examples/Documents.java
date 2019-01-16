@@ -1145,7 +1145,7 @@ public class Documents {
 				exp.printStackTrace();
 			}
 		}
-
+		 
 		/**
 		 * Adds watermark to a particular page of Word document
 		 */
@@ -3006,7 +3006,7 @@ public class Documents {
 		}
 		
 		/**
-		 * Adds watermark to a PowerPoint slide
+		 * Adds locked watermark to a PowerPoint slide
 		 */
 		public static void addLockedWatermark() {
 			try {
@@ -3021,7 +3021,7 @@ public class Documents {
 				settings.setLocked(true);
 				
 				// Add watermark
-				doc.getSlides().get_Item(0).addWatermark(textWatermark);
+				doc.getSlides().get_Item(0).addWatermark(textWatermark, settings);
 
 				// Save document
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
