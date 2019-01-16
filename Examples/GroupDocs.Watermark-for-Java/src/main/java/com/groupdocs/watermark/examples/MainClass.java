@@ -4,14 +4,14 @@ public class MainClass {
 	public static void main(String[] args) throws Throwable {
 
 		// Uncomment following code if you have license file
-		Common.applyLicenseFromFile();
+		// Common.applyLicenseFromFile();
 
 		// Using metered license
 		// Common.useDynabicMeteredAccount();
 
 		// Working with Watermark Operations
 		// Add image watermark to any supported document
-		 WatermarkOperations.addImageWatermark();
+		// WatermarkOperations.addImageWatermark();
 
 		// Add image watermark to any supported document using stream
 		 //WatermarkOperations.addImageWatermarkUsingStream();
@@ -48,6 +48,9 @@ public class MainClass {
 
 		// Search watermark
 		// WatermarkOperations.searchWatermark();
+		
+		// Search watermark
+		// WatermarkOperations.searchWatermark("Test watermark");
 
 		// Search watermark with combined search criteria
 		// WatermarkOperations.searchWatermarkWithCombinedSearch();
@@ -176,6 +179,9 @@ public class MainClass {
 
 		// Add watermark
 		// Documents.Excel.addWatermark();
+		
+		// Add locked watermark
+		// Documents.Excel.addLockedWatermark();
 
 		// Add watermark as background
 		// Documents.Excel.addWatermarkAsBackground();

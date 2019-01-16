@@ -1806,6 +1806,31 @@ public class Documents {
 		}
 
 		/**
+		 * Adds locked watermark to Excel spreadsheet
+		 */
+		public static void addLockedWatermark() {
+			try {
+				// ExStart:addLockedWatermark
+				CellsDocument doc = Document.load(CellsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				// Add text watermark
+				TextWatermark textWatermark = new TextWatermark("Test watermark", new Font("Arial", 8));
+				
+				CellsShapeSettings settings = new CellsShapeSettings();
+				settings.setLocked(true);
+				
+				doc.getWorksheets().get_Item(0).addWatermark(textWatermark, settings);
+
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:addLockedWatermark
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+		
+		/**
 		 * Gets content area dimensions of Excel worksheet
 		 */
 		public static void getContentAreaDimensions() {
@@ -2974,6 +2999,34 @@ public class Documents {
 				doc.save(Common.mapOutputFilePath(FILE_PATH));
 				doc.close();
 				// ExEnd:AddWatermarkToPowerPointSlide
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
+		
+		/**
+		 * Adds watermark to a PowerPoint slide
+		 */
+		public static void addLockedWatermark() {
+			try {
+				// ExStart:addLockedWatermarkPowerPointSlide
+				SlidesDocument doc = Document.load(SlidesDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				// Add text watermark
+				TextWatermark textWatermark = new TextWatermark("Test watermark", new Font("Arial", 8));
+				
+				// Settings to lock watermark 
+				SlidesShapeSettings settings = new SlidesShapeSettings();
+				settings.setLocked(true);
+				
+				// Add watermark
+				doc.getSlides().get_Item(0).addWatermark(textWatermark);
+
+				// Save document
+				doc.save(Common.mapOutputFilePath(FILE_PATH));
+				doc.close();
+				// ExEnd:addLockedWatermarkPowerPointSlide
 			} catch (Exception exp) {
 				System.out.println("Exception: " + exp.getMessage());
 				exp.printStackTrace();
