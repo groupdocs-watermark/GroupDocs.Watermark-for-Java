@@ -4,7 +4,7 @@ public class MainClass {
 	public static void main(String[] args) throws Throwable {
 
 		// Uncomment following code if you have license file
-		// Common.applyLicenseFromFile();
+		 Common.applyLicenseFromFile();
 
 		// Using metered license
 		// Common.useDynabicMeteredAccount();
@@ -141,7 +141,7 @@ public class MainClass {
 		// Documents.Word.addWatermarkToImageShapes();
 
 		// Add watermark to a section
-		// Documents.Word.addWatermarkToSection();
+		//Documents.Word.addWatermarkToSection();
 
 		// Add image watermark with effects
 		// Documents.Word.addWatermarkWithImageEffects();
@@ -160,7 +160,11 @@ public class MainClass {
 
 		// Get information of shapes inside a document
 		// Documents.Word.getShapesInformation();
-
+		
+		//Usage of ShapeType enum
+		//Documents.Word.shapeTypesUsage();
+		
+		
 		// Link header footer in section
 		// Documents.Word.linkHeaderFooterInSection();
 

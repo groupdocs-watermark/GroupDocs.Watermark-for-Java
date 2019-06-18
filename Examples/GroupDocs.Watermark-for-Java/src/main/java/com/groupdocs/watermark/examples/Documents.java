@@ -1621,6 +1621,36 @@ public class Documents {
 				exp.printStackTrace();
 			}
 		}
+		/**
+		 * Extracts information about all the shapes is a Word document
+		 */
+		public static void shapeTypesUsage() {
+			try {
+				// ExStart:ShapeTypesUsage
+				WordsDocument doc = Document.load(WordsDocument.class, Common.mapSourceFilePath(FILE_PATH));
+
+				for (WordsSection section : doc.getSections()) {
+					for (WordsShape shape : section.getShapes()) {
+
+						//Check for Diagonal Corners Rounded shapes
+						if (shape.getShapeType()== com.groupdocs.watermark.WordsShapeType.DiagonalCornersRounded) {
+							System.out.println("Diagonal Corners Rounded shape found");
+
+							//Write text on all Diagonal Corners Rounded shapes
+							shape.getFormattedTextFragments().add("© GroupDocs 2019",
+									new Font("Calibri", 19, FontStyle.Bold), Color.getRed(), Color.getAqua());
+						}
+
+					}
+				}
+
+				doc.close();
+				// ExEnd:ShapeTypesUsage
+			} catch (Exception exp) {
+				System.out.println("Exception: " + exp.getMessage());
+				exp.printStackTrace();
+			}
+		}
 
 		/**
 		 * Removes shape in a Word document
