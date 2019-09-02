@@ -11,6 +11,11 @@ GroupDocs.Watermark is a library for adding text and image watermarks to documen
   </a>
 </p>
 
+## How to Run the Examples
+Please see the following article that explains how to run the Aspose.Watermark for Java Console Examples.
+
++ [How to Run the Examples](https://docs.groupdocs.com/display/watermarkjava/How+to+Run+Examples)
+
 Directory | Description
 --------- | -----------
 [Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java/tree/master/Examples)  | Contains the package of all the examples and sample files that will help you learn how to use API features. 
