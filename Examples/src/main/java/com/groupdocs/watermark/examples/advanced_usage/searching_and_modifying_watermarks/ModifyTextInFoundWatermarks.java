@@ -7,33 +7,33 @@ import com.groupdocs.watermark.search.PossibleWatermarkCollection;
 import com.groupdocs.watermark.search.TextSearchCriteria;
 
 public class ModifyTextInFoundWatermarks {
-	/**
-	 * This example shows how to replace text of the found watermarks.
-	 */
-	public static void run() {
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);
+    /**
+     * This example shows how to replace text of the found watermarks.
+     */
+    public static void run() {
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);
 
-	    TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
-	    PossibleWatermarkCollection watermarks = watermarker.search(searchCriteria);
-	    for (PossibleWatermark watermark : watermarks)
-	    {
-	        try
-	        {
-	            // Edit text
-	            watermark.setText("passed");
-	        }
-	        catch (Exception e)
-	        {
-	            // Found entity may not support text editing
-	            // Passed argument can have inappropriate value
-	            // Process such cases here
-	        }
-	    }
+        TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
+        PossibleWatermarkCollection watermarks = watermarker.search(searchCriteria);
+        for (PossibleWatermark watermark : watermarks)
+        {
+            try
+            {
+                // Edit text
+                watermark.setText("passed");
+            }
+            catch (Exception e)
+            {
+                // Found entity may not support text editing
+                // Passed argument can have inappropriate value
+                // Process such cases here
+            }
+        }
 
-	    // Save document
-	    watermarker.save(Constants.OutDocumentPdf);
-	    
-	    watermarker.close();
-	}
+        // Save document
+        watermarker.save(Constants.OutDocumentPdf);
+
+        watermarker.close();
+    }
 }

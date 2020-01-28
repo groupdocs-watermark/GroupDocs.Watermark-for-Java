@@ -9,15 +9,15 @@ import com.groupdocs.watermark.watermarks.Color;
 import com.groupdocs.watermark.watermarks.ImageWatermark;
 
 public class SpreadsheetAddWatermarkWithImageEffects {
-	/**
-	 * This example shows how to apply image effects to the shape watermark.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to apply image effects to the shape watermark.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    ImageWatermark watermark = new ImageWatermark(Constants.LogoPng);
+        ImageWatermark watermark = new ImageWatermark(Constants.LogoPng);
 
         SpreadsheetImageEffects effects = new SpreadsheetImageEffects();
         effects.setBrightness(0.7);
@@ -31,8 +31,8 @@ public class SpreadsheetAddWatermarkWithImageEffects {
 
         watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

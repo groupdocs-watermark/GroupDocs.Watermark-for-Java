@@ -3,14 +3,14 @@ package com.groupdocs.watermark.examples;
 import java.io.File;
 
 public class Constants {
-	public static final String ResourcesPath = "Resources/";
-	
+    public static final String ResourcesPath = "Resources/";
+
     public static final String LicenseFilePath = new File(ResourcesPath, "GroupDocs.Watermark.Java.lic").getPath();
 
     public static final String DocumentsPath = new File(ResourcesPath, "SampleFiles/Documents").getPath();
     public static final String ImagesPath = new File(ResourcesPath, "SampleFiles/Images").getPath();
     public static final String OutputPath = new File(ResourcesPath, "SampleFiles/Output").getPath();
-    
+
     public static final String InDiagramVsdx = new File(DocumentsPath, "diagram.vsdx").getPath();
     public static final String OutDiagramVsdx = new File(OutputPath, "diagram.vsdx").getPath();
     public static final String InDocumentDocx = new File(DocumentsPath, "document.docx").getPath();

@@ -7,11 +7,11 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class LoadPasswordProtectedDocument {
-	/**
-	 * This example demonstrates how to load an encrypted document using the password.
-	 */
-	public static void run() {
-		LoadOptions loadOptions = new LoadOptions();
+    /**
+     * This example demonstrates how to load an encrypted document using the password.
+     */
+    public static void run() {
+        LoadOptions loadOptions = new LoadOptions();
         loadOptions.setPassword("P@$$w0rd");
         // Constants.InProtectedDocumentDocx is an absolute or relative path to your document. Ex: @"C:\\Docs\\protected-document.docx"
         String filePath = Constants.InProtectedDocumentDocx;
@@ -23,7 +23,7 @@ public class LoadPasswordProtectedDocument {
         watermarker.add(watermark);
 
         watermarker.save(Constants.OutProtectedDocumentDocx);
-        
+
         watermarker.close();
-	}
+    }
 }

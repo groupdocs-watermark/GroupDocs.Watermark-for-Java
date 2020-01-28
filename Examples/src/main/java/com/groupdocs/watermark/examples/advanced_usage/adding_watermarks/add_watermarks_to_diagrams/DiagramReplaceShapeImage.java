@@ -12,32 +12,32 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.options.DiagramLoadOptions;
 
 public class DiagramReplaceShapeImage {
-	/**
-	 * This example shows how to replace the image of particular shapes.
-	 */
-	public static void run() throws Exception {
-		DiagramLoadOptions loadOptions = new DiagramLoadOptions();
-		// Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
-		Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);
+    /**
+     * This example shows how to replace the image of particular shapes.
+     */
+    public static void run() throws Exception {
+        DiagramLoadOptions loadOptions = new DiagramLoadOptions();
+        // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
+        Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);
 
-		DiagramContent content = watermarker.getContent(DiagramContent.class);
-	    for (DiagramShape shape : content.getPages().get_Item(0).getShapes())
-	    {
-	        if (shape.getImage() != null)
-	        {
-	        	File imageFile = new File(Constants.TestPng);
-	        	byte[] imageBytes = new byte[(int) imageFile.length()];
-				InputStream imageInputStream = new FileInputStream(imageFile);
-				imageInputStream.read(imageBytes);
-				imageInputStream.close();
-				
-	        	shape.setImage(new DiagramWatermarkableImage(imageBytes));
-	        }
-	    }
+        DiagramContent content = watermarker.getContent(DiagramContent.class);
+        for (DiagramShape shape : content.getPages().get_Item(0).getShapes())
+        {
+            if (shape.getImage() != null)
+            {
+                File imageFile = new File(Constants.TestPng);
+                byte[] imageBytes = new byte[(int) imageFile.length()];
+                InputStream imageInputStream = new FileInputStream(imageFile);
+                imageInputStream.read(imageBytes);
+                imageInputStream.close();
 
-	    // Save changes
-	    watermarker.save(Constants.OutDiagramVsdx);
+                shape.setImage(new DiagramWatermarkableImage(imageBytes));
+            }
+        }
 
-	    watermarker.close();
-	}
+        // Save changes
+        watermarker.save(Constants.OutDiagramVsdx);
+
+        watermarker.close();
+    }
 }

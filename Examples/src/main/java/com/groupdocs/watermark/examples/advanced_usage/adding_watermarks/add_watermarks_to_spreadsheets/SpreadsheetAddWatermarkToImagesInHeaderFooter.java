@@ -14,40 +14,40 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class SpreadsheetAddWatermarkToImagesInHeaderFooter {
-	/**
-	 * This example shows how to add watermark to images inside any header and footer.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to add watermark to images inside any header and footer.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    // Initialize image or text watermark
-	    TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
-	    watermark.setVerticalAlignment(VerticalAlignment.Center);
-	    watermark.setRotateAngle(45);
-	    watermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    watermark.setScaleFactor(1);
+        // Initialize image or text watermark
+        TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
+        watermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        watermark.setVerticalAlignment(VerticalAlignment.Center);
+        watermark.setRotateAngle(45);
+        watermark.setSizingType(SizingType.ScaleToParentDimensions);
+        watermark.setScaleFactor(1);
 
-	    SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
-	    for (SpreadsheetWorksheet worksheet : content.getWorksheets())
-	    {
-	        for (SpreadsheetHeaderFooter headerFooter : worksheet.getHeadersFooters())
-	        {
-	            for (SpreadsheetHeaderFooterSection section : headerFooter.getSections())
-	            {
-	                if (section.getImage() != null)
-	                {
-	                    // Add watermark to the image
-	                    section.getImage().add(watermark);
-	                }
-	            }
-	        }
-	    }
+        SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
+        for (SpreadsheetWorksheet worksheet : content.getWorksheets())
+        {
+            for (SpreadsheetHeaderFooter headerFooter : worksheet.getHeadersFooters())
+            {
+                for (SpreadsheetHeaderFooterSection section : headerFooter.getSections())
+                {
+                    if (section.getImage() != null)
+                    {
+                        // Add watermark to the image
+                        section.getImage().add(watermark);
+                    }
+                }
+            }
+        }
 
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

@@ -10,15 +10,15 @@ import com.groupdocs.watermark.watermarks.ImageWatermark;
 import com.groupdocs.watermark.watermarks.SizingType;
 
 public class SpreadsheetAddImageWatermarkIntoHeaderFooter {
-	/**
-	 * This example shows how to add watermark to worksheet's header or footer.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to add watermark to worksheet's header or footer.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-		ImageWatermark watermark = new ImageWatermark(Constants.LogoPng);
+        ImageWatermark watermark = new ImageWatermark(Constants.LogoPng);
 
         watermark.setVerticalAlignment(VerticalAlignment.Top);
         watermark.setHorizontalAlignment(HorizontalAlignment.Center);
@@ -30,8 +30,8 @@ public class SpreadsheetAddImageWatermarkIntoHeaderFooter {
 
         watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

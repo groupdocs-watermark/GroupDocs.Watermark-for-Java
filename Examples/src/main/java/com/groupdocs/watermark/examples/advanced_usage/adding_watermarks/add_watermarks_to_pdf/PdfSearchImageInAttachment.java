@@ -7,22 +7,22 @@ import com.groupdocs.watermark.options.PdfLoadOptions;
 import com.groupdocs.watermark.search.PdfSearchableObjects;
 
 public class PdfSearchImageInAttachment {
-	/**
-	 * This example shows how to search for all the images attachments in a PDF document.
-	 */
-	public static void run() {
-		PdfLoadOptions loadOptions = new PdfLoadOptions();
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+    /**
+     * This example shows how to search for all the images attachments in a PDF document.
+     */
+    public static void run() {
+        PdfLoadOptions loadOptions = new PdfLoadOptions();
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
 
-	    // Consider only the attached images
-	    watermarker.getSearchableObjects().setPdfSearchableObjects(PdfSearchableObjects.AttachedImages);
+        // Consider only the attached images
+        watermarker.getSearchableObjects().setPdfSearchableObjects(PdfSearchableObjects.AttachedImages);
 
-	    // Search for similar images
-	    WatermarkableImageCollection possibleWatermarks = watermarker.getImages();
+        // Search for similar images
+        WatermarkableImageCollection possibleWatermarks = watermarker.getImages();
 
-	    System.out.println("Found " + possibleWatermarks.getCount() + " image(s).");
+        System.out.println("Found " + possibleWatermarks.getCount() + " image(s).");
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

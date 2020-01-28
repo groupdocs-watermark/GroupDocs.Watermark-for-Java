@@ -10,25 +10,25 @@ import com.groupdocs.watermark.watermarks.ImageWatermark;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class DiagramAddWatermarkToAllPagesOfParticularType {
-	/**
-	 * This example shows how to add watermark to a particular type of the pages.
-	 */
-	public static void run() {
-		DiagramLoadOptions loadOptions = new DiagramLoadOptions();
-		// Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
-		Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);
+    /**
+     * This example shows how to add watermark to a particular type of the pages.
+     */
+    public static void run() {
+        DiagramLoadOptions loadOptions = new DiagramLoadOptions();
+        // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
+        Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);
 
-	    // Initialize text watermark
-	    TextWatermark textWatermark = new TextWatermark("Test watermark 1", new Font("Calibri", 19));
+        // Initialize text watermark
+        TextWatermark textWatermark = new TextWatermark("Test watermark 1", new Font("Calibri", 19));
 
-	    DiagramShapeWatermarkOptions textWatermarkOptions = new DiagramShapeWatermarkOptions();
-	    textWatermarkOptions.setPlacementType(DiagramWatermarkPlacementType.BackgroundPages);
+        DiagramShapeWatermarkOptions textWatermarkOptions = new DiagramShapeWatermarkOptions();
+        textWatermarkOptions.setPlacementType(DiagramWatermarkPlacementType.BackgroundPages);
 
-	    // Add text watermark to all background pages
-	    watermarker.add(textWatermark, textWatermarkOptions);
+        // Add text watermark to all background pages
+        watermarker.add(textWatermark, textWatermarkOptions);
 
-	    // Initialize image watermark
-	    ImageWatermark imageWatermark = new ImageWatermark(Constants.LogoJpg);
+        // Initialize image watermark
+        ImageWatermark imageWatermark = new ImageWatermark(Constants.LogoJpg);
 
         DiagramShapeWatermarkOptions imageWatermarkOptions = new DiagramShapeWatermarkOptions();
         imageWatermarkOptions.setPlacementType(DiagramWatermarkPlacementType.ForegroundPages);
@@ -38,6 +38,6 @@ public class DiagramAddWatermarkToAllPagesOfParticularType {
 
         watermarker.save(Constants.OutDiagramVsdx);
         imageWatermark.close();
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

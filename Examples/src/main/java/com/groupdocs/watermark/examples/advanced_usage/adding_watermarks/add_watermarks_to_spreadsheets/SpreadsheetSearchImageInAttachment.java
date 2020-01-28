@@ -10,29 +10,29 @@ import com.groupdocs.watermark.search.PossibleWatermarkCollection;
 import com.groupdocs.watermark.search.SpreadsheetSearchableObjects;
 
 public class SpreadsheetSearchImageInAttachment {
-	/**
-	 * This example shows how to search for all the images and watermarkable attachments in Excel document.
-	 */
-	public static void run() {
-		// Consider only the attached images
-		WatermarkerSettings settings = new WatermarkerSettings();
-		settings.getSearchableObjects().setSpreadsheetSearchableObjects(SpreadsheetSearchableObjects.AttachedImages);
+    /**
+     * This example shows how to search for all the images and watermarkable attachments in Excel document.
+     */
+    public static void run() {
+        // Consider only the attached images
+        WatermarkerSettings settings = new WatermarkerSettings();
+        settings.getSearchableObjects().setSpreadsheetSearchableObjects(SpreadsheetSearchableObjects.AttachedImages);
 
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions, settings);
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions, settings);
 
-	    // Specify sample image to compare document images with
-	    ImageSearchCriteria criteria = new ImageDctHashSearchCriteria(Constants.AttachmentPng);
+        // Specify sample image to compare document images with
+        ImageSearchCriteria criteria = new ImageDctHashSearchCriteria(Constants.AttachmentPng);
 
-	    // Search for similar images
-	    PossibleWatermarkCollection possibleWatermarks = watermarker.search(criteria);
+        // Search for similar images
+        PossibleWatermarkCollection possibleWatermarks = watermarker.search(criteria);
 
-	    // Remove or modify found image watermarks
-	    // ...
+        // Remove or modify found image watermarks
+        // ...
 
-	    System.out.println("Found " + possibleWatermarks.getCount() + " possible watermark(s).");
+        System.out.println("Found " + possibleWatermarks.getCount() + " possible watermark(s).");
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

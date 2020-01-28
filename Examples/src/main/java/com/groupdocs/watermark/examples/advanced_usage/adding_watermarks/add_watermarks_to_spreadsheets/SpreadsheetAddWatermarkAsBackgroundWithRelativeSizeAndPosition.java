@@ -11,15 +11,15 @@ import com.groupdocs.watermark.watermarks.ImageWatermark;
 import com.groupdocs.watermark.watermarks.SizingType;
 
 public class SpreadsheetAddWatermarkAsBackgroundWithRelativeSizeAndPosition {
-	/**
-	 * This example shows how to define the size of the background image on which your watermark will be drawn.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to define the size of the background image on which your watermark will be drawn.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    ImageWatermark watermark = new ImageWatermark(Constants.LogoGif);
+        ImageWatermark watermark = new ImageWatermark(Constants.LogoGif);
 
         watermark.setHorizontalAlignment(HorizontalAlignment.Center);
         watermark.setVerticalAlignment(VerticalAlignment.Center);
@@ -33,8 +33,8 @@ public class SpreadsheetAddWatermarkAsBackgroundWithRelativeSizeAndPosition {
         options.setBackgroundHeight(content.getWorksheets().get_Item(0).getContentAreaHeightPx()); /* set background height */
         watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

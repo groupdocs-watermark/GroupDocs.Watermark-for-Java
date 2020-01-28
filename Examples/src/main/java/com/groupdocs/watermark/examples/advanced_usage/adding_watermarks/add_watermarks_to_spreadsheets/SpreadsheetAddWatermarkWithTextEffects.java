@@ -12,29 +12,29 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class SpreadsheetAddWatermarkWithTextEffects {
-	/**
-	 * This example shows how to apply text effects when adding shape watermark in Excel worksheet.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to apply text effects when adding shape watermark in Excel worksheet.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Segoe UI", 19));
+        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Segoe UI", 19));
 
-	    SpreadsheetTextEffects effects = new SpreadsheetTextEffects();
-	    effects.getLineFormat().setEnabled(true);
-	    effects.getLineFormat().setColor(Color.getRed());
-	    effects.getLineFormat().setDashStyle(OfficeDashStyle.DashDotDot);
-	    effects.getLineFormat().setLineStyle(OfficeLineStyle.Triple);
-	    effects.getLineFormat().setWeight(1);
+        SpreadsheetTextEffects effects = new SpreadsheetTextEffects();
+        effects.getLineFormat().setEnabled(true);
+        effects.getLineFormat().setColor(Color.getRed());
+        effects.getLineFormat().setDashStyle(OfficeDashStyle.DashDotDot);
+        effects.getLineFormat().setLineStyle(OfficeLineStyle.Triple);
+        effects.getLineFormat().setWeight(1);
 
-	    SpreadsheetWatermarkShapeOptions options = new SpreadsheetWatermarkShapeOptions();
-	    options.setEffects(effects);
+        SpreadsheetWatermarkShapeOptions options = new SpreadsheetWatermarkShapeOptions();
+        options.setEffects(effects);
 
-	    watermarker.add(watermark, options);
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.add(watermark, options);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

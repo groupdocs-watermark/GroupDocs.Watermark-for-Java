@@ -13,33 +13,33 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class WordProcessingAddWatermarkToSectionImages {
-	/**
-	 * This example shows how to add watermark to the images that belong to a particular section.
-	 */
-	public static void run() {
-		WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+    /**
+     * This example shows how to add watermark to the images that belong to a particular section.
+     */
+    public static void run() {
+        WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
-	    watermark.setVerticalAlignment(VerticalAlignment.Center);
-	    watermark.setRotateAngle(45);
-	    watermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    watermark.setScaleFactor(1);
+        TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
+        watermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        watermark.setVerticalAlignment(VerticalAlignment.Center);
+        watermark.setRotateAngle(45);
+        watermark.setSizingType(SizingType.ScaleToParentDimensions);
+        watermark.setScaleFactor(1);
 
-	    // Get all images belonging to the first section
-	    WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
-	    WatermarkableImageCollection images = content.getSections().get_Item(0).findImages();
+        // Get all images belonging to the first section
+        WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
+        WatermarkableImageCollection images = content.getSections().get_Item(0).findImages();
 
-	    // Add watermark to all found images
-	    for (WatermarkableImage image : images)
-	    {
-	        image.add(watermark);
-	    }
+        // Add watermark to all found images
+        for (WatermarkableImage image : images)
+        {
+            image.add(watermark);
+        }
 
-	    watermarker.save(Constants.OutDocumentDocx);
+        watermarker.save(Constants.OutDocumentDocx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

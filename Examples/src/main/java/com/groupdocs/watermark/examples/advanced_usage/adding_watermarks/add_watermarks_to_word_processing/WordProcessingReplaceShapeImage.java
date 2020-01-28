@@ -12,34 +12,34 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.options.WordProcessingLoadOptions;
 
 public class WordProcessingReplaceShapeImage {
-	/**
-	 * This example shows how to replace the image of the particular shapes in a Word document.
-	 */
-	public static void run() throws Exception {
-		WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+    /**
+     * This example shows how to replace the image of the particular shapes in a Word document.
+     */
+    public static void run() throws Exception {
+        WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
 
-		WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
+        WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
 
-		File imageFile = new File(Constants.TestPng);
-		byte[] imageBytes = new byte[(int) imageFile.length()];
-		InputStream imageInputStream = new FileInputStream(imageFile);
-		imageInputStream.read(imageBytes);
-		imageInputStream.close();
-		
-	    // Set shape image
-	    for (WordProcessingShape shape : content.getSections().get_Item(0).getShapes())
-	    {
-	        if (shape.getImage() != null)
-	        {
-	            shape.setImage(new WordProcessingWatermarkableImage(imageBytes));
-	        }
-	    }
+        File imageFile = new File(Constants.TestPng);
+        byte[] imageBytes = new byte[(int) imageFile.length()];
+        InputStream imageInputStream = new FileInputStream(imageFile);
+        imageInputStream.read(imageBytes);
+        imageInputStream.close();
 
-	    // Save document
-	    watermarker.save(Constants.OutDocumentDocx);
+        // Set shape image
+        for (WordProcessingShape shape : content.getSections().get_Item(0).getShapes())
+        {
+            if (shape.getImage() != null)
+            {
+                shape.setImage(new WordProcessingWatermarkableImage(imageBytes));
+            }
+        }
 
-	    watermarker.close();
-	}
+        // Save document
+        watermarker.save(Constants.OutDocumentDocx);
+
+        watermarker.close();
+    }
 }

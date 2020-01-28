@@ -9,7 +9,7 @@ import com.groupdocs.watermark.watermarks.FontStyle;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class HelloWorld {
-	public static void run() {
+    public static void run() {
         String documentPath = Constants.InDocumentPdf; // NOTE: Put here actual path for your document
         PdfLoadOptions loadOptions = new PdfLoadOptions();
         Watermarker watermarker = new Watermarker(documentPath, loadOptions);
@@ -20,5 +20,5 @@ public class HelloWorld {
         watermarker.add(watermark, options);
         watermarker.save(Constants.OutDocumentPdf);
         watermarker.close();
- 	}
+    }
 }

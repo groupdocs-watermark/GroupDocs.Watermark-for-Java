@@ -12,26 +12,26 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class SpreadsheetAddWatermarkToAttachment {
-	/**
-	 * This example shows how to add watermark to all attachments in Excel document.
-	 */
-	public static void run() {
-		TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to add watermark to all attachments in Excel document.
+     */
+    public static void run() {
+        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-		SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
-	    for (SpreadsheetWorksheet worksheet : content.getWorksheets())
-	    {
-	        for (SpreadsheetAttachment attachment : worksheet.getAttachments())
-	        {
-	            // Check if the attached file is supported by GroupDocs.Watermark
-	            IDocumentInfo info = attachment.getDocumentInfo();
-	            if (info.getFileType() != FileType.Unknown && !info.isEncrypted())
-	            {
-	                // Load the attached document
-	                Watermarker attachedWatermarker = attachment.createWatermarker();
+        SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
+        for (SpreadsheetWorksheet worksheet : content.getWorksheets())
+        {
+            for (SpreadsheetAttachment attachment : worksheet.getAttachments())
+            {
+                // Check if the attached file is supported by GroupDocs.Watermark
+                IDocumentInfo info = attachment.getDocumentInfo();
+                if (info.getFileType() != FileType.Unknown && !info.isEncrypted())
+                {
+                    // Load the attached document
+                    Watermarker attachedWatermarker = attachment.createWatermarker();
 
                     // Add watermark
                     attachedWatermarker.add(watermark);
@@ -40,13 +40,13 @@ public class SpreadsheetAddWatermarkToAttachment {
                     attachment.updateContent(attachedWatermarker);
 
                     attachedWatermarker.close();
-	            }
-	        }
-	    }
+                }
+            }
+        }
 
-	    // Save changes
-		watermarker.save(Constants.OutSpreadsheetXlsx);
+        // Save changes
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-		watermarker.close();
-	}
+        watermarker.close();
+    }
 }

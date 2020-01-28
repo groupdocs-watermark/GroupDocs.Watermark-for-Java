@@ -13,35 +13,35 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class PdfAddWatermarkToImages {
-	/**
-	 * This example shows how to add watermark to the images inside a particular page of the PDF document.
-	 */
-	public static void run() {
-		PdfLoadOptions loadOptions = new PdfLoadOptions();
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+    /**
+     * This example shows how to add watermark to the images inside a particular page of the PDF document.
+     */
+    public static void run() {
+        PdfLoadOptions loadOptions = new PdfLoadOptions();
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
 
-	    // Initialize image or text watermark
-	    TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
-	    watermark.setVerticalAlignment(VerticalAlignment.Center);
-	    watermark.setRotateAngle(45);
-	    watermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    watermark.setScaleFactor(1);
+        // Initialize image or text watermark
+        TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
+        watermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        watermark.setVerticalAlignment(VerticalAlignment.Center);
+        watermark.setRotateAngle(45);
+        watermark.setSizingType(SizingType.ScaleToParentDimensions);
+        watermark.setScaleFactor(1);
 
-	    PdfContent pdfContent = watermarker.getContent(PdfContent.class);
+        PdfContent pdfContent = watermarker.getContent(PdfContent.class);
 
-	    // Get all images from the first page
-	    WatermarkableImageCollection images = pdfContent.getPages().get_Item(0).findImages();
+        // Get all images from the first page
+        WatermarkableImageCollection images = pdfContent.getPages().get_Item(0).findImages();
 
-	    // Add watermark to all found images
-	    for (WatermarkableImage image : images)
-	    {
-	        image.add(watermark);
-	    }
+        // Add watermark to all found images
+        for (WatermarkableImage image : images)
+        {
+            image.add(watermark);
+        }
 
-	    watermarker.save(Constants.OutDocumentPdf);
+        watermarker.save(Constants.OutDocumentPdf);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

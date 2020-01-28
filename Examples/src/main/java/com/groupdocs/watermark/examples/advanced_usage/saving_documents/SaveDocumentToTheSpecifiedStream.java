@@ -8,14 +8,14 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class SaveDocumentToTheSpecifiedStream {
-	/**
-	 * This example shows how to save the document to the specified stream.
-	 */
-	public static void run() throws Exception {
-		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    /**
+     * This example shows how to save the document to the specified stream.
+     */
+    public static void run() throws Exception {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
-	    // Constants.InTestDoc is an absolute or relative path to your document. Ex: "C:\\Docs\\test.doc"
-	    Watermarker watermarker = new Watermarker(Constants.InTestDoc);
+        // Constants.InTestDoc is an absolute or relative path to your document. Ex: "C:\\Docs\\test.doc"
+        Watermarker watermarker = new Watermarker(Constants.InTestDoc);
 
         // watermarking goes here
         TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 12));
@@ -26,5 +26,5 @@ public class SaveDocumentToTheSpecifiedStream {
 
         watermarker.close();
         outputStream.close();
-	}
+    }
 }

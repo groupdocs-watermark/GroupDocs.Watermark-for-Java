@@ -13,33 +13,33 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class SpreadsheetAddWatermarkToWorksheetImages {
-	/**
-	 * This example shows how to add watermark to the images that belong to a particular worksheet.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to add watermark to the images that belong to a particular worksheet.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
-	    watermark.setVerticalAlignment(VerticalAlignment.Center);
-	    watermark.setRotateAngle(45);
-	    watermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    watermark.setScaleFactor(1);
+        TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
+        watermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        watermark.setVerticalAlignment(VerticalAlignment.Center);
+        watermark.setRotateAngle(45);
+        watermark.setSizingType(SizingType.ScaleToParentDimensions);
+        watermark.setScaleFactor(1);
 
-	    // Get all images from the first worksheet
-	    SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
-	    WatermarkableImageCollection images = content.getWorksheets().get_Item(0).findImages();
+        // Get all images from the first worksheet
+        SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
+        WatermarkableImageCollection images = content.getWorksheets().get_Item(0).findImages();
 
-	    // Add watermark to all found images
-	    for (WatermarkableImage image : images)
-	    {
-	        image.add(watermark);
-	    }
+        // Add watermark to all found images
+        for (WatermarkableImage image : images)
+        {
+            image.add(watermark);
+        }
 
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

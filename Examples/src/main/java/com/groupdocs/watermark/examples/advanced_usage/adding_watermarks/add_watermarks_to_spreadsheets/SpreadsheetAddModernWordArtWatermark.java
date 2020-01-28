@@ -8,21 +8,21 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class SpreadsheetAddModernWordArtWatermark {
-	/**
-	 * This example shows how to add modern WordArt watermark to Excel document worksheet.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to add modern WordArt watermark to Excel document worksheet.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    TextWatermark textWatermark = new TextWatermark("Test watermark", new Font("Arial", 8));
-	    SpreadsheetWatermarkModernWordArtOptions options = new SpreadsheetWatermarkModernWordArtOptions();
-	    options.setWorksheetIndex(0);
+        TextWatermark textWatermark = new TextWatermark("Test watermark", new Font("Arial", 8));
+        SpreadsheetWatermarkModernWordArtOptions options = new SpreadsheetWatermarkModernWordArtOptions();
+        options.setWorksheetIndex(0);
 
-	    watermarker.add(textWatermark, options);
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.add(textWatermark, options);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

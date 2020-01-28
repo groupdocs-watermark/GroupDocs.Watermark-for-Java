@@ -9,28 +9,28 @@ import com.groupdocs.watermark.search.SearchCriteria;
 import com.groupdocs.watermark.search.TextSearchCriteria;
 
 public class EmailSearchTextInBody {
-	/**
-	 * This example shows how to search for a text in the subject as well as in the body of the email message.
-	 */
-	public static void run() {
-		EmailLoadOptions loadOptions = new EmailLoadOptions();
-		// Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"
-		Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);
+    /**
+     * This example shows how to search for a text in the subject as well as in the body of the email message.
+     */
+    public static void run() {
+        EmailLoadOptions loadOptions = new EmailLoadOptions();
+        // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"
+        Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);
 
-	    SearchCriteria criteria = new TextSearchCriteria("test", false);
+        SearchCriteria criteria = new TextSearchCriteria("test", false);
 
-	    // Specify search locations
-	    watermarker.getSearchableObjects().setEmailSearchableObjects(EmailSearchableObjects.Subject | EmailSearchableObjects.HtmlBody | EmailSearchableObjects.PlainTextBody);
+        // Specify search locations
+        watermarker.getSearchableObjects().setEmailSearchableObjects(EmailSearchableObjects.Subject | EmailSearchableObjects.HtmlBody | EmailSearchableObjects.PlainTextBody);
 
-	    // Note, search is performed only if you pass TextSearchCriteria instance to FindWatermarks method
-	    PossibleWatermarkCollection watermarks = watermarker.search(criteria);
+        // Note, search is performed only if you pass TextSearchCriteria instance to FindWatermarks method
+        PossibleWatermarkCollection watermarks = watermarker.search(criteria);
 
-	    // Remove found text fragments
-	    watermarks.clear();
+        // Remove found text fragments
+        watermarks.clear();
 
-	    // Save changes
-	    watermarker.save(Constants.OutMessageMsg);
+        // Save changes
+        watermarker.save(Constants.OutMessageMsg);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

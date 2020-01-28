@@ -7,21 +7,21 @@ import com.groupdocs.watermark.options.SpreadsheetLoadOptions;
 import com.groupdocs.watermark.watermarks.ImageWatermark;
 
 public class SpreadsheetAddWatermarkAsBackground {
-	/**
-	 * This example show how to add background watermark to all worksheets of Excel document.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example show how to add background watermark to all worksheets of Excel document.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    ImageWatermark watermark = new ImageWatermark(Constants.LogoGif);
+        ImageWatermark watermark = new ImageWatermark(Constants.LogoGif);
 
         SpreadsheetBackgroundWatermarkOptions options = new SpreadsheetBackgroundWatermarkOptions();
         watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

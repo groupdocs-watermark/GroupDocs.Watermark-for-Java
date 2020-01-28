@@ -16,12 +16,12 @@ import com.groupdocs.watermark.examples.advanced_usage.saving_documents.*;
 import com.groupdocs.watermark.examples.advanced_usage.searching_and_modifying_watermarks.*;
 
 public class MainClass {
-	public static void main(String[] args) throws Throwable {
+    public static void main(String[] args) throws Throwable {
 
-		System.out.println("Open MainClass.java.\n");
-		System.out.println("In main() method uncomment the example that you want to run.");
+        System.out.println("Open MainClass.java.\n");
+        System.out.println("In main() method uncomment the example that you want to run.");
         System.out.println("=====================================================");
-        
+
         // NOTE: Please uncomment the example you want to try out
 
         //region Quick Start
@@ -31,8 +31,8 @@ public class MainClass {
 //        SetMeteredLicense.run();
 //        HelloWorld.run();
 
-        //endregion            
-        
+        //endregion
+
         //region Basic Usage
 
 //        GetSupportedFileFormats.run();
@@ -294,6 +294,6 @@ public class MainClass {
 
         //endregion
 
-		System.out.println("\nAll done.");
-	}
+        System.out.println("\nAll done.");
+    }
 }

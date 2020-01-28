@@ -8,28 +8,28 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.options.PdfLoadOptions;
 
 public class PdfRemoveAttachment {
-	/**
-	 * This example shows how to remove attachments from the PDF document.
-	 */
-	public static void run() {
-		PdfLoadOptions loadOptions = new PdfLoadOptions();
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+    /**
+     * This example shows how to remove attachments from the PDF document.
+     */
+    public static void run() {
+        PdfLoadOptions loadOptions = new PdfLoadOptions();
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
 
-		PdfContent pdfContent = watermarker.getContent(PdfContent.class);
-	    for (int i = pdfContent.getAttachments().getCount() - 1; i >= 0; i--)
-	    {
-	        PdfAttachment attachment = pdfContent.getAttachments().get_Item(i);
+        PdfContent pdfContent = watermarker.getContent(PdfContent.class);
+        for (int i = pdfContent.getAttachments().getCount() - 1; i >= 0; i--)
+        {
+            PdfAttachment attachment = pdfContent.getAttachments().get_Item(i);
 
-	        // Remove all attached pdf files with a particular name
-	        if (attachment.getName().contains("sample") && attachment.getDocumentInfo().getFileType() == FileType.DOCX)
-	        {
-	            pdfContent.getAttachments().removeAt(i);
-	        }
-	    }
+            // Remove all attached pdf files with a particular name
+            if (attachment.getName().contains("sample") && attachment.getDocumentInfo().getFileType() == FileType.DOCX)
+            {
+                pdfContent.getAttachments().removeAt(i);
+            }
+        }
 
-	    watermarker.save(Constants.OutDocumentPdf);
+        watermarker.save(Constants.OutDocumentPdf);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

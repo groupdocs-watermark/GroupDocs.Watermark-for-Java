@@ -6,27 +6,27 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class AddWatermarkToAbsolutePosition {
-	/**
-	 * This example shows how to add a text watermark with absolute positioning.
-	 */
-	public static void run() {
-		// Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png"
-		Watermarker watermarker = new Watermarker(Constants.InImagePng);
+    /**
+     * This example shows how to add a text watermark with absolute positioning.
+     */
+    public static void run() {
+        // Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png"
+        Watermarker watermarker = new Watermarker(Constants.InImagePng);
 
-		Font font = new Font("Times New Roman", 8);
-		TextWatermark watermark = new TextWatermark("Test watermark", font);
+        Font font = new Font("Times New Roman", 8);
+        TextWatermark watermark = new TextWatermark("Test watermark", font);
 
-		// Set watermark coordinates
-		watermark.setX(10);
-		watermark.setY(20);
+        // Set watermark coordinates
+        watermark.setX(10);
+        watermark.setY(20);
 
-		// Set watermark size
-		watermark.setWidth(100);
-		watermark.setHeight(40);
+        // Set watermark size
+        watermark.setWidth(100);
+        watermark.setHeight(40);
 
-		watermarker.add(watermark);
-		watermarker.save(Constants.OutImagePng);
+        watermarker.add(watermark);
+        watermarker.save(Constants.OutImagePng);
 
-		watermarker.close();
-	}
+        watermarker.close();
+    }
 }

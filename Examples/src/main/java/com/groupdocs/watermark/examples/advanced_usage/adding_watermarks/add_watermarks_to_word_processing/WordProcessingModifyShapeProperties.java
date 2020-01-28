@@ -7,34 +7,34 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.options.WordProcessingLoadOptions;
 
 public class WordProcessingModifyShapeProperties {
-	/**
-	 * This example shows how to modify properties of particular shapes in a Word document.
-	 */
-	public static void run() {
-		WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+    /**
+     * This example shows how to modify properties of particular shapes in a Word document.
+     */
+    public static void run() {
+        WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
 
-		WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
+        WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
 
-	    // Change shape properties
-	    for (WordProcessingShape shape : content.getSections().get_Item(0).getShapes())
-	    {
-	        if (shape.getText().contains("Some text"))
-	        {
-	            shape.setAlternativeText("watermark");
-	            shape.setRotateAngle(30);
-	            shape.setX(200);
-	            shape.setY(200);
-	            shape.setHeight(100);
-	            shape.setWidth(400);
-	            shape.setBehindText(false);
-	        }
-	    }
+        // Change shape properties
+        for (WordProcessingShape shape : content.getSections().get_Item(0).getShapes())
+        {
+            if (shape.getText().contains("Some text"))
+            {
+                shape.setAlternativeText("watermark");
+                shape.setRotateAngle(30);
+                shape.setX(200);
+                shape.setY(200);
+                shape.setHeight(100);
+                shape.setWidth(400);
+                shape.setBehindText(false);
+            }
+        }
 
-	    // Save document
-	    watermarker.save(Constants.OutDocumentDocx);
+        // Save document
+        watermarker.save(Constants.OutDocumentDocx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

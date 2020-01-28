@@ -13,33 +13,33 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class PresentationAddWatermarkToSlideImages {
-	/**
-	 * This example shows how to add watermark to the images inside a particular PowerPoint slide.
-	 */
-	public static void run() {
-		PresentationLoadOptions loadOptions = new PresentationLoadOptions();
-		// Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
-		Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);
+    /**
+     * This example shows how to add watermark to the images inside a particular PowerPoint slide.
+     */
+    public static void run() {
+        PresentationLoadOptions loadOptions = new PresentationLoadOptions();
+        // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
+        Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
-	    watermark.setVerticalAlignment(VerticalAlignment.Center);
-	    watermark.setRotateAngle(45);
-	    watermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    watermark.setScaleFactor(1);
+        TextWatermark watermark = new TextWatermark("Protected image", new Font("Arial", 8));
+        watermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        watermark.setVerticalAlignment(VerticalAlignment.Center);
+        watermark.setRotateAngle(45);
+        watermark.setSizingType(SizingType.ScaleToParentDimensions);
+        watermark.setScaleFactor(1);
 
-	    // Get all images from the first slide
-	    PresentationContent content = watermarker.getContent(PresentationContent.class);
-	    WatermarkableImageCollection images = content.getSlides().get_Item(0).findImages();
+        // Get all images from the first slide
+        PresentationContent content = watermarker.getContent(PresentationContent.class);
+        WatermarkableImageCollection images = content.getSlides().get_Item(0).findImages();
 
-	    // Add watermark to all found images
-	    for (WatermarkableImage image : images)
-	    {
-	        image.add(watermark);
-	    }
+        // Add watermark to all found images
+        for (WatermarkableImage image : images)
+        {
+            image.add(watermark);
+        }
 
-	    watermarker.save(Constants.OutPresentationPptx);
+        watermarker.save(Constants.OutPresentationPptx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

@@ -11,35 +11,35 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class WordProcessingAddWatermarkWithShapeSettings {
-	/**
-	 * This example shows how to set some additional options when adding shape watermark to a Word document.
-	 */
-	public static void run() {
-		WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+    /**
+     * This example shows how to set some additional options when adding shape watermark to a Word document.
+     */
+    public static void run() {
+        WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
+        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
 
-	    //Some settings for watermark
-	    watermark.setVerticalAlignment(VerticalAlignment.Center);
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
-	    watermark.setRotateAngle(25.0);
-	    watermark.setForegroundColor(Color.getRed());
-	    watermark.setOpacity(1.0);
+        //Some settings for watermark
+        watermark.setVerticalAlignment(VerticalAlignment.Center);
+        watermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        watermark.setRotateAngle(25.0);
+        watermark.setForegroundColor(Color.getRed());
+        watermark.setOpacity(1.0);
 
-	    WordProcessingWatermarkSectionOptions options = new WordProcessingWatermarkSectionOptions();
+        WordProcessingWatermarkSectionOptions options = new WordProcessingWatermarkSectionOptions();
 
-	    // Set the shape name
-	    options.setName("Shape 1");
+        // Set the shape name
+        options.setName("Shape 1");
 
-	    // Set the descriptive (alternative) text that will be associated with the shape
-	    options.setAlternativeText("Test watermark");
+        // Set the descriptive (alternative) text that will be associated with the shape
+        options.setAlternativeText("Test watermark");
 
-	    watermarker.add(watermark, options);
+        watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutDocumentDocx);
+        watermarker.save(Constants.OutDocumentDocx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

@@ -8,24 +8,24 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class DiagramLockWatermarkShape {
-	/**
-	 * This example shows how to protect watermark from editing.
-	 */
-	public static void run() {
-		DiagramLoadOptions loadOptions = new DiagramLoadOptions();
-		// Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
-		Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);
+    /**
+     * This example shows how to protect watermark from editing.
+     */
+    public static void run() {
+        DiagramLoadOptions loadOptions = new DiagramLoadOptions();
+        // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
+        Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
+        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));
 
-	    DiagramShapeWatermarkOptions options = new DiagramShapeWatermarkOptions();
-	    options.setLocked(true);
+        DiagramShapeWatermarkOptions options = new DiagramShapeWatermarkOptions();
+        options.setLocked(true);
 
-	    // Editing of the shape in Visio is forbidden
-	    watermarker.add(watermark, options);
+        // Editing of the shape in Visio is forbidden
+        watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutDiagramVsdx);
+        watermarker.save(Constants.OutDiagramVsdx);
 
-		watermarker.close();
-	}
+        watermarker.close();
+    }
 }

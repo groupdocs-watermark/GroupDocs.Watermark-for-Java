@@ -9,25 +9,25 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class DiagramAddWatermarkToSeparateBackgroundPage {
-	/**
-	 * This example shows how to place the watermark on separate newly created background pages.
-	 */
-	public static void run() {
-		DiagramLoadOptions loadOptions = new DiagramLoadOptions();
-		// Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
-		Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);
+    /**
+     * This example shows how to place the watermark on separate newly created background pages.
+     */
+    public static void run() {
+        DiagramLoadOptions loadOptions = new DiagramLoadOptions();
+        // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
+        Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);
 
-	    // Initialize watermark of any supported type
-	    TextWatermark textWatermark = new TextWatermark("Test watermark 1", new Font("Calibri", 19));
+        // Initialize watermark of any supported type
+        TextWatermark textWatermark = new TextWatermark("Test watermark 1", new Font("Calibri", 19));
 
-	    DiagramShapeWatermarkOptions options = new DiagramShapeWatermarkOptions();
-	    options.setPlacementType(DiagramWatermarkPlacementType.SeparateBackgrounds);
+        DiagramShapeWatermarkOptions options = new DiagramShapeWatermarkOptions();
+        options.setPlacementType(DiagramWatermarkPlacementType.SeparateBackgrounds);
 
-	    // Create separate background for each page where it is not set. Add watermark to it.
-	    watermarker.add(textWatermark, options);
+        // Create separate background for each page where it is not set. Add watermark to it.
+        watermarker.add(textWatermark, options);
 
-	    watermarker.save(Constants.OutDiagramVsdx);
-	    
-	    watermarker.close();
-	}
+        watermarker.save(Constants.OutDiagramVsdx);
+
+        watermarker.close();
+    }
 }

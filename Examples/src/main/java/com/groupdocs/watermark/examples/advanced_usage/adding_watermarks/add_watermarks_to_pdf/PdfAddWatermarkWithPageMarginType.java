@@ -12,27 +12,27 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class PdfAddWatermarkWithPageMarginType {
-	/**
-	 * This example shows how to get watermark aligned to bleed box.
-	 */
-	public static void run() {
-		PdfLoadOptions loadOptions = new PdfLoadOptions();
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+    /**
+     * This example shows how to get watermark aligned to bleed box.
+     */
+    public static void run() {
+        PdfLoadOptions loadOptions = new PdfLoadOptions();
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 42));
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Right);
-	    watermark.setVerticalAlignment(VerticalAlignment.Top);
-	    watermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    watermark.setScaleFactor(1);
+        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 42));
+        watermark.setHorizontalAlignment(HorizontalAlignment.Right);
+        watermark.setVerticalAlignment(VerticalAlignment.Top);
+        watermark.setSizingType(SizingType.ScaleToParentDimensions);
+        watermark.setScaleFactor(1);
 
-	    PdfContent pdfContent = watermarker.getContent(PdfContent.class);
-	    pdfContent.setPageMarginType(PdfPageMarginType.BleedBox);
-	    watermark.setConsiderParentMargins(true);
+        PdfContent pdfContent = watermarker.getContent(PdfContent.class);
+        pdfContent.setPageMarginType(PdfPageMarginType.BleedBox);
+        watermark.setConsiderParentMargins(true);
 
-	    watermarker.add(watermark);
-	    watermarker.save(Constants.OutDocumentPdf);
+        watermarker.add(watermark);
+        watermarker.save(Constants.OutDocumentPdf);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

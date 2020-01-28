@@ -5,15 +5,15 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.watermarks.ImageWatermark;
 
 public class AddImageWatermark {
-	/**
-	 * This example shows how to add image watermark from a local file.
-	 */
-	public static void run() {
-		// Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
-		Watermarker watermarker = new Watermarker(Constants.InPresentationPptx);
+    /**
+     * This example shows how to add image watermark from a local file.
+     */
+    public static void run() {
+        // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
+        Watermarker watermarker = new Watermarker(Constants.InPresentationPptx);
 
-	    // Use path to the image as constructor parameter
-	    ImageWatermark watermark = new ImageWatermark(Constants.WatermarkJpg);
+        // Use path to the image as constructor parameter
+        ImageWatermark watermark = new ImageWatermark(Constants.WatermarkJpg);
 
         // Add watermark to the document
         watermarker.add(watermark);
@@ -22,5 +22,5 @@ public class AddImageWatermark {
 
         watermark.close();
         watermarker.close();
-	}
+    }
 }

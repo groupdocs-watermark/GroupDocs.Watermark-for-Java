@@ -8,12 +8,12 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class LoadFromStream {
-	/**
-	 * This example demonstrates how to create a watermarker for a document stream.
-	 */
-	public static void run() throws Exception {
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: @"C:\\Docs\\document.docx"
-		FileInputStream document = new FileInputStream(Constants.InDocumentDocx);
+    /**
+     * This example demonstrates how to create a watermarker for a document stream.
+     */
+    public static void run() throws Exception {
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: @"C:\\Docs\\document.docx"
+        FileInputStream document = new FileInputStream(Constants.InDocumentDocx);
         Watermarker watermarker = new Watermarker(document);
 
         // use watermarker methods to manage watermarks
@@ -22,8 +22,8 @@ public class LoadFromStream {
         watermarker.add(watermark);
 
         watermarker.save(Constants.OutDocumentDocx);
-        
+
         watermarker.close();
         document.close();
-	}
+    }
 }

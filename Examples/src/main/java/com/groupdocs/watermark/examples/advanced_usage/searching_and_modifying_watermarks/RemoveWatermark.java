@@ -5,23 +5,23 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.search.PossibleWatermarkCollection;
 
 public class RemoveWatermark {
-	/**
-	 * This example shows how to find and remove a particular watermark from a document.
-	 */
-	public static void run() {
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);
+    /**
+     * This example shows how to find and remove a particular watermark from a document.
+     */
+    public static void run() {
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);
 
-	    PossibleWatermarkCollection possibleWatermarks = watermarker.search();
+        PossibleWatermarkCollection possibleWatermarks = watermarker.search();
 
-	    // Remove possible watermark at the specified index from the document.
-	    possibleWatermarks.removeAt(0);
+        // Remove possible watermark at the specified index from the document.
+        possibleWatermarks.removeAt(0);
 
-	    // Remove specified possible watermark from the document.
-	    possibleWatermarks.remove(possibleWatermarks.get_Item(0));
+        // Remove specified possible watermark from the document.
+        possibleWatermarks.remove(possibleWatermarks.get_Item(0));
 
-	    watermarker.save(Constants.OutDocumentPdf);
+        watermarker.save(Constants.OutDocumentPdf);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

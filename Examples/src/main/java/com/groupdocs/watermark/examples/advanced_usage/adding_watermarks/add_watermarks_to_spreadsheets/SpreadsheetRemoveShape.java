@@ -6,24 +6,24 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.options.SpreadsheetLoadOptions;
 
 public class SpreadsheetRemoveShape {
-	/**
-	 * This example shows how to remove a particular shape from the worksheet.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to remove a particular shape from the worksheet.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-		SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
+        SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
 
-	    // Remove shape by index
-	    content.getWorksheets().get_Item(0).getShapes().removeAt(0);
+        // Remove shape by index
+        content.getWorksheets().get_Item(0).getShapes().removeAt(0);
 
-	    // Remove shape by reference
-	    content.getWorksheets().get_Item(0).getShapes().remove(content.getWorksheets().get_Item(0).getShapes().get_Item(0));
+        // Remove shape by reference
+        content.getWorksheets().get_Item(0).getShapes().remove(content.getWorksheets().get_Item(0).getShapes().get_Item(0));
 
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

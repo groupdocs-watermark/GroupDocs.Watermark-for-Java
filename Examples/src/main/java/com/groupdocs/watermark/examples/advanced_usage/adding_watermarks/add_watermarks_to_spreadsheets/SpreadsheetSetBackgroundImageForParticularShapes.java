@@ -12,33 +12,33 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.options.SpreadsheetLoadOptions;
 
 public class SpreadsheetSetBackgroundImageForParticularShapes {
-	/**
-	 * This example shows how to set the background image for the particular shapes in an Excel Worksheet.
-	 */
-	public static void run() throws Exception {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to set the background image for the particular shapes in an Excel Worksheet.
+     */
+    public static void run() throws Exception {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-		File imageFile = new File(Constants.TestPng);
-		byte[] imageBytes = new byte[(int) imageFile.length()];
-		InputStream imageInputStream = new FileInputStream(imageFile);
-		imageInputStream.read(imageBytes);
-		imageInputStream.close();
+        File imageFile = new File(Constants.TestPng);
+        byte[] imageBytes = new byte[(int) imageFile.length()];
+        InputStream imageInputStream = new FileInputStream(imageFile);
+        imageInputStream.read(imageBytes);
+        imageInputStream.close();
 
-		SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
-	    for (SpreadsheetShape shape : content.getWorksheets().get_Item(0).getShapes())
-	    {
-	        if (shape.getText() == "© Aspose 2016")
-	        {
-	            shape.getImageFillFormat().setBackgroundImage(new SpreadsheetWatermarkableImage(imageBytes));
-	            shape.getImageFillFormat().setTransparency(0.5);
-	            shape.getImageFillFormat().setTileAsTexture(true);
-	        }
-	    }
+        SpreadsheetContent content = watermarker.getContent(SpreadsheetContent.class);
+        for (SpreadsheetShape shape : content.getWorksheets().get_Item(0).getShapes())
+        {
+            if (shape.getText() == "© Aspose 2016")
+            {
+                shape.getImageFillFormat().setBackgroundImage(new SpreadsheetWatermarkableImage(imageBytes));
+                shape.getImageFillFormat().setTransparency(0.5);
+                shape.getImageFillFormat().setTileAsTexture(true);
+            }
+        }
 
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

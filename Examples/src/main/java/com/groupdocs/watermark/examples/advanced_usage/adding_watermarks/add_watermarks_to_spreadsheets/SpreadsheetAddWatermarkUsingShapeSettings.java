@@ -8,29 +8,29 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class SpreadsheetAddWatermarkUsingShapeSettings {
-	/**
-	 * This example shows how to set some additional options when adding shape watermark to Excel worksheet.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to set some additional options when adding shape watermark to Excel worksheet.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Segoe UI", 19));
-	    SpreadsheetWatermarkShapeOptions options = new SpreadsheetWatermarkShapeOptions();
+        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Segoe UI", 19));
+        SpreadsheetWatermarkShapeOptions options = new SpreadsheetWatermarkShapeOptions();
 
-	    // Set the shape name
-	    options.setName("Shape 1");
+        // Set the shape name
+        options.setName("Shape 1");
 
-	    // Set the descriptive (alternative) text that will be associated with the shape
-	    options.setAlternativeText("Test watermark");
+        // Set the descriptive (alternative) text that will be associated with the shape
+        options.setAlternativeText("Test watermark");
 
-	    // Editing of the shape in Excel is forbidden
-	    options.setLocked(true);
+        // Editing of the shape in Excel is forbidden
+        options.setLocked(true);
 
-	    watermarker.add(watermark, options);
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.add(watermark, options);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

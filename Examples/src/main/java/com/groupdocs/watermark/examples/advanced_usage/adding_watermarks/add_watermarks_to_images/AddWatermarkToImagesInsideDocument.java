@@ -11,23 +11,23 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class AddWatermarkToImagesInsideDocument {
-	/**
-	 * This example shows how to add watermark to images inside a document.
-	 */
-	public static void run() {
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);
+    /**
+     * This example shows how to add watermark to images inside a document.
+     */
+    public static void run() {
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);
 
-	    // Initialize text watermark
-	    TextWatermark textWatermark = new TextWatermark("Protected image", new Font("Arial", 8));
-	    textWatermark.setHorizontalAlignment(HorizontalAlignment.Center);
-	    textWatermark.setVerticalAlignment(VerticalAlignment.Center);
-	    textWatermark.setRotateAngle(45);
-	    textWatermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    textWatermark.setScaleFactor(1);
+        // Initialize text watermark
+        TextWatermark textWatermark = new TextWatermark("Protected image", new Font("Arial", 8));
+        textWatermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        textWatermark.setVerticalAlignment(VerticalAlignment.Center);
+        textWatermark.setRotateAngle(45);
+        textWatermark.setSizingType(SizingType.ScaleToParentDimensions);
+        textWatermark.setScaleFactor(1);
 
-	    // Initialize image watermark
-	    ImageWatermark imageWatermark = new ImageWatermark(Constants.ProtectJpg);
+        // Initialize image watermark
+        ImageWatermark imageWatermark = new ImageWatermark(Constants.ProtectJpg);
 
         imageWatermark.setHorizontalAlignment(HorizontalAlignment.Center);
         imageWatermark.setVerticalAlignment(VerticalAlignment.Center);
@@ -54,9 +54,9 @@ public class AddWatermarkToImagesInsideDocument {
         }
 
         imageWatermark.close();
-        
-	    watermarker.save(Constants.OutDocumentPdf);
 
-	    watermarker.close();
-	}
+        watermarker.save(Constants.OutDocumentPdf);
+
+        watermarker.close();
+    }
 }

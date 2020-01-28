@@ -9,17 +9,17 @@ import com.groupdocs.watermark.watermarks.Color;
 import com.groupdocs.watermark.watermarks.ImageWatermark;
 
 public class PresentationAddWatermarkWithImageEffects {
-	/**
-	 * This example shows how to apply image effects to the shape watermark.
-	 */
-	public static void run() {
-		PresentationLoadOptions loadOptions = new PresentationLoadOptions();
-		// Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
-		Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);
+    /**
+     * This example shows how to apply image effects to the shape watermark.
+     */
+    public static void run() {
+        PresentationLoadOptions loadOptions = new PresentationLoadOptions();
+        // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
+        Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);
 
-	    ImageWatermark watermark = new ImageWatermark(Constants.LogoPng);
+        ImageWatermark watermark = new ImageWatermark(Constants.LogoPng);
 
-	    PresentationImageEffects effects = new PresentationImageEffects();
+        PresentationImageEffects effects = new PresentationImageEffects();
         effects.setBrightness(0.7);
         effects.setContrast(0.6);
         effects.setChromaKey(Color.getRed());
@@ -31,9 +31,9 @@ public class PresentationAddWatermarkWithImageEffects {
 
         watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutPresentationPptx);
+        watermarker.save(Constants.OutPresentationPptx);
 
-	    watermarker.close();
-	    watermark.close();
-	}
+        watermarker.close();
+        watermark.close();
+    }
 }

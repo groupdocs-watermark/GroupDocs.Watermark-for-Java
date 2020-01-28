@@ -10,28 +10,28 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class AddWatermarkWithParentMargin {
-	/**
-	 * This example shows how to consider parent margins.
-	 */
-	public static void run() {
-		// Constants.InInputVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\input.vsdx"
-		Watermarker watermarker = new Watermarker(Constants.InInputVsdx);
+    /**
+     * This example shows how to consider parent margins.
+     */
+    public static void run() {
+        // Constants.InInputVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\input.vsdx"
+        Watermarker watermarker = new Watermarker(Constants.InInputVsdx);
 
-	    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 42));
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Right);
-	    watermark.setVerticalAlignment(VerticalAlignment.Top);
-	    watermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    watermark.setScaleFactor(1);
-	    watermark.setRotateAngle(45);
-	    watermark.setForegroundColor(Color.getRed());
-	    watermark.setBackgroundColor(Color.getAqua());
+        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 42));
+        watermark.setHorizontalAlignment(HorizontalAlignment.Right);
+        watermark.setVerticalAlignment(VerticalAlignment.Top);
+        watermark.setSizingType(SizingType.ScaleToParentDimensions);
+        watermark.setScaleFactor(1);
+        watermark.setRotateAngle(45);
+        watermark.setForegroundColor(Color.getRed());
+        watermark.setBackgroundColor(Color.getAqua());
 
-	    // Add watermark considering parent margins
-	    watermark.setConsiderParentMargins(true);
+        // Add watermark considering parent margins
+        watermark.setConsiderParentMargins(true);
 
-	    watermarker.add(watermark);
-	    watermarker.save(Constants.OutInputVsdx);
+        watermarker.add(watermark);
+        watermarker.save(Constants.OutInputVsdx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

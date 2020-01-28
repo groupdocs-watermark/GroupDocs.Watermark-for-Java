@@ -10,28 +10,28 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.FontStyle;
 
 public class PdfReplaceTextForParticularXObjectWithFormatting {
-	/**
-	 * This example shows how to replace text with formatting.
-	 */
-	public static void run() {
-		PdfLoadOptions loadOptions = new PdfLoadOptions();
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+    /**
+     * This example shows how to replace text with formatting.
+     */
+    public static void run() {
+        PdfLoadOptions loadOptions = new PdfLoadOptions();
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
 
-		PdfContent pdfContent = watermarker.getContent(PdfContent.class);
-	    for (PdfXObject xObject : pdfContent.getPages().get_Item(0).getXObjects())
-	    {
-	        // Replace text
-	        if (xObject.getText().contains("Test"))
-	        {
-	            xObject.getFormattedTextFragments().clear();
-	            xObject.getFormattedTextFragments().add("Passed", new Font("Calibri", 19, FontStyle.Bold), Color.getRed(), Color.getAqua());
-	        }
-	    }
+        PdfContent pdfContent = watermarker.getContent(PdfContent.class);
+        for (PdfXObject xObject : pdfContent.getPages().get_Item(0).getXObjects())
+        {
+            // Replace text
+            if (xObject.getText().contains("Test"))
+            {
+                xObject.getFormattedTextFragments().clear();
+                xObject.getFormattedTextFragments().add("Passed", new Font("Calibri", 19, FontStyle.Bold), Color.getRed(), Color.getAqua());
+            }
+        }
 
-	    // Save document
-	    watermarker.save(Constants.OutDocumentPdf);
-	    
-	    watermarker.close();
-	}
+        // Save document
+        watermarker.save(Constants.OutDocumentPdf);
+
+        watermarker.close();
+    }
 }

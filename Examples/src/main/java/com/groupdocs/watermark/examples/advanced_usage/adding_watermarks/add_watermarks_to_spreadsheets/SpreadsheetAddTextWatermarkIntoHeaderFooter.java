@@ -12,26 +12,26 @@ import com.groupdocs.watermark.watermarks.FontStyle;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class SpreadsheetAddTextWatermarkIntoHeaderFooter {
-	/**
-	 * This example shows how to add text watermark in header or footer.
-	 */
-	public static void run() {
-		SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
-		// Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
-		Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
+    /**
+     * This example shows how to add text watermark in header or footer.
+     */
+    public static void run() {
+        SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();
+        // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
+        Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Test watermark", new Font("Segoe UI", 19, FontStyle.Bold));
-	    watermark.setForegroundColor(Color.getRed());
-	    watermark.setBackgroundColor(Color.getAqua());
-	    watermark.setVerticalAlignment(VerticalAlignment.Top);
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        TextWatermark watermark = new TextWatermark("Test watermark", new Font("Segoe UI", 19, FontStyle.Bold));
+        watermark.setForegroundColor(Color.getRed());
+        watermark.setBackgroundColor(Color.getAqua());
+        watermark.setVerticalAlignment(VerticalAlignment.Top);
+        watermark.setHorizontalAlignment(HorizontalAlignment.Center);
 
-	    SpreadsheetWatermarkHeaderFooterOptions options = new SpreadsheetWatermarkHeaderFooterOptions();
-	    options.setWorksheetIndex(0);
+        SpreadsheetWatermarkHeaderFooterOptions options = new SpreadsheetWatermarkHeaderFooterOptions();
+        options.setWorksheetIndex(0);
 
-	    watermarker.add(watermark, options);
-	    watermarker.save(Constants.OutSpreadsheetXlsx);
+        watermarker.add(watermark, options);
+        watermarker.save(Constants.OutSpreadsheetXlsx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

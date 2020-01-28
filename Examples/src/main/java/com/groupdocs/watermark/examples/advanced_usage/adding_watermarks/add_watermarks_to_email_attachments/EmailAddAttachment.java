@@ -10,27 +10,27 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.options.EmailLoadOptions;
 
 public class EmailAddAttachment {
-	/**
-	 * This example shows how to add attachments to the email messages.
-	 */
-	public static void run() throws Exception {
-		EmailLoadOptions loadOptions = new EmailLoadOptions();
-		// Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"
-		Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);
+    /**
+     * This example shows how to add attachments to the email messages.
+     */
+    public static void run() throws Exception {
+        EmailLoadOptions loadOptions = new EmailLoadOptions();
+        // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"
+        Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);
 
-		EmailContent content = watermarker.getContent(EmailContent.class);
+        EmailContent content = watermarker.getContent(EmailContent.class);
 
-		File attachmentFile = new File(Constants.InSampleMsg);
-		byte[] attachmentBytes = new byte[(int) attachmentFile.length()];
-		InputStream attachmentInputStream = new FileInputStream(attachmentFile);
-		attachmentInputStream.read(attachmentBytes);
-		attachmentInputStream.close();
-		
-		content.getAttachments().add(attachmentBytes, "sample.msg");
+        File attachmentFile = new File(Constants.InSampleMsg);
+        byte[] attachmentBytes = new byte[(int) attachmentFile.length()];
+        InputStream attachmentInputStream = new FileInputStream(attachmentFile);
+        attachmentInputStream.read(attachmentBytes);
+        attachmentInputStream.close();
 
-	    // Save changes
-	    watermarker.save(Constants.OutMessageMsg);
+        content.getAttachments().add(attachmentBytes, "sample.msg");
 
-	    watermarker.close();
-	}
+        // Save changes
+        watermarker.save(Constants.OutMessageMsg);
+
+        watermarker.close();
+    }
 }

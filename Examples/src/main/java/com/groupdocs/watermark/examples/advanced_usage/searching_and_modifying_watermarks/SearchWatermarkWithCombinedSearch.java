@@ -10,26 +10,26 @@ import com.groupdocs.watermark.search.SearchCriteria;
 import com.groupdocs.watermark.search.TextSearchCriteria;
 
 public class SearchWatermarkWithCombinedSearch {
-	/**
-	 * This example shows how to search watermark with the combination of different search criteria.
-	 */
-	public static void run() {
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);
+    /**
+     * This example shows how to search watermark with the combination of different search criteria.
+     */
+    public static void run() {
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);
 
-	    ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(Constants.LogoPng);
-	    imageSearchCriteria.setMaxDifference(0.9);
+        ImageSearchCriteria imageSearchCriteria = new ImageDctHashSearchCriteria(Constants.LogoPng);
+        imageSearchCriteria.setMaxDifference(0.9);
 
-	    TextSearchCriteria textSearchCriteria = new TextSearchCriteria("Company Name");
+        TextSearchCriteria textSearchCriteria = new TextSearchCriteria("Company Name");
 
-	    RotateAngleSearchCriteria rotateAngleSearchCriteria = new RotateAngleSearchCriteria(30, 60);
+        RotateAngleSearchCriteria rotateAngleSearchCriteria = new RotateAngleSearchCriteria(30, 60);
 
-	    SearchCriteria combinedSearchCriteria = imageSearchCriteria.or(textSearchCriteria)
-	    														   .and(rotateAngleSearchCriteria);
-	    PossibleWatermarkCollection possibleWatermarks = watermarker.search(combinedSearchCriteria);
+        SearchCriteria combinedSearchCriteria = imageSearchCriteria.or(textSearchCriteria)
+                                                                   .and(rotateAngleSearchCriteria);
+        PossibleWatermarkCollection possibleWatermarks = watermarker.search(combinedSearchCriteria);
 
-	    System.out.println("Found " + possibleWatermarks.getCount() + " possible watermark(s).");
+        System.out.println("Found " + possibleWatermarks.getCount() + " possible watermark(s).");
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

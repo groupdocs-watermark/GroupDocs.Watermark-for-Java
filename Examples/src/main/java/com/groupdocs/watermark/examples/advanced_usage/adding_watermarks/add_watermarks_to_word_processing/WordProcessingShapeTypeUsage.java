@@ -12,32 +12,32 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.FontStyle;
 
 public class WordProcessingShapeTypeUsage {
-	/**
-	 * This example demonstrates the usage of WordProcessingShapeType enum.
-	 */
-	public static void run() {
-		WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+    /**
+     * This example demonstrates the usage of WordProcessingShapeType enum.
+     */
+    public static void run() {
+        WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
 
-		WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
-	    for (WordProcessingSection section : content.getSections())
-	    {
-	        for (WordProcessingShape shape : section.getShapes())
-	        {
-	            //Check for Diagonal Corners Rounded shapes
-	            if (shape.getShapeType() == WordProcessingShapeType.DiagonalCornersRounded)
-	            {
-	            	System.out.println("Diagonal Corners Rounded shape found");
+        WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
+        for (WordProcessingSection section : content.getSections())
+        {
+            for (WordProcessingShape shape : section.getShapes())
+            {
+                //Check for Diagonal Corners Rounded shapes
+                if (shape.getShapeType() == WordProcessingShapeType.DiagonalCornersRounded)
+                {
+                    System.out.println("Diagonal Corners Rounded shape found");
 
-	                //Write text on all Diagonal Corners Rounded shapes
-	                shape.getFormattedTextFragments().add("I am Diagonal Corner Rounded", new Font("Calibri", 8, FontStyle.Bold), Color.getRed(), Color.getAqua());
-	            }
-	        }
-	    }
+                    //Write text on all Diagonal Corners Rounded shapes
+                    shape.getFormattedTextFragments().add("I am Diagonal Corner Rounded", new Font("Calibri", 8, FontStyle.Bold), Color.getRed(), Color.getAqua());
+                }
+            }
+        }
 
-	    watermarker.save(Constants.OutDocumentDocx);
+        watermarker.save(Constants.OutDocumentDocx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

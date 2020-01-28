@@ -10,28 +10,28 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.FontStyle;
 
 public class PdfReplaceTextForParticularAnnotationWithFormatting {
-	/**
-	 * This example shows how to edit and replace the text with formatting.
-	 */
-	public static void run() {
-		PdfLoadOptions loadOptions = new PdfLoadOptions();
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+    /**
+     * This example shows how to edit and replace the text with formatting.
+     */
+    public static void run() {
+        PdfLoadOptions loadOptions = new PdfLoadOptions();
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
 
-		PdfContent pdfContent = watermarker.getContent(PdfContent.class);
-	    for (PdfAnnotation annotation : pdfContent.getPages().get_Item(0).getAnnotations())
-	    {
-	        // Replace text
-	        if (annotation.getText().contains("Test"))
-	        {
-	            annotation.getFormattedTextFragments().clear();
-	            annotation.getFormattedTextFragments().add("Passed", new Font("Calibri", 19, FontStyle.Bold), Color.getRed(), Color.getAqua());
-	        }
-	    }
+        PdfContent pdfContent = watermarker.getContent(PdfContent.class);
+        for (PdfAnnotation annotation : pdfContent.getPages().get_Item(0).getAnnotations())
+        {
+            // Replace text
+            if (annotation.getText().contains("Test"))
+            {
+                annotation.getFormattedTextFragments().clear();
+                annotation.getFormattedTextFragments().add("Passed", new Font("Calibri", 19, FontStyle.Bold), Color.getRed(), Color.getAqua());
+            }
+        }
 
-	    // Save document
-	    watermarker.save(Constants.OutDocumentPdf);
+        // Save document
+        watermarker.save(Constants.OutDocumentPdf);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

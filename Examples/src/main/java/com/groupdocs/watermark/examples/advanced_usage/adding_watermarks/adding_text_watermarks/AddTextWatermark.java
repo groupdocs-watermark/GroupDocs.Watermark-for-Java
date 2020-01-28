@@ -9,30 +9,30 @@ import com.groupdocs.watermark.watermarks.TextAlignment;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class AddTextWatermark {
-	/**
-	 * This example shows how to add text watermark to a document.
-	 */
-	public static void run() {
-		// Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png"
-		Watermarker watermarker = new Watermarker(Constants.InImagePng);
+    /**
+     * This example shows how to add text watermark to a document.
+     */
+    public static void run() {
+        // Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png"
+        Watermarker watermarker = new Watermarker(Constants.InImagePng);
 
-		// Initialize the font to be used for watermark
-		Font font = new Font("Arial", 19, FontStyle.Bold | FontStyle.Italic);
+        // Initialize the font to be used for watermark
+        Font font = new Font("Arial", 19, FontStyle.Bold | FontStyle.Italic);
 
-		// Create the watermark object
-		TextWatermark watermark = new TextWatermark("Test watermark", font);
+        // Create the watermark object
+        TextWatermark watermark = new TextWatermark("Test watermark", font);
 
-		// Set watermark properties
-		watermark.setForegroundColor(Color.getRed());
-		watermark.setBackgroundColor(Color.getBlue());
-		watermark.setTextAlignment(TextAlignment.Right);
-		watermark.setOpacity(0.5);
+        // Set watermark properties
+        watermark.setForegroundColor(Color.getRed());
+        watermark.setBackgroundColor(Color.getBlue());
+        watermark.setTextAlignment(TextAlignment.Right);
+        watermark.setOpacity(0.5);
 
-		// Add watermark
-		watermarker.add(watermark);
+        // Add watermark
+        watermarker.add(watermark);
 
-		watermarker.save(Constants.OutImagePng);
-		
-		watermarker.close();
-	}
+        watermarker.save(Constants.OutImagePng);
+
+        watermarker.close();
+    }
 }

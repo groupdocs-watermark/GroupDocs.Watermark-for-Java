@@ -9,15 +9,15 @@ import com.groupdocs.watermark.watermarks.Color;
 import com.groupdocs.watermark.watermarks.ImageWatermark;
 
 public class WordProcessingAddWatermarkWithImageEffects {
-	/**
-	 * This example shows how to apply image effects to the shape watermarks.
-	 */
-	public static void run() {
-		WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+    /**
+     * This example shows how to apply image effects to the shape watermarks.
+     */
+    public static void run() {
+        WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
 
-		ImageWatermark watermark = new ImageWatermark(Constants.LogoPng);
+        ImageWatermark watermark = new ImageWatermark(Constants.LogoPng);
 
         WordProcessingImageEffects effects = new WordProcessingImageEffects();
         effects.setBrightness(0.7);
@@ -31,8 +31,8 @@ public class WordProcessingAddWatermarkWithImageEffects {
 
         watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutDocumentDocx);
+        watermarker.save(Constants.OutDocumentDocx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

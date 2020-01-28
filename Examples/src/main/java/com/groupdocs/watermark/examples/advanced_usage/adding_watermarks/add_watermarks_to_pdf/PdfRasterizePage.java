@@ -13,35 +13,35 @@ import com.groupdocs.watermark.watermarks.SizingType;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class PdfRasterizePage {
-	/**
-	 * This example shows how to rasterize any particular page of the PDF document.
-	 */
-	public static void run() {
-		PdfLoadOptions loadOptions = new PdfLoadOptions();
-		// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+    /**
+     * This example shows how to rasterize any particular page of the PDF document.
+     */
+    public static void run() {
+        PdfLoadOptions loadOptions = new PdfLoadOptions();
+        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
 
-	    // Initialize image or text watermark
-	    TextWatermark watermark = new TextWatermark("Do not copy", new Font("Arial", 8));
-	    watermark.setHorizontalAlignment(HorizontalAlignment.Center);
-	    watermark.setVerticalAlignment(VerticalAlignment.Center);
-	    watermark.setRotateAngle(45);
-	    watermark.setSizingType(SizingType.ScaleToParentDimensions);
-	    watermark.setScaleFactor(1);
-	    watermark.setOpacity(0.5);
+        // Initialize image or text watermark
+        TextWatermark watermark = new TextWatermark("Do not copy", new Font("Arial", 8));
+        watermark.setHorizontalAlignment(HorizontalAlignment.Center);
+        watermark.setVerticalAlignment(VerticalAlignment.Center);
+        watermark.setRotateAngle(45);
+        watermark.setSizingType(SizingType.ScaleToParentDimensions);
+        watermark.setScaleFactor(1);
+        watermark.setOpacity(0.5);
 
-	    // Add watermark of any type first
-	    PdfArtifactWatermarkOptions options = new PdfArtifactWatermarkOptions();
-	    options.setPageIndex(0);
-	    watermarker.add(watermark, options);
+        // Add watermark of any type first
+        PdfArtifactWatermarkOptions options = new PdfArtifactWatermarkOptions();
+        options.setPageIndex(0);
+        watermarker.add(watermark, options);
 
-	    // Rasterize the first page
-	    PdfContent pdfContent = watermarker.getContent(PdfContent.class);
-	    pdfContent.getPages().get_Item(0).rasterize(100, 100, PdfImageConversionFormat.Png);
+        // Rasterize the first page
+        PdfContent pdfContent = watermarker.getContent(PdfContent.class);
+        pdfContent.getPages().get_Item(0).rasterize(100, 100, PdfImageConversionFormat.Png);
 
-	    // Content of the first page is replaced with raster image
-	    watermarker.save(Constants.OutDocumentPdf);
+        // Content of the first page is replaced with raster image
+        watermarker.save(Constants.OutDocumentPdf);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

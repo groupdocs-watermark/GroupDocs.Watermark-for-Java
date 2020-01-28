@@ -10,28 +10,28 @@ import com.groupdocs.watermark.watermarks.Font;
 import com.groupdocs.watermark.watermarks.TextWatermark;
 
 public class WordProcessingAddLockedWatermarkToAllPages {
-	/**
-	 * This example shows how to lock watermark in all pages.
-	 */
-	public static void run() {
-		WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+    /**
+     * This example shows how to lock watermark in all pages.
+     */
+    public static void run() {
+        WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
 
-	    TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
-	    watermark.setForegroundColor(Color.getRed());
+        TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
+        watermark.setForegroundColor(Color.getRed());
 
-	    WordProcessingWatermarkPagesOptions options = new WordProcessingWatermarkPagesOptions();
-	    options.setLocked(true);
-	    options.setLockType(WordProcessingLockType.AllowOnlyFormFields);
+        WordProcessingWatermarkPagesOptions options = new WordProcessingWatermarkPagesOptions();
+        options.setLocked(true);
+        options.setLockType(WordProcessingLockType.AllowOnlyFormFields);
 
-	    // To protect with password
-	    //options.setPassword("7654321");
+        // To protect with password
+        //options.setPassword("7654321");
 
-	    watermarker.add(watermark, options);
+        watermarker.add(watermark, options);
 
-	    watermarker.save(Constants.OutDocumentDocx);
+        watermarker.save(Constants.OutDocumentDocx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }

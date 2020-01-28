@@ -7,20 +7,20 @@ import com.groupdocs.watermark.examples.Constants;
 import com.groupdocs.watermark.options.WordProcessingLoadOptions;
 
 public class WordProcessingProtectDocument {
-	/**
-	 * This example shows how to protect a Word document with the password.
-	 */
-	public static void run() {
-		WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-		// Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-		Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+    /**
+     * This example shows how to protect a Word document with the password.
+     */
+    public static void run() {
+        WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
+        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
+        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
 
-		WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
+        WordProcessingContent content = watermarker.getContent(WordProcessingContent.class);
 
-	    content.protect(WordProcessingProtectionType.ReadOnly, "7654321");
+        content.protect(WordProcessingProtectionType.ReadOnly, "7654321");
 
-	    watermarker.save(Constants.OutDocumentDocx);
+        watermarker.save(Constants.OutDocumentDocx);
 
-	    watermarker.close();
-	}
+        watermarker.close();
+    }
 }
