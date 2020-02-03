@@ -6,7 +6,7 @@ GroupDocs.Watermark is a library for adding text and image watermarks to documen
 
 <p align="center">
 
-  <a title="Download complete GroupDocs.Watermark for Java source code" href="https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java/archive/master.zip">
+  <a title="Download complete GroupDocs.Watermark for Java Examples source code" href="https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java/archive/master.zip">
 	<img src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" />
   </a>
 </p>
