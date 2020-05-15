@@ -42,6 +42,8 @@ public class MainClass {
 //        AddATextWatermark.run();
 //        AddAnImageWatermark.run();
 
+//        GenerateDocumentPreview.run();
+        
         //endregion
 
         //region Advanced Usage
