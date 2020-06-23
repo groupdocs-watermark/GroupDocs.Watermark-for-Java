@@ -17,7 +17,7 @@ The following code sample demonstrates how to get supported file formats list.
 
 **basic\_usage.GetSupportedFileFormats**
 
-```csharp
+```java
 FileType[] fileTypes = FileType.getSupportedFileTypes();
 for(FileType fileType : fileTypes) {                    
     System.out.println(fileType);                       

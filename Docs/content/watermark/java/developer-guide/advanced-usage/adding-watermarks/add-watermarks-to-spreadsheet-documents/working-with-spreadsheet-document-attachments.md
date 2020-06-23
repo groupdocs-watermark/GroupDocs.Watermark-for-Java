@@ -14,7 +14,7 @@ GroupDocs.Watermark API allows you to extract [attachments](https://apireference
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetExtractAllAttachments**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                                                
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"                                 
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                                                              
@@ -55,7 +55,7 @@ watermarker.close();
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddAttachment**
 
-```csharp
+```java
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -98,7 +98,7 @@ watermarker.close();
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddLinkedAttachment**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -132,7 +132,7 @@ GroupDocs.Watermark API allows you to remove [attachments](https://apireference.
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetRemoveAttachment**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                    
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"     
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                                  
@@ -165,7 +165,7 @@ GroupDocs.Watermark API allows you to add watermark to all [attachments](https:/
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkToAttachment**
 
-```csharp
+```java
 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));                            
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
@@ -206,7 +206,7 @@ GroupDocs.Watermark API allows you to search for all the [images and watermarkab
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetSearchImageInAttachment**
 
-```csharp
+```java
 // Consider only the attached images                                                                             
 WatermarkerSettings settings = new WatermarkerSettings();                                                        
 settings.getSearchableObjects().setSpreadsheetSearchableObjects(SpreadsheetSearchableObjects.AttachedImages);    

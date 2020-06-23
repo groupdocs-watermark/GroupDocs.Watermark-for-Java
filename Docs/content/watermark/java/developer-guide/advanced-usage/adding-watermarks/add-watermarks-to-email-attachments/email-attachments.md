@@ -14,7 +14,7 @@ GroupDocs.Watermark allows you to get the information about the [attachments](ht
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailExtractAllAttachments**
 
-```csharp
+```java
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                       
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"      
 Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);                              
@@ -39,7 +39,7 @@ Using GroupDocs.Watermark, you can [remove](https://apireference.groupdocs.com/w
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailRemoveAttachment**
 
-```csharp
+```java
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                         
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"        
 Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);                                
@@ -68,7 +68,7 @@ You can also add attachments to the email messages using GroupDocs.Watermark. Fo
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailAddAttachment**
 
-```csharp
+```java
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                 
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"
 Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);                        

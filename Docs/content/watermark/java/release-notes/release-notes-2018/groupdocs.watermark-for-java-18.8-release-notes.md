@@ -48,9 +48,9 @@ None.
 
 The following example will fail in Java 7 but will be completed successfully in Java 8u101 or above:
 
-**Java**
 
-```csharp
+
+```java
 Metered metered = new Metered();
 try {
     metered.setMeteredKey(publicKey, privateKey);
@@ -84,9 +84,9 @@ This feature allows finding text watermark even if it contains unreadable charac
 
 Search for text watermarks with skipping unreadable characters:
 
-**Java**
 
-```csharp
+
+```java
 String inputFileName = "d:\\input.pptx";
  
 final SlidesDocument document = Document.load(SlidesDocument.class, inputFileName);
@@ -117,9 +117,9 @@ This feature allows strengthening protection of text watermark in case of modify
 
 Protect text watermark with unreadable characters:
 
-**Java**
 
-```csharp
+
+```java
 String inputFileName = "d:\\input.pptx";
 String outputFileName = "d:\\output.pptx";
  
@@ -153,9 +153,9 @@ This enhancement adds two new supported drawing types to **CellsMsoDrawingType*
 
 Remove shapes of *SmartArt and* *CustomXml type from document worksheet:*
 
-**Java**
 
-```csharp
+
+```java
 String inputFileName = "G:\\Input.xlsx";
 String outputFileName = "G:\\Output.xlsx";
  
@@ -188,9 +188,9 @@ None.
 
 Lock text watermark:
 
-**Java**
 
-```csharp
+
+```java
 String inputFileName = "d:\\input.pptx";
 String outputFileName = "d:\\output.pptx";
  

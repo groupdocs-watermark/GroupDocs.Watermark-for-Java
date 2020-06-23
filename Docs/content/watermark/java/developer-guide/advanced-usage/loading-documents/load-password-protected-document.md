@@ -16,7 +16,7 @@ The following example demonstrates how to load an encrypted document of any supp
 
 **advanced\_usage.loading\_documents.LoadPasswordProtectedDocument**
 
-```csharp
+```java
 LoadOptions loadOptions = new LoadOptions();                                                                                   
 loadOptions.setPassword("P@$$w0rd");                                                                                           
 // Constants.InProtectedDocumentDocx is an absolute or relative path to your document. Ex: @"C:\\Docs\\protected-document.docx"
@@ -39,7 +39,7 @@ The following example demontrates how to load an encrypted word processing docum
 
 **advanced\_usage.loading\_documents.LoadPasswordProtectedWordProcessingDocument**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                                       
 loadOptions.setPassword("P@$$w0rd");                                                                                           
 // Constants.InProtectedDocumentDocx is an absolute or relative path to your document. Ex: @"C:\\Docs\\protected-document.docx"

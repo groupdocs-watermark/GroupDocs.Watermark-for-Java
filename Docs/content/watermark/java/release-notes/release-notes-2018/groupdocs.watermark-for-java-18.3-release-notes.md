@@ -49,9 +49,9 @@ This feature allows a user to edit existing XObjects, Artifacts and Annotations 
 
 Replace text for particular XObjects.
 
-**Java**
 
-```csharp
+
+```java
 PdfDocument doc = Document.load(PdfDocument.class, "D:\\xobjects.pdf");
 
 for (PdfXObject xObject : doc.getPages().get_Item(0).getXObjects())
@@ -68,9 +68,9 @@ doc.close();
 
 Replace text for particular Artifacts.
 
-**Java**
 
-```csharp
+
+```java
 PdfDocument doc = Document.load(PdfDocument.class, "D:\\artifacts.pdf");
 
 for (PdfArtifact artifact : doc.getPages().get_Item(0).getArtifacts())
@@ -87,9 +87,9 @@ doc.close();
 
 Replace text for particular Annotations.
 
-**Java**
 
-```csharp
+
+```java
 PdfDocument doc = Document.load(PdfDocument.class, "D:\\annotations.pdf");
 
 for (PdfAnnotation annotation : doc.getPages().get_Item(0).getAnnotations())
@@ -106,9 +106,9 @@ doc.close();
 
 Replace text with formatting (XObjects).
 
-**Java**
 
-```csharp
+
+```java
 PdfDocument doc = Document.load(PdfDocument.class, "D:\\xobjects.pdf");
 
 for (PdfXObject xObject : doc.getPages().get_Item(0).getXObjects())
@@ -126,9 +126,9 @@ doc.close();
 
 Replace text with formatting (Artifacts).
 
-**Java**
 
-```csharp
+
+```java
 PdfDocument doc = Document.load(PdfDocument.class, "D:\\artifacts.pdf");
 
 for (PdfArtifact artifact : doc.getPages().get_Item(0).getArtifacts())
@@ -146,9 +146,9 @@ doc.close();
 
 Replace text with formatting (Annotations).
 
-**Java**
 
-```csharp
+
+```java
 PdfDocument doc = Document.load(PdfDocument.class, "D:\\annotations.pdf");
 
 for (PdfAnnotation annotation : doc.getPages().get_Item(0).getAnnotations())
@@ -166,9 +166,9 @@ doc.close();
 
 Replace XObject image.
 
-**Java**
 
-```csharp
+
+```java
 String imagePath = "D:\\test.png";
 File imageFile = new File(imagePath);
 byte[] imageBytes = new byte[(int)imageFile.length()];
@@ -192,9 +192,9 @@ doc.close();
 
 Replace Artifact image.
 
-**Java**
 
-```csharp
+
+```java
 String imagePath = "D:\\test.png";
 File imageFile = new File(imagePath);
 byte[] imageBytes = new byte[(int)imageFile.length()];
@@ -218,9 +218,9 @@ doc.close();
 
 Replace Annotation image.
 
-**Java**
 
-```csharp
+
+```java
 String imagePath = "D:\\test.png";
 File imageFile = new File(imagePath);
 byte[] imageBytes = new byte[(int)imageFile.length()];
@@ -258,9 +258,9 @@ This feature allows a user to edit image and text in found possible watermarks.
 
 Replace text of found possible watermarks.
 
-**Java**
 
-```csharp
+
+```java
 Document doc = Document.load("D:\\input.pptx");
 
 TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
@@ -285,9 +285,9 @@ doc.close();
 
 Replace text with formatting.
 
-**Java**
 
-```csharp
+
+```java
 Document doc = Document.load("D:\\input.docx");
 
 TextSearchCriteria searchCriteria = new TextSearchCriteria("test", false);
@@ -313,9 +313,9 @@ doc.close();
 
 Replace images of found possible watermarks.
 
-**Java**
 
-```csharp
+
+```java
 String imagePath = "D:\\test.png";
 File imageFile = new File(imagePath);
 byte[] imageBytes = new byte[(int)imageFile.length()];

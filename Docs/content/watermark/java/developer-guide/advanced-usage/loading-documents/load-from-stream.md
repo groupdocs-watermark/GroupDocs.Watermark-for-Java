@@ -12,7 +12,7 @@ The following example democtrates how to create a [watermarker](https://apirefer
 
 **advanced\_usage.loading\_documents.LoadFromStream**
 
-```csharp
+```java
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 FileInputStream document = new FileInputStream(Constants.InDocumentDocx);                                   
 Watermarker watermarker = new Watermarker(document);                                                        

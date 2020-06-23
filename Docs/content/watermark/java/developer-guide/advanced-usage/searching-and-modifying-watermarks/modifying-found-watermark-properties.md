@@ -16,7 +16,7 @@ To replace text of the found watermarks, loop through the possible watermarks in
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.EditTextInFoundWatermarks**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -49,7 +49,7 @@ You can also replace the watermark's text with [formatting](https://apireference
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.EditTextWithFormattingInFoundWatermarks**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"                             
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                                                   
                                                                                                                                       
@@ -83,7 +83,7 @@ Following code sample shows how to replace the image of the found watermarks usi
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.ReplacesImageInFoundWatermarks**
 
-```csharp
+```java
 File imageFile = new File(Constants.ImagePng);                                                           
 byte[] imageData = new byte[(int) imageFile.length()];                                                   
 InputStream imageInputStream = new FileInputStream(imageFile);                                           

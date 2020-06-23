@@ -23,7 +23,7 @@ Following code shows how to add watermark to a particular worksheet.
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkToWorksheet**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -53,7 +53,7 @@ If for some reasons you want to use absolute sizing and positioning, you may als
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetGetContentAreaDimensions**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -77,7 +77,7 @@ Using GroupDocs.Watermark, you can add watermark to the images that belong to a 
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkToWorksheetImages**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -114,7 +114,7 @@ The code sample below shows how to add modern WordArt watermark to Excel documen
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddModernWordArdWatermark**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -135,7 +135,7 @@ The API also provides the feature to set some additional options ([setName()](h
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkUsingShapeSettings**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -164,7 +164,7 @@ You can also apply [text effects](https://apireference.groupdocs.com/watermark/j
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkWithTextEffects**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -193,7 +193,7 @@ The API also allows you to apply [image effects](https://apireference.groupdocs.
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkWithImageEffects**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -225,7 +225,7 @@ Use the following code sample to add [background watermark](https://apireference
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkAsBackground**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -248,7 +248,7 @@ You can also define the size ([width](https://apireference.groupdocs.com/waterm
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkAsBackgroundWithRelativeSizeAndPosition**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                    
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"     
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                                  
@@ -280,7 +280,7 @@ Excel does not support text backgrounds but you still can pass [TextWatermark](
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddTextWatermarkAsBackground**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                     
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"      
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                                   
@@ -310,7 +310,7 @@ Another way to mimic watermark in Excel is to [use Headers and Footers](https:/
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddImageWatermarkIntoHeaderFooter**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -338,7 +338,7 @@ You can also add [text watermark](https://apireference.groupdocs.com/watermark/j
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddTextWatermarkIntoHeaderFooter**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             

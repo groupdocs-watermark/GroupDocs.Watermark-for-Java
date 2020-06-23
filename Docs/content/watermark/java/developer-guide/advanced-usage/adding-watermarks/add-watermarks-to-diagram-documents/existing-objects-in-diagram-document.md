@@ -24,7 +24,7 @@ Following code sample shows how to remove watermark from a particular page.
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramRemoveWatermark**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                                                         
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"                          
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                                                   
@@ -54,7 +54,7 @@ watermarker.close();
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramGetShapesInformation**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                               
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                         
@@ -91,7 +91,7 @@ You can also remove a particular shape from a page using GroupDocs.Watermark AP
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramRemoveShape()**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                                
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: @"C:\Docs\diagram.vsdx"  
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                          
@@ -115,7 +115,7 @@ You can also find and remove the shapes with a particular text formatting from a
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramRemoveTextShapesWithParticularTextFormatting**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                                            
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"             
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                                      
@@ -147,7 +147,7 @@ Using GroupDocs.Watermark for Java, you can also remove hyperlink associated wi
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramRemoveHyperlinks**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                               
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                         
@@ -173,7 +173,7 @@ Since version 18.1. GroupDocs.Watermark allows you to replace the text for parti
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramReplaceTextForParticularShapes**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                              
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: @"C:\Docs\diagram.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                        
@@ -199,7 +199,7 @@ You can also replace the text with a formatted text as shown in the following co
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramReplaceTextWithFormatting**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                                                                  
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"                                   
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                                                            
@@ -226,7 +226,7 @@ Since version 18.1. GroupDocs.Watermark also allows you to replace the image of 
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramReplaceShapeImage**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                                
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx" 
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                          
@@ -260,7 +260,7 @@ The API allows you to extract information about all the headers and footers in a
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramGetHeaderFooterInformation**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                               
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                         
@@ -299,7 +299,7 @@ Following code sample shows how to remove and replace a particular header and fo
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramRemoveOrReplaceHeaderFooter**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                               
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                         

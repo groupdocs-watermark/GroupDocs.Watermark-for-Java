@@ -24,7 +24,7 @@ This example uses [WordProcessingWatermarkPagesOptions](https://apireference.gro
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddLockedWatermarkToAllPages**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -52,7 +52,7 @@ This example uses [WordProcessingWatermarkPagesOptions](https://apireference.gro
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddLockedWatermarkToParticularPages**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -81,7 +81,7 @@ This example uses [WordProcessingWatermarkSectionOptions](https://apireference.g
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddLockedWatermarkToSection**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          

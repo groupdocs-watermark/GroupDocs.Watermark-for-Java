@@ -25,7 +25,7 @@ Following code adds watermark to the headers of a particular section.
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddWatermarkToSection**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -50,7 +50,7 @@ If for some reasons you want to use absolute sizing and positioning, you may als
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingGetSectionProperties**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -73,7 +73,7 @@ Using GroupDocs.Watermark, you can add watermark to the [images](https://apirefe
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddWatermarkToSectionImages**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -106,7 +106,7 @@ Word document may also contain different [shapes](https://apireference.groupdoc
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddWatermarkToShapeImages**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                    
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx" 
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                           
@@ -143,7 +143,7 @@ GroupDocs.Watermark enables you to add watermark to a [particular page](https://
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddWatermarkToParticularPage**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -169,7 +169,7 @@ Header/footer in a Word document can be linked to the corresponding header/foot
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingLinkHeaderFooterInSection**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                                                       
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"                                    
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                                                              
@@ -190,7 +190,7 @@ Following code snippet links all the [headers and footers](https://apireference.
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingLinkAllHeaderFooterInSection**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -211,7 +211,7 @@ This feature can be useful to reduce resultant file size when you're adding imag
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddImageWatermark**
 
-```csharp
+```java
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -241,7 +241,7 @@ Using GroupDocs.Watermark API, you can also set [different](https://apireference
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingSetDifferentFirstPageHeaderFooter**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          

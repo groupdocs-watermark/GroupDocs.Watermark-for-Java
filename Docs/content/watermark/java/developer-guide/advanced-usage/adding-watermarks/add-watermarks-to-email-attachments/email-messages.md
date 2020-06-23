@@ -14,7 +14,7 @@ GroupDocs.Watermark also allows you to modify the body and subject of an email m
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailUpdateEmailBody**
 
-```csharp
+```java
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                 
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"
 Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);                        
@@ -42,7 +42,7 @@ GroupDocs.Watermark also provides the feature of embedding images in the body of
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailAddEmbeddedImage**
 
-```csharp
+```java
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                                              
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"                             
 Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);                                                     
@@ -69,7 +69,7 @@ You can also remove the embedded images from the body of the email message. Belo
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailRemoveEmbeddedImages**
 
-```csharp
+```java
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                                
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"               
 Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);                                       
@@ -99,7 +99,7 @@ Using GroupDocs.Watermark, you can also search for a text in the subject as wel
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailSearchTextInBody**
 
-```csharp
+```java
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                                                                               
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"                                                              
 Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);                                                                                      
@@ -127,7 +127,7 @@ GroupDocs.Watermark also allows listing all the message recipients using method
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailListRecipients**
 
-```csharp
+```java
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                  
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg" 
 Watermarker watermarker = new Watermarker(Constants.InMessageMsg, loadOptions);                         

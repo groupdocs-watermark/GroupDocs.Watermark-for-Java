@@ -14,7 +14,7 @@ When you are working with an animated gif or multi-frame tiff images, you may wa
 
 **advanced\_usage.add\_watermarks\_to\_images.AddWatermarkToImage**
 
-```csharp
+```java
 // Constants.InImageTiff is an absolute or relative path to your document. Ex: "C:\\Docs\\image.tiff"
 TiffImageLoadOptions loadOptions = new TiffImageLoadOptions();                                       
 Watermarker watermarker = new Watermarker(Constants.InImageTiff, loadOptions);                       

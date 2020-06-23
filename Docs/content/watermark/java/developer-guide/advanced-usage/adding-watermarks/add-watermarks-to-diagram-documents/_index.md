@@ -22,7 +22,7 @@ Following code shows how to add watermark to a particular type of the pages.
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramAddWatermarkToAllPagesOfParticularType**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                               
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                         
@@ -56,7 +56,7 @@ In some cases, you may want to place the watermark on separate newly created bac
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramAddWatermarkToSeparateBackgroundPage**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                               
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                         
@@ -81,7 +81,7 @@ GroupDocs.Watermark allows you to add watermark to a particular page of the docu
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramAddWatermarkToParticularPage**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                               
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                         
@@ -116,7 +116,7 @@ GroupDocs.Watermark allows you to protect watermark from editing in MS Visio by 
 
 **advanced\_usage.add\_watermarks\_to\_diagrams.DiagramLockWatermarkShape**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();                                                
 // Constants.InDiagramVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\diagram.vsdx" 
 Watermarker watermarker = new Watermarker(Constants.InDiagramVsdx, loadOptions);                          

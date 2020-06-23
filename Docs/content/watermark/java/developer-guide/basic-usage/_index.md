@@ -23,7 +23,7 @@ Here are main GroupDocs.Watermark API concepts:
 
 The following code shows most used code pattern to define [Watermarker](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark/Watermarker) object and call its methods.
 
-```csharp
+```java
 // Add text watermark to PDF document
 Watermarker watermarker = new Watermarker("document.pdf");
 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 36, FontStyle.Bold | FontStyle.Italic));

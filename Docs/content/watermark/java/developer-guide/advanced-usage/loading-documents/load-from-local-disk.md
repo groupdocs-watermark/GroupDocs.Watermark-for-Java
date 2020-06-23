@@ -12,7 +12,7 @@ The folowing example demontrates how to create a [watermarker](https://apirefere
 
 **advanced\_usage.loading\_documents.LoadFromLocalDisk**
 
-```csharp
+```java
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 String filePath = Constants.InDocumentDocx;                                                                 
 Watermarker watermarker = new Watermarker(filePath);                                                        

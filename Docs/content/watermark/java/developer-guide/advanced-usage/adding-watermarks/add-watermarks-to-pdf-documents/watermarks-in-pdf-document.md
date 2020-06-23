@@ -16,7 +16,7 @@ GroupDocs.Watermark API allows you to extract [attachments](https://apireference
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfExtractAllAttachments**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                           
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"    
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                             
@@ -43,7 +43,7 @@ The API also allows you to add attachments to the PDF document. Following code s
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfAddAttachment**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         
@@ -71,7 +71,7 @@ The API also allows you to remove attachments from the PDF document. Following c
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfRemoveAttachment**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                             
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"      
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                               
@@ -99,7 +99,7 @@ In case you want to search for all the images attachments in a PDF document, you
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfSearchImageInAttachment**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         

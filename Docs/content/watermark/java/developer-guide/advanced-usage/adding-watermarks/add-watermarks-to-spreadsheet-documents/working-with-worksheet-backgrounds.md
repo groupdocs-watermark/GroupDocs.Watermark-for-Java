@@ -14,7 +14,7 @@ The API allows you to extract [information](https://apireference.groupdocs.com/w
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetGetInformationOfWorksheetBackgrounds**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -39,7 +39,7 @@ Following code sample can be used to remove the [background](https://apirefere
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetRemoveWorksheetBackground**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -58,7 +58,7 @@ You can [add](https://apireference.groupdocs.com/watermark/java/com.groupdocs.wa
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkToBackgroundImages**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -92,7 +92,7 @@ GroupDocs.Watermark for Java also allows you to set the [background image](htt
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetSetBackgroundImageForChart**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                                                 
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"                                  
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                                                               

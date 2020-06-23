@@ -14,7 +14,7 @@ You can extract [information](https://apireference.groupdocs.com/watermark/java/
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetGetHeaderFooterInformation**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -50,7 +50,7 @@ You can also clear a particular [header and footer](https://apireference.groupdo
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetClearHeaderFooter**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                              
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                            
@@ -78,7 +78,7 @@ Using GroupDocs.Watermark, you can also clear a particular section of [header an
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetClearSectionOfHeaderFooter**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -103,7 +103,7 @@ GroupDocs.Watermark enables you to add watermark to [images](https://apireferenc
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetAddWatermarkToImagesInHeaderFooter**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             

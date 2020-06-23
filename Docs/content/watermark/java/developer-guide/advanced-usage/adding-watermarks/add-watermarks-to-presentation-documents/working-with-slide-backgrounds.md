@@ -14,7 +14,7 @@ The API allows you to extract information about all the slide backgrounds in a P
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationGetSlideBackgroundsInformation**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -39,7 +39,7 @@ Following code sample shows how to remove the background image of a particular s
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationRemoveSlideBackground**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -58,7 +58,7 @@ Using GroupDocs.Watermark, you can also [add](https://apireference.groupdocs.com
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationAddWatermarkToSlideBackgroundImages**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -92,7 +92,7 @@ GroupDocs.Watermark for Java also provides the feature that allows you to [tile]
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationSetTiledSemitransparentBackground**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -121,7 +121,7 @@ GroupDocs.Watermark for Java also allows you to set the background image for a
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationSetBackgroundImageForChart**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                                                             
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"                              
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                                                            

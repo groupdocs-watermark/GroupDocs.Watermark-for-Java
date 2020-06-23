@@ -19,7 +19,7 @@ The most of the document formats allow you to place images inside a document. If
 
 **advanced\_usage.add\_watermarks\_to\_images.AddWatermarkToImagesInsideDocument**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          

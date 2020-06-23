@@ -14,7 +14,7 @@ GroupDocs.Watermark API enables you to easily find and remove a particular [wate
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.RemoveWatermark**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -37,7 +37,7 @@ GroupDocs.Watermark also enables you to search and remove the watermarks on the 
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.RemoveWatermarkWithParticularTextFormatting**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -68,7 +68,7 @@ GroupDocs.Watermark API allows you to search and remove [hyperlinks](https://api
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.RemoveHyperlinksWithParticularUrl**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"             
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                                   
                                                                                                                       

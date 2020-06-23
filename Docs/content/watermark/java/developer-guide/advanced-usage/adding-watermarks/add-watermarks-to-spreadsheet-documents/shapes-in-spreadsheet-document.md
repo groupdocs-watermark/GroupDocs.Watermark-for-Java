@@ -14,7 +14,7 @@ hideChildren: False
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetGetShapesInformation**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                              
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: @"C:\Docs\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                            
@@ -55,7 +55,7 @@ You can also remove a particular [shape](https://apireference.groupdocs.com/wate
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetRemoveShape**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                  
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"   
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                                
@@ -79,7 +79,7 @@ You can also find and remove the shapes with a [particular text formatting](http
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetRemoveTextShapesWithParticularTextFormatting**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                    
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"     
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                                  
@@ -111,7 +111,7 @@ Using GroupDocs.Watermark for Java, you can also remove/replace hyperlink assoc
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetRemoveHyperlinks**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -139,7 +139,7 @@ Since version 17.12, GroupDocs.Watermark supports replacing [text](https://apire
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetReplaceTextForParticularShapes**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -164,7 +164,7 @@ You can also replace the [text](https://apireference.groupdocs.com/watermark/jav
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetReplaceTextWithFormattingForParticularShapes**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                                          
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"                           
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                                                        
@@ -190,7 +190,7 @@ GroupDocs.Watermark also allows you to replace the [image](https://apireference
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetReplaceImageOfParticularShapes**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -222,7 +222,7 @@ Since version 17.12, GroupDocs.Watermark enables you to set the [background imag
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetSetBackgroundImageForParticularShapes**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             
@@ -255,7 +255,7 @@ Since version 17.12, GroupDocs.Watermark also provides the feature of modifying 
 
 **advanced\_usage.add\_watermarks\_to\_spreadsheets.SpreadsheetUpdateShapeProperties**
 
-```csharp
+```java
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                               
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 Watermarker watermarker = new Watermarker(Constants.InSpreadsheetXlsx, loadOptions);                             

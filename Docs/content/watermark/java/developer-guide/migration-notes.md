@@ -30,7 +30,7 @@ The folowing examples show how to load a document of any supported format.
 
 **Old API**
 
-```csharp
+```java
 Document doc = Document.load("test.doc");
 // watermarking goes here
 // ...
@@ -39,7 +39,7 @@ doc.close();
 
 **New API**
 
-```csharp
+```java
 Watermarker watermarker = new Watermarker("test.doc");
 // watermarking goes here
 // ...
@@ -52,7 +52,7 @@ The following examples show how to load a diagram document.
 
 **Old API**
 
-```csharp
+```java
 DiagramDocument doc = Document.load(DiagramDocument.class, "diagram.vsdx");
 // watermarking goes here
 // ...
@@ -61,7 +61,7 @@ doc.close();
 
 **New API**
 
-```csharp
+```java
 DiagramLoadOptions loadOptions = new DiagramLoadOptions();
 Watermarker watermarker = new Watermarker("diagram.vsdx", loadOptions);
 // watermarking goes here
@@ -75,7 +75,7 @@ The following examples show how to add text watermark to a document of any suppo
 
 **Old API**
 
-```csharp
+```java
 for (File file : new File("Documents").listFiles())
 {
     Document document = Document.load(file.getPath());
@@ -93,7 +93,7 @@ for (File file : new File("Documents").listFiles())
 
 **New API**
 
-```csharp
+```java
 for (File file : new File("Documents").listFiles())
 {                                                                                       
     Watermarker watermarker = new Watermarker(file.getPath());
@@ -115,7 +115,7 @@ The following examples show how to add watermark to the first page of a diagram 
 
 **Old API**
 
-```csharp
+```java
 DiagramDocument doc = Document.load(DiagramDocument.class, "diagram.vsdx");
 
 TextWatermark textWatermark = new TextWatermark("Test watermark", new Font("Calibri", 19));
@@ -128,7 +128,7 @@ doc.close();
 
 **New API**
 
-```csharp
+```java
 Watermarker watermarker = new Watermarker("diagram.vsdx", new DiagramLoadOptions());
 
 TextWatermark textWatermark = new TextWatermark("Test watermark", new Font("Calibri", 19));
@@ -148,7 +148,7 @@ The following examles show how to find watermarks using search criteria.
 
 **Old API**
 
-```csharp
+```java
 Document doc = Document.load("test.some_ext");
 
 SizeSearchCriteria widthRange = new SizeSearchCriteria(Dimension.Width, 50, 100);
@@ -164,7 +164,7 @@ doc.close();
 
 **New API**
 
-```csharp
+```java
 Watermarker watermarker = new Watermarker("test.some_ext");
 
 SizeSearchCriteria widthRange = new SizeSearchCriteria(Dimension.Width, 50, 100);
@@ -184,7 +184,7 @@ The following examples show how to remove all possible watermarks.
 
 **Old API**
 
-```csharp
+```java
 Document doc = Document.load("document.pdf");
 
 PossibleWatermarkCollection watermarks = doc.findWatermarks();
@@ -196,7 +196,7 @@ doc.close();
 
 **New API**
 
-```csharp
+```java
 Watermarker watermarker = new Watermarker("document.pdf");
 
 PossibleWatermarkCollection watermarks = watermarker.search();
@@ -212,7 +212,7 @@ The following examples show how to get document information from the local file.
 
 **Old API**
 
-```csharp
+```java
 DocumentInfo documentInfo = Document.getInfo("test.ppt");
 System.out.println(documentInfo.getFileFormat());
 System.out.println(documentInfo.isEncrypted());
@@ -220,7 +220,7 @@ System.out.println(documentInfo.isEncrypted());
 
 **New API**
 
-```csharp
+```java
 Watermarker watermarker = new Watermarker("test.ppt");
 
 IDocumentInfo info = watermarker.getDocumentInfo();

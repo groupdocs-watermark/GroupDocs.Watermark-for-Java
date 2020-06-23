@@ -23,7 +23,7 @@ This example demostrates how to get document information from the local file.
 
 **basic\_usage.GetDocumentInfoForTheFileFromLocalDisk**
 
-```csharp
+```java
 // Constants.InSourceDocx is an absolute or relative path to your document. Ex.: "C:\\Docs\\source.docx"
 Watermarker watermarker = new Watermarker(Constants.InSourceDocx);                                      
 IDocumentInfo info = watermarker.getDocumentInfo();                                                 
@@ -39,7 +39,7 @@ This example demonstrates how to get document information from the file stream.
 
 **basic\_usage.GetDocumentInfoForTheFileFromStream**
 
-```csharp
+```java
 // Constants.InSourceDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\source.docx"
 FileInputStream stream = new FileInputStream(Constants.InSourceDocx);                                  
 Watermarker watermarker = new Watermarker(stream);                                                     

@@ -14,7 +14,7 @@ The following examle demonstrates how to create a watermarker for the Spreadshee
 
 **advanced\_usage.loading\_documents.LoadingDocumentOfSpecificFormat**
 
-```csharp
+```java
 // Constants.InSpreadsheetXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\spreadsheet.xlsx"
 String filePath = Constants.InSpreadsheetXlsx;                                                                    
 SpreadsheetLoadOptions loadOptions = new SpreadsheetLoadOptions();                                                

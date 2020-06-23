@@ -16,7 +16,7 @@ You can also set some additional options ([setName()](https://apireference.grou
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddWatermarkWithShapeSettings**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -51,7 +51,7 @@ You can also apply some text effects to the shape watermarks as shown in the bel
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddWatermarkWithTextEffects**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -80,7 +80,7 @@ GroupDocs.Watermark also provides the facility to apply image effects to the sha
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingAddWatermarkWithImageEffects**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          

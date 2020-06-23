@@ -12,7 +12,7 @@ Following code snippet shows how to add text watermark to a document. If the do
 
 **advanced\_usage.adding\_text\_watermarks.AddTextWatermark**
 
-```csharp
+```java
 // Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png"
 Watermarker watermarker = new Watermarker(Constants.InImagePng);                                   
                                                                                                    
@@ -44,7 +44,7 @@ Using GroupDocs.Watermark, you can also add watermark to some absolute position 
 
 **advanced\_usage.adding\_text\_watermarks.AddWatermarkToAbsolutePosition**
 
-```csharp
+```java
 // Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png"
 Watermarker watermarker = new Watermarker(Constants.InImagePng);                                   
                                                                                                    
@@ -84,7 +84,7 @@ Instead of exact coordinates, you can also use parent relative alignment. Furthe
 
 **advanced\_usage.adding\_text\_watermarks.AddWatermarkToRelativePosition**
 
-```csharp
+```java
 // Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png
 Watermarker watermarker = new Watermarker(Constants.InImagePng);                                  
                                                                                                   
@@ -111,7 +111,7 @@ In the example above, absolute margin values are used. This means that margins a
 
 **advanced\_usage.adding\_text\_watermarks.AddWatermarkWithMarginType**
 
-```csharp
+```java
 // Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png"
 Watermarker watermarker = new Watermarker(Constants.InImagePng);                                   
                                                                                                    
@@ -139,7 +139,7 @@ In most cases, to add good looking watermark, you should consider the size of th
 
 **advanced\_usage.adding\_text\_watermarks.AddWatermarkWithSizeType**
 
-```csharp
+```java
 // Constants.InImagePng is an absolute or relative path to your document. Ex: "C:\\Docs\\image.png"
 Watermarker watermarker = new Watermarker(Constants.InImagePng);                                   
                                                                                                    
@@ -166,7 +166,7 @@ GroupDocs.Watermark API also supports rotation of the watermark. You can use [se
 
 **advanced\_usage.adding\_text\_watermarks.AddTextWatermarkWithRotationAngle**
 
-```csharp
+```java
 // Constants.InTestDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\test.docx"
 Watermarker watermarker = new Watermarker(Constants.InTestDocx);                                   
                                                                                                    
@@ -200,7 +200,7 @@ As you can see, the watermark goes beyond page margins. To change this behavior,
 
 **advanced\_usage.adding\_text\_watermarks.AddWatermarkWithParentMargin**
 
-```csharp
+```java
 // Constants.InInputVsdx is an absolute or relative path to your document. Ex: "C:\\Docs\\input.vsdx"
 Watermarker watermarker = new Watermarker(Constants.InInputVsdx);                                    
                                                                                                      

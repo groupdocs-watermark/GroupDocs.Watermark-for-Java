@@ -12,7 +12,7 @@ Following code shows usage of [save(String)](https://apireference.groupdocs.com/
 
 **advanced\_usage.saving\_documents.SaveDocumentToTheSpecifiedLocation**
 
-```csharp
+```java
 // Constants.InTestDoc is an absolute or relative path to your document. Ex: "C:\\Docs\\test.doc"
 Watermarker watermarker = new Watermarker(Constants.InTestDoc);                                  
                                                                                                  

@@ -14,7 +14,7 @@ GroupDocs.Watermark API allows you to search the possible watermarks placed in a
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchWatermark**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -47,7 +47,7 @@ Following code snippet shows how to search for the watermarks that meet a partic
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchWatermarkWithSearchString**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -68,7 +68,7 @@ Regular expressions are also supported by [TextSearchCriteria](https://apirefer
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchWatermarkWithRegularExpression**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -93,7 +93,7 @@ Sometimes a document can contain image watermarks, and it's necessary to find th
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchImageWatermark**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -123,7 +123,7 @@ GroupDocs.Watermark API also allows you to search watermarks by a combination ([
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchWatermarkWithCombinedSearch**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -149,7 +149,7 @@ GroupDocs.Watermark also enables you to search the watermarks on the basis of so
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchWatermarkWithParticularTextFormatting**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -180,7 +180,7 @@ This feature allows you to specify which objects should be included in watermark
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchWatermarkInParticularObjectsAllInstances**
 
-```csharp
+```java
 WatermarkerSettings settings = new WatermarkerSettings();                                                                                                
 settings.setSearchableObjects(new SearchableObjects());                                                                                                  
 settings.getSearchableObjects().setWordProcessingSearchableObjects(WordProcessingSearchableObjects.Hyperlinks | WordProcessingSearchableObjects.Text);   
@@ -215,7 +215,7 @@ You can also set [searchable objects](https://apireference.groupdocs.com/waterma
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchWatermarkInParticularObjectsForParticularDocument**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -236,7 +236,7 @@ This feature allows finding text watermark even if it contains unreadable charac
 
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchTextWatermarkSkippingUnreadableCharacters**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          

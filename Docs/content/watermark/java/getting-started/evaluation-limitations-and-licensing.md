@@ -30,7 +30,7 @@ The license can be loaded from a file or stream object.
 
 The code below will explain how to [set](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/License#setLicense(java.lang.String)) product [license](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/License) from a file.
 
-```csharp
+```java
 // For complete examples and data files, please go to https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java
 //initialize License
 License lic = new License();
@@ -43,7 +43,7 @@ lic.setLicense("GroupDocs.Watermark.lic");
 
 The following example shows how to [load](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/License#setLicense(java.io.InputStream)) a [license](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/License) from a stream.
 
-```csharp
+```java
 // For complete examples and data files, please go to https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java
 Path fileLocation = Paths.get("GroupDocs.Watermark.lic");
 try {
@@ -75,7 +75,7 @@ Here are the simple steps to use the [Metered](https://apireference.groupdocs.co
 
 Following is the sample code demonstrating how to set metered public and private keys.
 
-```csharp
+```java
 // For complete examples and data files, please go to https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java
 string PublicKey = ""; // Your public license key
 string PrivateKey = ""; // Your private license key

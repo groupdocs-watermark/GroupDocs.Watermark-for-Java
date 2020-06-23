@@ -12,7 +12,7 @@ Following code shows usage of [save(OutputStream)](https://apireference.groupdoc
 
 **advanced\_usage.saving\_documents.SaveDocumentToTheSpecifiedStream**
 
-```csharp
+```java
 ByteArrayOutputStream outputStream = new ByteArrayOutputStream();                                
                                                                                                  
 // Constants.InTestDoc is an absolute or relative path to your document. Ex: "C:\\Docs\\test.doc"

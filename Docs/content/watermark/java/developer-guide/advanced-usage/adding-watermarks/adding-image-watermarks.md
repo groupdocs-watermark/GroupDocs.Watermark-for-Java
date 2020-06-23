@@ -21,7 +21,7 @@ Following code snippet shows how to add [ImageWatermark](https://apireference.gr
 
 **advanced\_usage.adding\_image\_watermarks.AddImageWatermark**
 
-```csharp
+```java
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx);                                           
                                                                                                                    
@@ -43,7 +43,7 @@ You can also use a stream of the image to initialize [ ImageWatermark](https:/
 
 **advanced\_usage.adding\_image\_watermarks.AddImageWatermarkUsingStream**
 
-```csharp
+```java
 // Constants.WatermarkJpg is an absolute or relative path to your document. Ex: "C:\\Docs\\watermark.jpg"
 FileInputStream watermarkStream = new FileInputStream(Constants.WatermarkJpg);                           
                                                                                                          

@@ -12,7 +12,7 @@ The API allows you to add watermark to all the [attachments](https://apireferenc
 
 **advanced\_usage.add\_watermarks\_to\_email\_attachments.EmailAddWatermarkToAllAttachments**
 
-```csharp
+```java
 TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 19));                  
 EmailLoadOptions loadOptions = new EmailLoadOptions();                                                 
 // Constants.InMessageMsg is an absolute or relative path to your document. Ex: "C:\\Docs\\message.msg"

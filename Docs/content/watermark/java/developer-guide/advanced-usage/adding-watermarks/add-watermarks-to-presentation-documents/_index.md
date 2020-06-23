@@ -23,7 +23,7 @@ Following code shows how to add [TextWatermark](https://apireference.groupdocs.c
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationAddWatermarkToSlide**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -53,7 +53,7 @@ This feature allows strengthening the protection of text watermark. Using unread
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationProtectWatermarkUsingUnreadableCharacters**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -79,7 +79,7 @@ If for some reasons you want to use absolute sizing and positioning, you may als
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationGetSlideDimensions**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -98,7 +98,7 @@ GroupDocs.Watermark allows you to add watermark to the images inside a particula
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationAddWatermarkToSlideImages**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -139,7 +139,7 @@ Following code shows how to access each type of the slides in a PowerPoint pres
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationAddWatermarkToAllSlideTypes**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                                          
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"           
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                                         
@@ -197,7 +197,7 @@ When you're calling [add()](https://apireference.groupdocs.com/watermark/java/co
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationAddWatermarkWithSlidesShapeSettings**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -229,7 +229,7 @@ You can also apply [text effects](https://apireference.groupdocs.com/watermark/j
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationAddWatermarkWithTextEffects**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              
@@ -260,7 +260,7 @@ The API also allows you to apply [image effects](https://apireference.groupdocs.
 
 **advanced\_usage.add\_watermarks\_to\_presentations.PresentationAddWatermarkWithImageEffects**
 
-```csharp
+```java
 PresentationLoadOptions loadOptions = new PresentationLoadOptions();                                               
 // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
 Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);                              

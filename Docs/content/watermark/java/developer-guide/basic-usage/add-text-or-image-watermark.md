@@ -23,7 +23,7 @@ The following example demostrates how to add a [TextWatermark](https://apirefere
 
 **basic\_usage.AddATextWatermark**
 
-```csharp
+```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
                                                                                                          
@@ -52,7 +52,7 @@ The following example demonstrates how to add an [ImageWatermark](https://apiref
 
 **basic\_usage.AddAnImageWatermark**
 
-```csharp
+```java
 // Constants.InDocumentXlsx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.xlsx" 
 FileInputStream stream = new FileInputStream(Constants.InDocumentXlsx);                                     
                                                                                                             

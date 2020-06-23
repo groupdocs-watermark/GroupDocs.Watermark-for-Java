@@ -24,7 +24,7 @@ Following code sample shows how to remove watermark from a particular section.
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingRemoveWatermarkFromSection**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                                              
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"                           
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                                                     
@@ -54,7 +54,7 @@ You can also call [search()](https://apireference.groupdocs.com/watermark/java/c
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingFindWatermarkInHeaderFooter**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -86,7 +86,7 @@ watermarker.close();
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingGetShapesInformation**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -136,7 +136,7 @@ The following code snippet demonstrates the usage of [WordProcessingShapeType](
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingShapeTypeUsage**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                                                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"                                                
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                                                                          
@@ -168,7 +168,7 @@ You can also remove a particular [shape](https://apireference.groupdocs.com/wate
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingRemoveShape**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                        
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"     
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                               
@@ -192,7 +192,7 @@ You can also find and remove the shapes with a particular [text formatting](http
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingRemoveShapesWithParticularTextFormatting**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                              
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"           
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                                     
@@ -224,7 +224,7 @@ Using GroupDocs.Watermark for Java, you can also remove or replace [hyperlink](h
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingRemoveHyperlinks**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -250,7 +250,7 @@ GroupDocs.Watermark supports replacing [text](https://apireference.groupdocs.com
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingReplaceTextForParticularShape**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -278,7 +278,7 @@ You can also replace the [text](https://apireference.groupdocs.com/watermark/jav
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingReplaceShapeTextWithFormattedText**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                                                
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"                             
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                                                       
@@ -307,7 +307,7 @@ GroupDocs.Watermark also allows you to replace the [image](https://apireference
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingReplaceShapeImage**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -341,7 +341,7 @@ GroupDocs.Watermark also provides the feature of modifying properties ([setAlte
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingModifyShapeProperties**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          

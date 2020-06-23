@@ -26,7 +26,7 @@ According to artifact definition, the watermark can be represented by an artifac
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfAddArtifactWatermark**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         
@@ -58,7 +58,7 @@ Annotation is the third type of PDF entities by which a watermark can be represe
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfAddAnnotationWatermark**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         
@@ -90,7 +90,7 @@ You can also add print only annotation watermark to the document using [setPrint
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfAddPrintOnlyAnnotationWatermark**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                                                          
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"                                   
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                                                            

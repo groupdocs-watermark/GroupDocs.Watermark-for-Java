@@ -16,7 +16,7 @@ Following code snippet is used to [rasterize](https://apireference.groupdocs.com
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfRasterizeDocument**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         
@@ -52,7 +52,7 @@ The API also allows you to [rasterize](https://apireference.groupdocs.com/waterm
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfRasterizePage**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         

@@ -22,7 +22,7 @@ Following code performs this functionality.
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfAddWatermarks**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         
@@ -54,7 +54,7 @@ The API also allows you to add watermark to the images inside a particular page 
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfAddWatermarkToImages**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         
@@ -89,7 +89,7 @@ If for some reasons you want to use absolute sizing and positioning, you may als
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfGetDimensions**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         
@@ -110,7 +110,7 @@ If a PDF document contains a crop box definition, Adobe Acrobat uses it for scre
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfAddWatermarkWithPageMarginType**
 
-```csharp
+```java
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);                         
@@ -137,7 +137,7 @@ GroupDocs.Watermark also provides the feature to add watermark to supported fil
 
 **advanced\_usage.add\_watermarks\_to\_pdf.PdfAddWatermarkToAllAttachments**
 
-```csharp
+```java
 TextWatermark watermark = new TextWatermark("This is WaterMark on Attachment", new Font("Arial", 19));   
 PdfLoadOptions loadOptions = new PdfLoadOptions();                                                       
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"

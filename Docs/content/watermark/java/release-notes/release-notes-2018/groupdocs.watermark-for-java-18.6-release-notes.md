@@ -60,9 +60,9 @@ There are 5 variants of locking Word document when adding watermark:
 
 Lock watermark for editing when adding to all pages of a Word document:
 
-**Java**
 
-```csharp
+
+```java
 String inputFileName = "d:\\input.docx";
 String outputFileName = "d:\\output.docx";
 
@@ -85,9 +85,9 @@ doc.close();
   
 Lock watermark for editing when adding to one section:
 
-**Java**
 
-```csharp
+
+```java
 String inputFileName = "d:\\input.docx";
 String outputFileName = "d:\\output.docx";
 
@@ -110,9 +110,9 @@ doc.close();
   
 Lock watermark for editing when adding to only several pages:
 
-**Java**
 
-```csharp
+
+```java
 String inputFileName = "d:\\input.docx";
 String outputFileName = "d:\\output.docx";
 
@@ -148,9 +148,9 @@ This feature allows the user to lock Word document for editing.
 
 Protect Word document with a password by making it read-only:
 
-**Java**
 
-```csharp
+
+```java
 WordsDocument doc = Document.load(WordsDocument.class, "D:\\test.doc");
 
 doc.protect(WordsProtectionType.ReadOnly, "7654321");
@@ -162,9 +162,9 @@ doc.close();
   
 Remove protection from Word document regardless of password:
 
-**Java**
 
-```csharp
+
+```java
 WordsDocument doc = Document.load(WordsDocument.class, "D:\\test.doc");
 
 doc.unprotect();

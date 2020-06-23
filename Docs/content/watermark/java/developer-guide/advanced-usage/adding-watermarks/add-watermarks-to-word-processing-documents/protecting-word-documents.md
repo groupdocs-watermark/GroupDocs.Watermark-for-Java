@@ -27,7 +27,7 @@ Following code sample [protects](https://apireference.groupdocs.com/watermark/ja
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingProtectDocument**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
@@ -47,7 +47,7 @@ The following code sample shows how to [unprotect](https://apireference.groupdoc
 
 **advanced\_usage.add\_watermarks\_to\_word\_processing.WordProcessingUnProtectDocument**
 
-```csharp
+```java
 WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();                                   
 // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
 Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);                          
