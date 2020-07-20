@@ -10,7 +10,7 @@ hideChildren: True
 ---
 {{< alert style="info" >}}
 ![](https://blog.groupdocs.com/wp-content/uploads/sites/4/2018/01/groupdocs-watermark-java.png) **Welcome to the GroupDocs.Watermark for Java**  
-GroupDocs.Watermark is an API for adding watermarks to the documents of different formats. It provides the effective watermarking methods that allow you to add watermarks that are hard to be automatically removed by third-party tools. It also allows you to search and remove previously added watermarks of popular types (including watermarks added by third-party tools) in a document. The API provides straightforward and easy to use set of methods to add, search, and remove watermarks in supported file formats. |
+GroupDocs.Watermark is an API for adding watermarks to the documents of different formats. It provides the effective watermarking methods that allow you to add watermarks that are hard to be automatically removed by third-party tools. It also allows you to search and remove previously added watermarks of popular types (including watermarks added by third-party tools) in a document. The API provides straightforward and easy to use set of methods to add, search, and remove watermarks in supported file formats. 
 {{< /alert >}}
 
 ## GroupDocs.Watermark for Java Resources
