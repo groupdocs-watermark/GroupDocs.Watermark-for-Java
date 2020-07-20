@@ -57,14 +57,13 @@ try {
 }
 ```
 
-{{< alert style="info" >}}Calling License.setLicense multiple times is not harmful but simply wastes processor time. If you are developing a Windows or console application, call License.setLicense in your startup code, before using GroupDocs.Watermark classes.{{< /alert >}}
+{{< alert style="info" >}}
+Calling [License.setLicense](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/License#setLicense(java.io.InputStream)) multiple times is not harmful but simply wastes processor time. If you are developing a Windows or console application, call [License.setLicense](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/License#setLicense(java.io.InputStream)) in your startup code, before using GroupDocs.Watermark classes.
+{{< /alert >}}
 
 ### Setting metered license
-
 You can also set [Metered](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/Metered) license as an alternative to license file. It is a new licensing mechanism that will be used along with existing licensing method. It is useful for the customers who want to be billed based on the usage of the API features. For more details, please refer to [Metered Licensing FAQ](https://purchase.groupdocs.com/faqs/licensing/metered) section.
-
 Here are the simple steps to use the [Metered](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/Metered) class.
-
 *       Create an instance of [Metered](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/Metered) class.
 *       Pass public & private keys to [setMeteredKey](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.licensing/Metered#setMeteredKey(java.lang.String,%20java.lang.String)) method.
 *       Do processing (perform task).

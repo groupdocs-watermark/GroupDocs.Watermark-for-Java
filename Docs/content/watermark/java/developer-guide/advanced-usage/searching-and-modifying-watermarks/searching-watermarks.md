@@ -85,14 +85,17 @@ System.out.println("Found " + possibleWatermarks.getCount() + " possible waterma
 watermarker.close();                                                                                     
 ```
 
-{{< alert style="info" >}}What happens when the user is passing TextSearchCriteria instance to the method?1. It searches fragments of document's main text which match regular expression (or contain exact search string)2. It checks text of other objects (shapes, XObjects, annotations etc.) if they match regular expression (or contain exact search string){{< /alert >}}{{< alert style="warning" >}}Search in the main text of a document is performed only if you pass TextSearchCriteria instance to search() method.{{< /alert >}}
+{{< alert style="info" >}}
+What happens when the user is passing [TextSearchCriteria](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.search/TextSearchCriteria) instance to the method?
+1. It searches fragments of document's main text which match regular expression (or contain exact search string)
+2. It checks text of other objects (shapes, XObjects, annotations etc.) if they match regular expression (or contain exact search string)
+  
+Search in the main text of a document is performed only if you pass [TextSearchCriteria](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark.search/TextSearchCriteria) instance to [search()](https://apireference.groupdocs.com/watermark/java/com.groupdocs.watermark/Watermarker#search(com.groupdocs.watermark.search.SearchCriteria)) method.
+{{< /alert >}}
 
 ### Image search criteria
-
 Sometimes a document can contain image watermarks, and it's necessary to find them using sample picture. For example, you may want to find all possible image watermarks that are similar to a company logo. Following sample code searches for image watermarks that resemble with a particular image.
-
 **advanced\_usage.searching\_and\_modifying\_watermarks.SearchImageWatermark**
-
 ```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
