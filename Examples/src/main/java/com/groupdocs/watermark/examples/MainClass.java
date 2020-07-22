@@ -2,6 +2,7 @@ package com.groupdocs.watermark.examples;
 
 import com.groupdocs.watermark.examples.quick_start.*;
 import com.groupdocs.watermark.examples.basic_usage.*;
+import com.groupdocs.watermark.examples.advanced_usage.*;
 import com.groupdocs.watermark.examples.advanced_usage.loading_documents.*;
 import com.groupdocs.watermark.examples.advanced_usage.adding_watermarks.add_watermarks_to_email_attachments.*;
 import com.groupdocs.watermark.examples.advanced_usage.adding_watermarks.add_watermarks_to_images.*;
@@ -47,6 +48,8 @@ public class MainClass {
         //endregion
 
         //region Advanced Usage
+
+//        Logging.run();
 
         //region Loading Documents
 

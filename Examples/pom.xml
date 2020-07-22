@@ -34,7 +34,7 @@
  		<dependency>
  			<groupId>com.groupdocs</groupId>
  			<artifactId>groupdocs-watermark</artifactId>
- 			<version>20.5</version>
+ 			<version>20.8</version>
  		</dependency>
 	</dependencies>
  	<repositories>
