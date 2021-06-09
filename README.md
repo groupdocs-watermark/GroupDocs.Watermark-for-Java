@@ -10,7 +10,6 @@
 
 Directory | Description
 --------- | -----------
-[Docs](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java/tree/master/Docs)  | Product documentation containing the Developer's Guide, Release Notes and more.
 [Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java/tree/master/Examples)  | Java examples and sample documents for you to get started quickly. 
 
 ## Add, Remove or Search for Watermarks
