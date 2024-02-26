@@ -3,7 +3,7 @@ package com.groupdocs.watermark.examples.quick_start;
 import java.io.File;
 
 import com.groupdocs.watermark.examples.Constants;
-import com.groupdocs.watermark.licensing.License;
+import com.groupdocs.watermark.licenses.License;
 
 public class SetLicenseFromFile {
     /**

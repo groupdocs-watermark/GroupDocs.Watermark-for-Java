@@ -29,7 +29,7 @@ public class MainClass {
         SetLicenseFromFile.run();
 //        SetLicenseFromStream.run();
 //        SetMeteredLicense.run();
-//        HelloWorld.run();
+       HelloWorld.run();
 
         //endregion
 

@@ -1,6 +1,6 @@
 package com.groupdocs.watermark.examples.quick_start;
 
-import com.groupdocs.watermark.licensing.Metered;
+import com.groupdocs.watermark.licenses.Metered;
 
 public class SetMeteredLicense {
     public static void run() throws Exception {
