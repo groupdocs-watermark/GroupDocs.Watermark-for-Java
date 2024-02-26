@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 
 import com.groupdocs.watermark.examples.Constants;
-import com.groupdocs.watermark.licensing.License;
+import com.groupdocs.watermark.licenses.License;
 
 public class SetLicenseFromStream {
     /**
