@@ -37,13 +37,18 @@
  			<version>23.12</version>
  		</dependency>
 	</dependencies>
- 	<repositories>
- 		<repository>
- 			<id>GroupDocsJavaAPI</id>
- 			<name>GroupDocs Java API</name>
- 			<url>http://repository.groupdocs.com/repo/</url>
- 		</repository>
- 	</repositories>
+	<repositories>
+		<repository>
+			<id>GroupDocsJavaAPI</id>
+			<name>GroupDocs Java API</name>
+			<url>https://releases.groupdocs.com/java/repo/</url>
+		</repository>
+		<repository>
+			<id>maven-central</id>
+			<name>maven-central</name>
+			<url>https://repo1.maven.org/maven2</url>
+		</repository>
+	</repositories>
 	<build>
 		<plugins>
 			<plugin>
