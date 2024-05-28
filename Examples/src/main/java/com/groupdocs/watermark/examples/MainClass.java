@@ -14,6 +14,7 @@ import com.groupdocs.watermark.examples.advanced_usage.adding_watermarks.adding_
 import com.groupdocs.watermark.examples.advanced_usage.adding_watermarks.add_watermarks_to_diagrams.*;
 import com.groupdocs.watermark.examples.advanced_usage.saving_documents.*;
 import com.groupdocs.watermark.examples.advanced_usage.searching_and_modifying_watermarks.*;
+import org.bouncycastle.util.test.Test;
 
 public class MainClass {
     public static void main(String[] args) throws Throwable {
@@ -26,7 +27,7 @@ public class MainClass {
 
         //region Quick Start
 
-        SetLicenseFromFile.run();
+        //SetLicenseFromFile.run();
 //        SetLicenseFromStream.run();
 //        SetMeteredLicense.run();
        HelloWorld.run();
