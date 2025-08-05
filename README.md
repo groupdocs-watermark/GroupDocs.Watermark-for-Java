@@ -1,40 +1,36 @@
-# Watermark Images & Documents via Java
+# GroupDocs.Watermark Java Examples - Protect Documents with Watermarks
 
-[GroupDocs.Watermark is a Java library](https://products.groupdocs.com/watermark/java) to add text or image watermarks to Office, OpenOffice, PDF & Visio documents as well as all popular image formats. It also allows the developers to search and remove previously added watermarks (including watermarks added by third-party tools). 
+![GroupDocs.Watermark for Java](https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png)
 
-<p align="center">
-  <a title="Download GroupDocs.Watermark for Java Example's Source Code" href="https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java/archive/master.zip"> 
-    <img src="https://camo.githubusercontent.com/11839cd752a2d367f3149c7bee1742b68e4a4d37/68747470733a2f2f7261772e6769746875622e636f6d2f4173706f73654578616d706c65732f6a6176612d6578616d706c65732d64617368626f6172642f6d61737465722f696d616765732f646f776e6c6f61645a69702d427574746f6e2d4c617267652e706e67" data-canonical-src="https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png" style="max-width:100%;">
-  </a>
-</p>
+**Document security** through comprehensive watermarking solutions for Java applications. This repository provides complete examples demonstrating **how to watermark files**, **add watermark**, **create watermark**, **remove watermark**, and implement **invisible watermarking for documents** using GroupDocs.Watermark for Java.
 
-Directory | Description
---------- | -----------
-[Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java/tree/master/Examples)  | Java examples and sample documents for you to get started quickly. 
+## 🔐 Enterprise Document Security & Content Protection
 
-## Add, Remove or Search for Watermarks
+**Protect documents with watermarks** across 40+ file formats with powerful **content protection with watermarking** capabilities:
 
-- [Add text or image watermark](https://docs.groupdocs.com/watermark/java/add-text-or-image-watermark/) to [40+ document formats](https://docs.groupdocs.com/watermark/java/supported-document-formats/).
-- Add watermark to embedded images inside a document.
-- Remove or [modify existing watermark objects](https://docs.groupdocs.com/watermark/java/modifying-found-watermark-properties/).
-- Extract information of watermark objects.
-- Search and remove watermarks from supported document formats.
-- Search watermarks in particular objects such as Excel charts.
-- Search watermarks by text formatting (font, color etc.).
-- Extract document's basic information such as file type, size, pages count, page height & width.
-- Generate image representations of document pages.
+- **Custom watermark** creation with personalized text and images
+- **Customize watermark** appearance, positioning, and transparency
+- **Custom fonts** support for branded watermarking solutions
+- **Watermark automation for enterprise** Java workflows
+- Advanced search and removal capabilities
+- **Invisible watermarking for documents** with steganographic techniques
+- **Tiling watermarks** across entire document pages for comprehensive coverage
 
-## Get Started with GroupDocs.Watermark for Java
+## 📁 Repository Structure
 
-GroupDocs.Watermark for Java requires J2SE 7.0 (1.7), J2SE 8.0 (1.8) or above. Please install Java first if you do not have it already. 
+| Directory | Description |
+|-----------|-------------|
+| [Examples](./Examples) | Complete Java examples showing **how to watermark a** document and implement **document security** |
 
-GroupDocs hosts all Java APIs on [GroupDocs Artifact Repository](https://artifact.groupdocs.com/webapp/#/artifacts/browse/tree/General/repo/com/groupdocs/groupdocs-watermark), so simply [configure](https://docs.groupdocs.com/watermark/java/installation/) your Maven project to fetch the dependencies automatically.
+## 🚀 Quick Start - How to Watermark Documents in Java
 
-## Add Text Watermark to PDF Pages
+### Add Watermark to Documents
+
+Learn **how to watermark** your documents with this simple Java example:
 
 ```java
-// Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
+// Specify an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+Watermarker watermarker = new Watermarker("document.pdf");                                      
                                                                                                          
 TextWatermark watermark = new TextWatermark("top secret", new Font("Arial", 36));                        
 watermark.setForegroundColor(Color.getRed());                                                            
@@ -42,13 +38,43 @@ watermark.setHorizontalAlignment(HorizontalAlignment.Center);
 watermark.setVerticalAlignment(VerticalAlignment.Center);                                                
                                                                                                          
 watermarker.add(watermark);                                                                              
-watermarker.save(Constants.OutDocumentPdf);                                                              
+watermarker.save("document.pdf");                                                              
                                                                                                          
-watermarker.close();        
+watermarker.close();
 ```
 
-## Search Watermarks in PDF Document
+## 📋 Java Watermarking Examples by Use Case
 
+### Basic Watermarking Operations
+- **How to watermark in** PDF documents with Java
+- **Create watermark** with custom fonts and styling
+- **Add watermark** to multiple pages simultaneously
+- **Customize watermark** transparency and rotation angles
+
+### Advanced Document Security
+- **Removing watermark from** third-party applications
+- **Delete watermark from** specific document regions
+- **Can you remove watermark from** password-protected files
+- **How to remove watermarks in** batch processing workflows
+
+### Enterprise Java Solutions
+- **Watermark automation for enterprise** document management systems
+- **Content protection with watermarking** for sensitive business documents
+- **Document security** compliance implementations
+- **Customized product** branding with corporate watermarks
+
+## 🎯 Supported File Formats
+
+**How to watermark files** across multiple formats using Java:
+
+**Documents:** PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, RTF  
+**Images:** PNG, JPG, BMP, TIFF, GIF, WEBP  
+**Email:** EML, MSG, EMLX  
+**Other:** Visio files (VSD, VSDX), OpenOffice (ODT)
+
+## 💡 Key Java Watermarking Scenarios
+
+### How to Search Watermarks in PDF documents
 ```java
 // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
 Watermarker watermarker = new Watermarker(Constants.InDocumentPdf);                                      
@@ -69,7 +95,93 @@ for (PossibleWatermark possibleWatermark : possibleWatermarks)
     System.out.println(possibleWatermark.getHeight());                                                   
 }                                                                                                        
                                                                                                          
-watermarker.close();        
+watermarker.close();
 ```
 
-[Home](https://www.groupdocs.com/) | [Product Page](https://products.groupdocs.com/watermark/java) | [Documentation](https://docs.groupdocs.com/watermark/java/) | [Demos](https://products.groupdocs.app/watermark/family) | [API Reference](https://apireference.groupdocs.com/java/watermark) | [Examples](https://github.com/groupdocs-watermark/GroupDocs.watermark-for-Java/tree/master/Examples) | [Blog](https://blog.groupdocs.com/category/watermark/) | [Search](https://search.groupdocs.com/) | [Free Support](https://forum.groupdocs.com/c/watermark) | [Temporary License](https://purchase.groupdocs.com/temporary-license)
+### Image Watermarking
+```java
+// Specify an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
+Watermarker watermarker = new Watermarker("presentation.pptx");                                           
+                                                                                                                   
+// Use path to the image as constructor parameter                                                                  
+ImageWatermark watermark = new ImageWatermark("watermark.jpg");                                             
+                                                                                                                   
+// Add watermark to the document                                                                                   
+watermarker.add(watermark);                                                                                        
+                                                                                                                   
+watermarker.save("presentation.pptx");                                                                   
+                                                                                                                   
+watermark.close();                                                                                                 
+watermarker.close();
+```
+
+### **How to Remove Watermark** Operations
+```java
+// Specify an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
+Watermarker watermarker = new Watermarker("document.pdf");                                      
+                                                                                                         
+PossibleWatermarkCollection possibleWatermarks = watermarker.search();                                   
+                                                                                                         
+// Remove possible watermark at the specified index from the document.                                   
+possibleWatermarks.removeAt(0);                                                                          
+                                                                                                         
+// Remove specified possible watermark from the document.                                                
+possibleWatermarks.remove(possibleWatermarks.get_Item(0));                                               
+                                                                                                         
+watermarker.save("document.pdf");                                                              
+                                                                                                         
+watermarker.close();
+```
+
+## 🔧 Installation & Setup
+
+### Maven Configuration
+Add to your `pom.xml`:
+```xml
+<repositories>
+  <repository>
+    <id>GroupDocsJavaAPI</id>
+    <name>GroupDocs Java API</name>
+    <url>https://releases.groupdocs.com/java/repo/</url>
+  </repository>
+</repositories>
+```
+
+### System Requirements
+- Java J2SE 7.0 (1.7) or higher
+- J2SE 8.0 (1.8) recommended for optimal performance
+- Compatible with all major Java IDEs
+
+## 🌟 Advanced Java Features
+
+- **Invisible watermarking for documents** with steganographic embedding  
+- Search watermarks by formatting properties (font, color, size)
+- **Document security** with password protection integration
+- **Tiling watermarks** with customizable spacing and patterns
+- Batch processing for **watermark automation for enterprise**
+- **Custom watermark** templates for consistent branding
+- Multi-threaded watermark processing for high-volume scenarios
+
+## 📖 Documentation & Resources
+
+- [Complete Java API Documentation](https://docs.groupdocs.com/watermark/java/)
+- [Live Demo - **How to Watermark** Online](https://products.groupdocs.app/watermark/family)
+- [Java API Reference Guide](https://apireference.groupdocs.com/java/watermark)
+- [Developer Blog](https://blog.groupdocs.com/category/watermark/)
+
+## 🤝 Support & Community
+
+- [Free Support Forum](https://forum.groupdocs.com/c/watermark) - Get help with **how to remove watermark from free** community
+- [Temporary License](https://purchase.groupdocs.com/temporary-license) - Test full features
+
+## 🏷️ Tags
+
+`java-watermarking` `document-security` `content-protection` `pdf-watermark` `document-watermark` `remove-watermark` `add-watermark` `custom-watermark` `enterprise-security` `java-library`
+
+---
+
+**Start securing your Java applications today!** Clone this repository to explore comprehensive examples of **how to watermark a** document, implement **document security**, and leverage **watermark automation for enterprise** Java solutions.
+
+- [⬇️ Download Examples](https://github.com/groupdocs-watermark/GroupDocs.Watermark-for-Java/archive/master.zip) 
+- [🏠 GroupDocs Home](https://products.groupdocs.com/)
+- [📧 Contact Sales](https://purchase.groupdocs.com/temporary-license)

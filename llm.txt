@@ -1,0 +1,48 @@
+# GroupDocs.Watermark Java Examples
+
+## Overview
+Repository containing Java examples for GroupDocs.Watermark Java library - a document watermarking solution supporting 40+ file formats including PDF, Word, Excel, PowerPoint, and images.
+
+## Core Functionality
+- Add text/image watermarks to documents via Java API
+- Remove existing watermarks (including third-party)
+- Search watermarks by text, formatting, or custom criteria
+- Invisible watermarking and steganographic embedding
+- Batch watermark processing and automation
+- Custom watermark styling with fonts, colors, transparency
+- Tiling watermarks for comprehensive page coverage
+- Multi-threaded processing for enterprise applications
+
+## Key Use Cases
+- Enterprise Java document security workflows
+- Content protection and brand enforcement
+- Legal document authentication
+- Automated watermark processing in Java applications
+- Integration with existing Java document management systems
+- Compliance and audit trail requirements
+
+## Supported Formats
+**Documents**: PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, RTF, ODT
+**Images**: PNG, JPG, BMP, TIFF, GIF, WEBP
+**Email**: EML, MSG, EMLX
+**Other**: Visio files, various proprietary formats
+
+## Technical Details
+- Java J2SE 7.0+ (J2SE 8.0+ recommended)
+- Maven artifact: com.groupdocs:groupdocs-watermark
+- Cross-platform Java compatibility
+- Thread-safe operations for concurrent processing
+- Memory-efficient streaming for large documents
+
+## Repository Structure
+- `/Examples` - Core Java implementation examples with complete source code
+
+## Java Integration
+- Maven/Gradle dependency management
+- Spring Framework compatible
+- Enterprise Java (J2EE) ready
+- Microservices architecture suitable
+- RESTful API integration examples
+
+## AI/LLM Context
+Ideal for AI applications requiring automated document processing, batch watermarking workflows, or Java-based document security solutions. Examples demonstrate programmatic watermark manipulation suitable for integration into larger enterprise Java systems, microservices, or automated document processing pipelines.
