@@ -1,7 +1,5 @@
 # GroupDocs.Watermark Java Examples - Protect Documents with Watermarks
 
-![GroupDocs.Watermark for Java](https://raw.github.com/AsposeExamples/java-examples-dashboard/master/images/downloadZip-Button-Large.png)
-
 **Document security** through comprehensive watermarking solutions for Java applications. This repository provides complete examples demonstrating **how to watermark files**, **add watermark**, **create watermark**, **remove watermark**, and implement **invisible watermarking for documents** using GroupDocs.Watermark for Java.
 
 ## 🔐 Enterprise Document Security & Content Protection
@@ -72,6 +70,26 @@ watermarker.close();
 **Email:** EML, MSG, EMLX  
 **Other:** Visio files (VSD, VSDX), OpenOffice (ODT)
 
+## 🔧 Installation & Setup
+
+### Maven Configuration
+Add to your `pom.xml`:
+```xml
+<repositories>
+  <repository>
+    <id>GroupDocsJavaAPI</id>
+    <name>GroupDocs Java API</name>
+    <url>https://releases.groupdocs.com/java/repo/</url>
+  </repository>
+</repositories>
+```
+
+### System Requirements
+- Java J2SE 7.0 (1.7) or higher
+- J2SE 8.0 (1.8) recommended for optimal performance
+- Compatible with all major Java IDEs
+
+
 ## 💡 Key Java Watermarking Scenarios
 
 ### How to Search Watermarks in PDF documents
@@ -132,25 +150,6 @@ watermarker.save("document.pdf");
                                                                                                          
 watermarker.close();
 ```
-
-## 🔧 Installation & Setup
-
-### Maven Configuration
-Add to your `pom.xml`:
-```xml
-<repositories>
-  <repository>
-    <id>GroupDocsJavaAPI</id>
-    <name>GroupDocs Java API</name>
-    <url>https://releases.groupdocs.com/java/repo/</url>
-  </repository>
-</repositories>
-```
-
-### System Requirements
-- Java J2SE 7.0 (1.7) or higher
-- J2SE 8.0 (1.8) recommended for optimal performance
-- Compatible with all major Java IDEs
 
 ## 🌟 Advanced Java Features
 
