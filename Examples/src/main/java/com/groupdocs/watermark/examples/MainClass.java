@@ -42,6 +42,9 @@ public class MainClass {
 
 //        AddATextWatermark.run();
 //        AddAnImageWatermark.run();
+//        AddTextWatermarkWithCustomFont.run();
+//        AddTextTiledWatermark.run();
+//        AddImageTiledWatermark.run();
 
 //        GenerateDocumentPreview.run();
         
@@ -56,6 +59,7 @@ public class MainClass {
 //        LoadingDocumentOfSpecificFormat.run();
 //        LoadPasswordProtectedDocument.run();
 //        LoadPasswordProtectedWordProcessingDocument.run();
+//        LoadingDocumentWithKnownType.run();
 
         //endregion
 
@@ -128,6 +132,7 @@ public class MainClass {
 //        PdfGetDimensions.run();
 //        PdfAddWatermarkWithPageMarginType.run();
 //        PdfAddWatermarkToAllAttachments.run();
+//        PdfAddWatermarksToSpecificPages.run();
 
 //        PdfAddArtifactWatermark.run();
 //        PdfAddAnnotationWatermark.run();
@@ -169,6 +174,7 @@ public class MainClass {
         //region AddWatermarksToPresentations
 
 //        PresentationAddWatermarkToSlide.run();
+//        PresentationAddWatermarkToSpecificSlides.run();
 //        PresentationProtectWatermarkUsingUnreadableCharacters.run();
 //        PresentationGetSlideDimensions.run();
 //        PresentationAddWatermarkToSlideImages.run();
@@ -188,6 +194,7 @@ public class MainClass {
         //region AddWatermarksToSpreadsheets
 
 //        SpreadsheetAddWatermarkToWorksheet.run();
+//        SpreadsheetAddWatermarkToSpecificWorksheet.run();
 //        SpreadsheetGetContentAreaDimensions.run();
 //        SpreadsheetAddWatermarkToWorksheetImages.run();
 //        SpreadsheetAddModernWordArtWatermark.run();
@@ -236,6 +243,7 @@ public class MainClass {
 //        WordProcessingAddWatermarkToSectionImages.run();
 //        WordProcessingAddWatermarkToShapeImages.run();
 //        WordProcessingAddWatermarkToParticularPage.run();
+//        WordProcessingAddWatermarkToSpecificPages.run();
 //        WordProcessingLinkHeaderFooterInSection.run();
 //        WordProcessingLinkAllHeaderFooterInSection.run();
 //        WordProcessingAddImageWatermarkToAllHeaders.run();
@@ -288,6 +296,7 @@ public class MainClass {
 //        RemoveWatermark.run();
 //        RemoveWatermarkWithParticularTextFormatting.run();
 //        RemoveHyperlinksWithParticularUrl.run();
+//        InpaintImageArea.run();
 
 //        ModifyTextInFoundWatermarks.run();
 //        ModifyTextWithFormattingInFoundWatermarks.run();
