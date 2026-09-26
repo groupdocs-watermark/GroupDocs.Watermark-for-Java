@@ -10,6 +10,7 @@ public class Constants {
     public static final String DocumentsPath = new File(ResourcesPath, "SampleFiles/Documents").getPath();
     public static final String ImagesPath = new File(ResourcesPath, "SampleFiles/Images").getPath();
     public static final String OutputPath = new File(ResourcesPath, "SampleFiles/Output").getPath();
+    public static final String FontsPath = new File(ResourcesPath, "SampleFiles/Fonts").getPath();
     public static final String InDiagramVsdx = new File(DocumentsPath, "diagram.vsdx").getPath();
     public static final String OutDiagramVsdx = new File(OutputPath, "diagram.vsdx").getPath();
     public static final String InDocumentDocx = new File(DocumentsPath, "document.docx").getPath();
@@ -31,6 +32,9 @@ public class Constants {
     public static final String InProtectedDocumentDocx = new File(DocumentsPath, "protected-document.docx").getPath();
     public static final String OutProtectedDocumentDocx = new File(OutputPath, "protected-document.docx").getPath();
     public static final String InSampleDocx = new File(DocumentsPath, "sample.docx").getPath();
+    public static final String InSamplePdf = new File(DocumentsPath, "sample.pdf").getPath();
+    public static final String OutSamplePdf = new File(OutputPath, "sample.pdf").getPath();
+    public static final String OutSampleJpg = new File(OutputPath, "sample.jpg").getPath();
     public static final String InSampleMsg = new File(DocumentsPath, "sample.msg").getPath();
     public static final String InSourceDocx = new File(DocumentsPath, "source.docx").getPath();
     public static final String InSpreadsheetXlsx = new File(DocumentsPath, "spreadsheet.xlsx").getPath();
