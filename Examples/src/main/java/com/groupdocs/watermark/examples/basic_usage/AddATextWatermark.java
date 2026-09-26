@@ -4,6 +4,9 @@ import com.groupdocs.watermark.Watermarker;
 import com.groupdocs.watermark.common.HorizontalAlignment;
 import com.groupdocs.watermark.common.VerticalAlignment;
 import com.groupdocs.watermark.examples.Constants;
+import com.groupdocs.watermark.watermarks.Color;
+import com.groupdocs.watermark.watermarks.Font;
+import com.groupdocs.watermark.watermarks.TextWatermark;
 import com.groupdocs.watermark.watermarks.*;
 
 public class AddATextWatermark {
@@ -18,6 +21,7 @@ public class AddATextWatermark {
         watermark.setForegroundColor(Color.getRed());
         watermark.setHorizontalAlignment(HorizontalAlignment.Center);
         watermark.setVerticalAlignment(VerticalAlignment.Center);
+
         watermark.setOpacity(0.4);
         watermarker.add(watermark);
 
@@ -26,3 +30,4 @@ public class AddATextWatermark {
         watermarker.close();
     }
 }
+
