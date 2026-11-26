@@ -14,8 +14,8 @@ public class PdfAddWatermarks {
      */
     public static void run() {
         PdfLoadOptions loadOptions = new PdfLoadOptions();
-        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+        // Constants.InSamplePdf is an absolute or relative path to your document. Ex: "C:\\Docs\\sample.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InSamplePdf, loadOptions);
 
         // Add text watermark to the first page
         TextWatermark textWatermark = new TextWatermark("This is a test watermark", new Font("Arial", 8));
@@ -33,7 +33,7 @@ public class PdfAddWatermarks {
 
         imageWatermark.close();
 
-        watermarker.save(Constants.OutDocumentPdf);
+        watermarker.save(Constants.OutSamplePdf);
 
         watermarker.close();
     }

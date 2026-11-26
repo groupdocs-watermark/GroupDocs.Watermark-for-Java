@@ -32,6 +32,11 @@ public class Constants {
     public static final String InProtectedDocumentDocx = new File(DocumentsPath, "protected-document.docx").getPath();
     public static final String OutProtectedDocumentDocx = new File(OutputPath, "protected-document.docx").getPath();
     public static final String InSampleDocx = new File(DocumentsPath, "sample.docx").getPath();
+    public static final String OutSampleDocx = new File(OutputPath, "sample.docx").getPath();
+    public static final String InSamplePptx = new File(DocumentsPath, "sample.pptx").getPath();
+    public static final String OutSamplePptx = new File(OutputPath, "sample.pptx").getPath();
+    public static final String InSampleXlsx = new File(DocumentsPath, "sample.xlsx").getPath();
+    public static final String OutSampleXlsx = new File(OutputPath, "sample.xlsx").getPath();
     public static final String InSamplePdf = new File(DocumentsPath, "sample.pdf").getPath();
     public static final String OutSamplePdf = new File(OutputPath, "sample.pdf").getPath();
     public static final String OutSampleJpg = new File(OutputPath, "sample.jpg").getPath();
@@ -52,7 +57,7 @@ public class Constants {
     public static final String LogoBmp = new File(ImagesPath, "logo.bmp").getPath();
     public static final String LogoGif = new File(ImagesPath, "logo.gif").getPath();
     public static final String LogoJpg = new File(ImagesPath, "logo.jpg").getPath();
-    public static final String LogoPng = new File(ImagesPath, "logo.png").getPath();
+    public static final String LogoPng = new File(ImagesPath, "protected_logo_small.png").getPath();
     public static final String ProtectJpg = new File(ImagesPath, "protect.jpg").getPath();
     public static final String SampleJpg = new File(ImagesPath, "sample.jpg").getPath();
     public static final String TestPng = new File(ImagesPath, "test.png").getPath();

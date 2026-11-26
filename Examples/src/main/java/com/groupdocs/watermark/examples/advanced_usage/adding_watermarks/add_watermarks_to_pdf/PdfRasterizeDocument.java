@@ -17,8 +17,8 @@ public class PdfRasterizeDocument {
      */
     public static void run() {
         PdfLoadOptions loadOptions = new PdfLoadOptions();
-        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+        // Constants.InSamplePdf is an absolute or relative path to your document. Ex: "C:\\Docs\\sample.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InSamplePdf, loadOptions);
 
         // Initialize image or text watermark
         TextWatermark watermark = new TextWatermark("Do not copy", new Font("Arial", 8));
@@ -38,7 +38,7 @@ public class PdfRasterizeDocument {
         pdfContent.rasterize(100, 100, PdfImageConversionFormat.Png);
 
         // Content of all pages is replaced with raster images
-        watermarker.save(Constants.OutDocumentPdf);
+        watermarker.save(Constants.OutSamplePdf);
 
         watermarker.close();
     }

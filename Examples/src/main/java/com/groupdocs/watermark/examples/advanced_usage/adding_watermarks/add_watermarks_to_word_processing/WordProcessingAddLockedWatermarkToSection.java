@@ -15,8 +15,8 @@ public class WordProcessingAddLockedWatermarkToSection {
      */
     public static void run() {
         WordProcessingLoadOptions loadOptions = new WordProcessingLoadOptions();
-        // Constants.InDocumentDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\document.docx"
-        Watermarker watermarker = new Watermarker(Constants.InDocumentDocx, loadOptions);
+        // Constants.InSampleDocx is an absolute or relative path to your document. Ex: "C:\\Docs\\sample.docx"
+        Watermarker watermarker = new Watermarker(Constants.InSampleDocx, loadOptions);
 
         TextWatermark watermark = new TextWatermark("Watermark text", new Font("Arial", 19));
         watermark.setForegroundColor(Color.getRed());
@@ -31,7 +31,7 @@ public class WordProcessingAddLockedWatermarkToSection {
 
         watermarker.add(watermark, options);
 
-        watermarker.save(Constants.OutDocumentDocx);
+        watermarker.save(Constants.OutSampleDocx);
 
         watermarker.close();
     }

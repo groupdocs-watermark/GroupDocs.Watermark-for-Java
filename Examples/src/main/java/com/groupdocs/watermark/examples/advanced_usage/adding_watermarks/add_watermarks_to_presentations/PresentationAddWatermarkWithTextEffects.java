@@ -17,8 +17,8 @@ public class PresentationAddWatermarkWithTextEffects {
      */
     public static void run() {
         PresentationLoadOptions loadOptions = new PresentationLoadOptions();
-        // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
-        Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);
+        // Constants.InSamplePptx is an absolute or relative path to your document. Ex: "C:\\Docs\\sample.pptx"
+        Watermarker watermarker = new Watermarker(Constants.InSamplePptx, loadOptions);
 
         TextWatermark watermark = new TextWatermark("Test watermark", new Font("Segoe UI", 19));
 
@@ -33,7 +33,7 @@ public class PresentationAddWatermarkWithTextEffects {
         options.setEffects(effects);
 
         watermarker.add(watermark, options);
-        watermarker.save(Constants.OutPresentationPptx);
+        watermarker.save(Constants.OutSamplePptx);
 
         watermarker.close();
     }
