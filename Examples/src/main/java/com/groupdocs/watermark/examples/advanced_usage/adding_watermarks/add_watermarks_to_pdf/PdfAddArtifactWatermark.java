@@ -15,8 +15,8 @@ public class PdfAddArtifactWatermark {
      */
     public static void run() {
         PdfLoadOptions loadOptions = new PdfLoadOptions();
-        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+        // Constants.InSamplePdf is an absolute or relative path to your document. Ex: "C:\\Docs\\sample.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InSamplePdf, loadOptions);
 
         PdfArtifactWatermarkOptions options = new PdfArtifactWatermarkOptions();
 
@@ -32,7 +32,7 @@ public class PdfAddArtifactWatermark {
 
         imageWatermark.close();
 
-        watermarker.save(Constants.OutDocumentPdf);
+        watermarker.save(Constants.OutSamplePdf);
 
         watermarker.close();
     }

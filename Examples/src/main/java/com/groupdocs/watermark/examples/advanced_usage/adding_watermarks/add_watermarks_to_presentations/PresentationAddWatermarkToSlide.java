@@ -14,8 +14,8 @@ public class PresentationAddWatermarkToSlide {
      */
     public static void run() {
         PresentationLoadOptions loadOptions = new PresentationLoadOptions();
-        // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
-        Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);
+        // Constants.InSamplePptx is an absolute or relative path to your document. Ex: "C:\\Docs\\sample.pptx"
+        Watermarker watermarker = new Watermarker(Constants.InSamplePptx, loadOptions);
 
         // Add text watermark to the first slide
         TextWatermark textWatermark = new TextWatermark("Test watermark", new Font("Arial", 8));
@@ -30,7 +30,7 @@ public class PresentationAddWatermarkToSlide {
         imageWatermarkOptions.setSlideIndex(1);
         watermarker.add(imageWatermark, imageWatermarkOptions);
 
-        watermarker.save(Constants.OutPresentationPptx);
+        watermarker.save(Constants.OutSamplePptx);
 
         watermarker.close();
         imageWatermark.close();

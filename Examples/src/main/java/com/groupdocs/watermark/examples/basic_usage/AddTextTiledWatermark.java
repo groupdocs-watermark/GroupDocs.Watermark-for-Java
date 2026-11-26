@@ -42,7 +42,7 @@ public class AddTextTiledWatermark {
 
         TileOptions tileOptions = new TileOptions();
         tileOptions.setTileType(TileType.Straight);
-        tileOptions.setRotateAroundCenter(true);
+        tileOptions.setRotateAroundOrigin(true);
         tileOptions.setLineSpacing(lineSpacing);
         tileOptions.setWatermarkSpacing(watermarkSpacing);
         watermark.setTileOptions(tileOptions);

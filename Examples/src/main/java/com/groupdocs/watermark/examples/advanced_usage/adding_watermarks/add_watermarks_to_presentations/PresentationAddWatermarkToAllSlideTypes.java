@@ -18,8 +18,8 @@ public class PresentationAddWatermarkToAllSlideTypes {
      */
     public static void run() {
         PresentationLoadOptions loadOptions = new PresentationLoadOptions();
-        // Constants.InPresentationPptx is an absolute or relative path to your document. Ex: "C:\\Docs\\presentation.pptx"
-        Watermarker watermarker = new Watermarker(Constants.InPresentationPptx, loadOptions);
+        // Constants.InSamplePptx is an absolute or relative path to your document. Ex: "C:\\Docs\\sample.pptx"
+        Watermarker watermarker = new Watermarker(Constants.InSamplePptx, loadOptions);
 
         TextWatermark watermark = new TextWatermark("Test watermark", new Font("Arial", 8));
 
@@ -63,7 +63,7 @@ public class PresentationAddWatermarkToAllSlideTypes {
             watermarker.add(watermark, masterNotesSlideOptions);
         }
 
-        watermarker.save(Constants.OutPresentationPptx);
+        watermarker.save(Constants.OutSamplePptx);
 
         watermarker.close();
     }

@@ -16,8 +16,8 @@ public class PdfAddAnnotationWatermark {
      */
     public static void run() {
         PdfLoadOptions loadOptions = new PdfLoadOptions();
-        // Constants.InDocumentPdf is an absolute or relative path to your document. Ex: "C:\\Docs\\document.pdf"
-        Watermarker watermarker = new Watermarker(Constants.InDocumentPdf, loadOptions);
+        // Constants.InSamplePdf is an absolute or relative path to your document. Ex: "C:\\Docs\\sample.pdf"
+        Watermarker watermarker = new Watermarker(Constants.InSamplePdf, loadOptions);
 
         PdfAnnotationWatermarkOptions options = new PdfAnnotationWatermarkOptions();
 
@@ -34,7 +34,7 @@ public class PdfAddAnnotationWatermark {
         imageWatermark.setVerticalAlignment(VerticalAlignment.Top);
         watermarker.add(imageWatermark, options);
 
-        watermarker.save(Constants.OutDocumentPdf);
+        watermarker.save(Constants.OutSamplePdf);
 
         imageWatermark.close();
         watermarker.close();
